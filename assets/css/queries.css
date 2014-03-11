@@ -1,0 +1,1860 @@
+/* 480px / 16px = 30em */
+@media only screen and (min-width: 30em) {
+
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Data Modal
+	---------------------------------------------------------------------------- */
+	/* --- Data Modal Header --- */
+	[data-modal="header"] [data-container="contained"] {
+		max-width: 40.6rem;
+	}
+
+	/* Connected Device & Settings Nav List
+	---------------------------------------------------------------------------- */
+	ul[data-modal="nav-list"] {
+		width: 42.6rem;
+	}
+	ul[data-modal="nav-list"] li:nth-child(3n) {
+		margin-right: 1.8rem;
+	}
+	ul[data-modal="nav-list"] li:nth-child(4n) {
+		margin-right: 0;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Default View
+	---------------------------------------------------------------------------- */
+	/* --- Current Song --- */
+	#view_default [data-component="current-song"] {
+		text-align: left;
+	}
+	/* + album cover + */
+	#view_default [data-component="current-song"] div.album-cover {
+		float: left;
+		margin: 0 5% 0 0;
+		width: 35%;
+	}
+	/* + song details + */
+	#view_default [data-component="current-song"] div[data-meta="song-details"] {
+		float: left;
+		width: 60%;
+	}
+	/* + song specifics + */
+	#view_default [data-component="current-song"] ul[data-meta="song-specifics"] {
+		float: left;
+		margin: 0;
+	}
+
+	/* Artist View
+	---------------------------------------------------------------------------- */
+	/* --- Artist Header --- */
+	/* + selected artist + */
+	#view_artist [data-component="artist-albums"] [data-component="artist-header"] div.selected-artist {
+		margin-bottom: 0;
+		width: 70%;
+		text-align: left;
+	}
+	/* + media actions + */
+	#view_artist [data-compontent="media-actions"] {
+		position: absolute;
+		margin: 0;
+		top: 3rem;
+		right: 1rem;
+	}
+	#view_artist [data-compontent="media-actions"] li.more-actions [data-ui="tooltip"] {
+		-webkit-transform: translateX(-94%);
+		   -moz-transform: translateX(-94%);
+			-ms-transform: translateX(-94%);
+				transform: translateX(-94%);
+	}
+	#view_artist [data-compontent="media-actions"] li.more-actions [data-ui="tooltip"] i[data-icon] {
+		left: 88%;
+		-webkit-transform: translateX(0);
+		   -moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+				transform: translateX(0);
+	}
+	/* --- Album Details --- */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container^="column"] {
+		float: left;
+	}
+	/* + column one + */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-one"] {
+		margin: 0 6% 0 0;
+		width: 24%;
+	}
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-one"] span[data-meta="album-cover_library"] {
+		margin: 0;
+	}
+	/* + column two + */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-two"] {
+		width: 70%;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album [data-component="album"] {
+		width: 33.33333333333333%; /* 100 / 3 = 33.33333333333333 */
+	}
+
+/* ==|== settings =============================================================
+   ========================================================================= */
+
+	/* Album Art Database
+	---------------------------------------------------------------------------- */
+	#settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"] ul li,
+	#settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"] ul li:nth-child(3n) {
+		margin: 0 3.260869565217% 2rem 0;
+		width: 17.391304347826%;
+	}
+	#settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"] ul li:nth-child(5n) {
+		margin-right: 0;
+	}
+
+}
+
+/* 568px / 16px = 35.5em */
+@media only screen and (min-width: 35.5em) {
+
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Data Modal
+	---------------------------------------------------------------------------- */
+	/* --- Data Modal Header --- */
+	[data-modal="header"] [data-container="contained"] {
+		max-width: 51.2rem;
+	}
+
+	/* Connected Device & Settings Nav List
+	---------------------------------------------------------------------------- */
+	ul[data-modal="nav-list"] {
+		width: 53.2rem;
+	}
+	ul[data-modal="nav-list"] li:nth-child(4n) {
+		margin-right: 1.8rem;
+	}
+	ul[data-modal="nav-list"] li:nth-child(5n) {
+		margin-right: 0;
+	}
+
+/* ==|== footer ===============================================================
+   ========================================================================= */
+
+	/* Main Components Nav
+	---------------------------------------------------------------------------- */
+	nav[role="primary"] > ul {
+		border-top: 0.1rem solid hsla(0,0%,18%,1);
+	}
+	nav[role="primary"] > ul > li {
+		float: left;
+		width: 50%;
+	}
+	/* + individual components + */
+	nav[role="primary"] > ul > li.nav-tvmode {
+		border-top: none;
+	}
+	nav[role="primary"] > ul > li.nav-bradio,
+	nav[role="primary"] > ul > li.nav-connected {
+		border-left: 0.1rem solid hsla(0,0%,18%,1);
+	}
+
+	/* Settings Options
+	---------------------------------------------------------------------------- */
+	nav[role="secondary"] header.settings-header {
+		padding: 1.6rem 1rem;
+		text-align: center;
+	}
+	nav[role="secondary"] header.settings-header i[data-icon="ui_plus"] {
+		display: inline-block;
+		position: relative;
+		top: 0.2rem;
+		left: 0;
+		margin-right: 1.6rem;
+	}
+
+/* ==|== internals ============================================================
+   ========================================================================= */
+
+	/* Dashboard
+	---------------------------------------------------------------------------- */
+	/* --- User Login --- */
+	#login-form form div.input-wrap.username {
+		float: left;
+		width: 49%;
+	}
+	#login-form form div.input-wrap.password {
+		float: right;
+		width: 49%;
+	}
+
+	/* TV Mode
+	---------------------------------------------------------------------------- */
+	#tv-mode main section article {
+		max-width: 128rem;
+	}
+	/* --- Album Cover --- */
+	#tv-mode main section article div.album-cover {
+		margin-bottom: 0;
+		width: 30%;
+	}
+	/* --- Song Details --- */
+	#tv-mode main section article div[data-meta="song-details"] {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		margin-bottom: 0;
+		padding-left: 34%;
+		text-align: left;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+	}
+	/* --- Song Duration --- */
+	#tv-mode main section article div[data-control="song-duration"] {
+		padding-top: 3.2rem;
+	}
+	#tv-mode main section article div[data-control="song-duration"] span {
+		top: 2.8rem;
+		width: 9%;
+	}
+	#tv-mode main section article div[data-control="song-duration"] div[data-control="song-length"] {
+		margin-left: 9%;
+		width: 82%;
+	}
+
+	/* User
+	---------------------------------------------------------------------------- */
+	#page_user [data-content="parent"] [data-content="body"].user_login-form form.content-form input {
+		float: left;
+	}
+	#page_user [data-content="parent"] [data-content="body"].user_login-form form.content-form input[type="text"],
+	#page_user [data-content="parent"] [data-content="body"].user_login-form form.content-form input[type="password"] {
+		margin: 0 1rem 0 0;
+		width: 20rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Info Modal
+	---------------------------------------------------------------------------- */
+	/* --- Input Container --- */
+	#song-info div.input-container div.input-wrap label span.hide-mobile {
+		display: inline;
+		visibility: visible;
+	}
+	#song-info div.input-container div.input-wrap label[for="info_track-number"]::after,
+	#song-info div.input-container div.input-wrap label[for="info_disc-number"]::after {
+		content: "";
+		display: none;
+		visibility: hidden;
+	}
+	/* + two column inputs + */
+	#song-info div.input-container div.input-wrap span.input-innerwrap.left {
+		margin-right: 2%;
+		width: 70%;
+	}
+	#song-info div.input-container div.input-wrap span.input-innerwrap.right {
+		width: 28%;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album [data-component="album"] {
+		width: 25%; /* 100 / 4 = 25 */
+	}
+
+/* ==|== settings =============================================================
+   ========================================================================= */
+
+	/* System
+	---------------------------------------------------------------------------- */
+	#settings_system [data-content="parent"] [data-content="body"].actions {
+		border-top: 0.1rem solid hsla(0,0%,22%,1);
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
+		margin-bottom: 1.6rem;
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a:only-child,
+	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
+		margin-bottom: 0;
+	}
+	#settings_system [data-content="parent"] [data-content="body"] [data-container^="column"] {
+		float: left;
+	}
+	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] {
+		margin: 0 3% 0 0;
+		width: 65%;
+	}
+	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		width: 32%;
+	}
+
+	/* Disk Information
+	---------------------------------------------------------------------------- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container^="column"] {
+		float: left;
+		margin-bottom: 0;
+	}
+	/* --- Drive List --- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] {
+		width: 30%;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] {
+		max-height: none;
+		height: 40rem;
+	}
+	/* --- Content / Actions --- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		width: 70%;
+		padding-left: 1.6rem;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] div.scroll-container [data-content="box"] {
+		height: 29.1rem;
+	}
+	/* --- Disk Details --- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] ul[data-disk="details"] {
+		clear: both;
+		padding-top: 2.6rem;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 2rem;
+		   -moz-column-count: 2;
+		   -moz-column-gap: 2rem;
+				column-count: 2;
+				column-gap: 2rem;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] ul[data-disk="details"] li:nth-child(4) {
+		margin-bottom: 0;
+	}
+
+	/* Network Interfaces
+	---------------------------------------------------------------------------- */
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container^="column"] {
+		float: left;
+		margin-bottom: 0;
+	}
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-one"] {
+		width: 30%;
+	}
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		width: 70%;
+		padding-left: 1.6rem;
+	}
+	/* --- Network List --- */
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-component="network-list"] {
+		max-height: none;
+	}
+	/* --- Network Actions --- */
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul[data-component="network-actions"] {
+		margin-bottom: 3.2rem;
+		text-align: left;
+	}
+
+/* ==|== settings =============================================================
+   ========================================================================= */
+
+	/* System
+	---------------------------------------------------------------------------- */
+	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] [data-content="box"] {
+		min-height: 14.4rem;
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
+		float: left;
+		margin: 0 1rem 0 0;
+		width: auto;
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a:only-child,
+	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
+		margin-right: 0;
+	}
+
+	/* Album Art Database
+	---------------------------------------------------------------------------- */
+	/* --- Actions --- */
+	#settings_album-art-db [data-content="parent"] [data-content="body"].actions {
+		text-align: left;
+	}
+
+	/* Update Firmware
+	---------------------------------------------------------------------------- */
+	#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"] a[title="Browse"] {
+		float: left;
+		margin: 0 1rem 0 0;
+	}
+	#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"] input {
+		float: left;
+		width: 80%;
+	}
+	/* --- Content Actions --- */
+	#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"].actions {
+		border-top: 0.1rem solid hsla(0,0%,22%,1);
+	}
+
+	/* Music Player Daemon
+	---------------------------------------------------------------------------- */
+	/* --- MPD Settings --- */
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form div.version-length > div {
+		float: left;
+		width: 50%;
+	}
+	/* + mpd version + */
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form div.version-length div.mpd_version {
+		margin-bottom: 0;
+	}
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form div.version-length div.mpd_version div[data-ui="dropdown"],
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form div.version-length div.mpd_version div[data-ui="dropdown"] ul li.select-option {
+		width: 12rem;
+	}
+	/* + mpd playlist length + */
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form div.version-length div.mpd_playlist-length {
+		text-align: right;
+	}
+	/* --- Last FM --- */
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_last-fm form.content-form input {
+		float: left;
+	}
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_last-fm form.content-form input[type="text"],
+	#settings_mpd [data-content="parent"] [data-content="body"].mpd_last-fm form.content-form input[type="password"] {
+		margin: 0 1rem 0 0;
+		width: 20rem;
+	}
+
+	/* NAS Setup
+	---------------------------------------------------------------------------- */
+	/* + data meta text + */
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.name-ip,
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.network-type {
+		float: left;
+		width: 50%;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.name-ip {
+		padding-right: 0.8rem;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.network-type {
+		margin-top: 0;
+		padding-left: 0.8rem;
+		text-align: right;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong,
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em {
+		display: inline-block;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong {
+		margin-bottom: 0;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em::before {
+		content: "\2014";
+		margin: 0 0.4rem;
+	}
+	/* --- Actions --- */
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions {
+		text-align: right;
+	}
+	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions .common-button {
+		display: inline-block;
+		width: auto;
+		margin: 0 0 0 1rem;
+	}
+
+	/* Services
+	---------------------------------------------------------------------------- */
+	#settings_services [data-content="parent"] [data-content="body"] [data-container^="column"] {
+		float: left;
+	}
+	/* --- Services List --- */
+	#settings_services [data-content="parent"] [data-content="body"] [data-container="column-one"] {
+		width: 30%;
+		margin-bottom: 0;
+	}
+	/* --- Services Info --- */
+	#settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		width: 70%;
+		padding-left: 1.6rem;
+	}
+
+}
+
+/* 700px / 16px = 43.75em */
+@media only screen and (min-width: 43.75em) {
+
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Forms
+	---------------------------------------------------------------------------- */
+	/* --- Checkboxes --- */
+	input[type="checkbox"] + label {
+		padding: 2rem 1.6rem 1.9rem 7rem;
+		min-height: 5.4rem;
+		font-size: 1.5rem;
+	}
+	/* + before | after + */
+	input[type="checkbox"] + label::before {
+		width: 5.4rem;
+	}
+	input[type="checkbox"] + label::after {
+		top: 1.6rem;
+		left: 1.6rem;
+		width: 1.9rem;
+		height: 1.9rem;
+		font-size: 1.6rem;
+	}
+	/* + checkbox lists + */
+	ul.checkbox-list li {
+		margin-bottom: 2rem;
+	}
+	ul.checkbox-list li:last-child,
+	ul.checkbox-list li:only-child {
+		margin-bottom: 0;
+	}
+
+/* ==|== main content =========================================================
+   ========================================================================= */
+
+	/* Main Elements
+	---------------------------------------------------------------------------- */
+	/* --- The Content --- */
+	[data-content="box"] p,
+	[data-content="box"] ol li,
+	[data-content="box"] ul li {
+		font-size: 1.6rem;
+	}
+
+/* ==|== internals ============================================================
+   ========================================================================= */
+
+	/* General Pages and Settings
+	---------------------------------------------------------------------------- */
+	main.internal-content > [data-container="width-full"] {
+		padding: 8rem 0 3.2rem 0;
+	}
+	main.internal-content section [data-content="parent"] {
+		background: hsla(0,0%,12%,1);
+		box-shadow: 0 0.2rem 0.6rem hsla(0,0%,0%,0.6);
+	}
+	/* --- Content Header --- */
+	main.internal-content section [data-content="parent"] [data-content="header"] {
+		padding: 1.6rem 5.6rem 1.6rem 2.6rem;
+	}
+	main.internal-content section [data-content="parent"] [data-content="header"] h4 {
+		font-size: 2rem;
+	}
+	main.internal-content section [data-content="parent"] [data-content="header"] i[data-icon] {
+		right: 2.6rem;
+		font-size: 2.4rem;
+	}
+	/* --- Content Body --- */
+	main.internal-content section [data-content="parent"] [data-content="body"] {
+		padding: 2.6rem;
+	}
+
+/* ==|== settings =============================================================
+   ========================================================================= */
+
+	/* Disk Information
+	---------------------------------------------------------------------------- */
+	/* --- Drive List --- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta] {
+		padding-left: 4.6rem;
+		font-size: 1.6rem;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk] > a[data-meta]::before {
+		font-size: 1.8rem;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] ul[data-disk="drive-children"] li[data-disk] a[data-meta] {
+		padding: 1rem 1.6rem 1rem 6rem;
+	}
+	/* + individual drive types + */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
+		font-size: 2rem;
+	}
+	/* --- Content / Actions --- */
+	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		padding-left: 2.6rem;
+	}
+
+	/* Album Art Database
+	---------------------------------------------------------------------------- */
+	#settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"]::before {
+		background-image: linear-gradient(to bottom, hsla(0,0%,12%,1), hsla(0,0%,12%,0));
+	}
+	#settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"]::after {
+		background-image: linear-gradient(to bottom, hsla(0,0%,12%,0), hsla(0,0%,12%,1));
+	}
+	/* --- Actions --- */
+	#settings_album-art-db [data-content="parent"] [data-content="body"].actions {
+		padding-bottom: 1rem;
+	}
+
+	/* Network Interfaces
+	---------------------------------------------------------------------------- */
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		padding-left: 2.6rem;
+	}
+	/* --- Network List --- */
+	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-component="network-list"] li[data-network] a[data-meta] {
+		font-size: 1.6rem;
+	}
+
+	/* Services
+	---------------------------------------------------------------------------- */
+	/* --- Services Info --- */
+	#settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+		padding-left: 2.6rem;
+	}
+
+}
+
+/* 768px / 16px = 48em */
+@media only screen and (min-width: 48em) {
+
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Data Modal
+	---------------------------------------------------------------------------- */
+	[data-modal="overlay"] {
+		overflow-y: visible;
+		background: hsla(0,0%,20%,0.98);
+	}
+	[data-modal="overlay"] [data-modal="wrapper"] {
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 56rem;
+		background: hsla(0,0%,14%,1);
+		box-shadow: 0 0.4rem 0.6rem hsla(0,0%,0%,0.4);
+		-webkit-transform: translate(-50%, -50%) scale(0.7);
+		   -moz-transform: translate(-50%, -50%) scale(0.7);
+			-ms-transform: translate(-50%, -50%) scale(0.7);
+				transform: translate(-50%, -50%) scale(0.7);
+	}
+	[data-modal="overlay"].visible [data-modal="wrapper"] {
+		visibility: visible;
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		   -moz-transform: translate(-50%, -50%) scale(1);
+			-ms-transform: translate(-50%, -50%) scale(1);
+				transform: translate(-50%, -50%) scale(1);
+	}
+	/* --- Data Modal Header --- */
+	[data-modal="header"] {
+		padding: 1.4rem 2.4rem;
+	}
+	[data-modal="header"] [data-container="contained"] {
+		max-width: none;
+	}
+	[data-modal="header"] > a[data-modal="close"] {
+		right: 2.4rem;
+	}
+	/* --- Data Modal Content--- */
+	[data-modal="content"] {
+		padding: 2.4rem;
+	}
+	[data-modal="content"] ul[data-modal="actions"] li {
+		margin-bottom: 0;
+	}
+
+	/* Connected Device & Settings Nav List
+	---------------------------------------------------------------------------- */
+	ul[data-modal="nav-list"] {
+		padding: 2rem 2.4rem 0.6rem 2.4rem;
+		width: auto;
+	}
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Audio Interface
+	---------------------------------------------------------------------------- */
+	/* --- Song Duration --- */
+	#audio-interface div[data-control="song-duration"] {
+		margin: 0 auto 1.4rem auto;
+		padding-top: 0;
+		width: 64.8rem;
+	}
+	#audio-interface div[data-control="song-duration"] span {
+		top: -0.4rem;
+		width: 5.4rem;
+	}
+	#audio-interface div[data-control="song-duration"] div[data-control="song-length"] {
+		margin-left: 5.4rem;
+		width: 54rem;
+	}
+	/* + individual song duration times + */
+	#audio-interface div[data-control="song-duration"] span[data-meta="song-time-elapsed_current"] {
+		padding-right: 1.2rem;
+		text-align: right;
+	}
+	#audio-interface div[data-control="song-duration"] span[data-meta="song-time-length_current"] {
+		padding-left: 1.2rem;
+		text-align: left;
+	}
+	/* --- Player Controls --- */
+	#audio-interface div[data-control="player-controls"] {
+		top: -2.6rem;
+		margin: 0 auto;
+		width: 72.8rem;
+	}
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	#player-specifics {
+		margin-top: 2rem;
+	}
+	/* --- Library Search --- */
+	#library-search {
+		float: left;
+		margin: 0;
+		width: 26rem;
+	}
+	/* --- Info / Settings --- */
+	#info-settings {
+		float: none;
+		padding-top: 0;
+		position: absolute;
+		top: 1rem;
+		right: 16.8rem;
+		width: auto;
+	}
+	#info-settings > li > a {
+		font-size: 1.6rem;
+	}
+	/* + individual info / settings + */
+	#info-settings > li.view-info::after {
+		font-size: 1.6rem;
+	}
+
+/* ==|== footer ===============================================================
+   ========================================================================= */
+
+	/* Main Components Nav
+	---------------------------------------------------------------------------- */
+	nav[role="primary"] > ul > li > a {
+		padding: 2rem 1rem 2rem 1rem;
+		height: 7rem;
+		text-align: center;
+	}
+	nav[role="primary"] > ul > li > a i[data-icon] {
+		display: inline-block;
+		position: relative;
+		top: 0.4rem;
+		left: auto;
+		margin-right: 2.4rem;
+		font-size: 2.8rem;
+	}
+	/* + individual components + */
+	nav[role="primary"] > ul > li.nav-vfp > a i[data-icon],
+	nav[role="primary"] > ul > li.nav-connected > a i[data-icon] {
+		top: 0.6rem;
+	}
+
+/* ==|== internals ============================================================
+   ========================================================================= */
+
+	/* Dashboard
+	---------------------------------------------------------------------------- */
+	/* --- User Login --- */
+	/* + form errors + */
+	#login-form [data-modal="wrapper"] {
+		-webkit-animation-fill-mode: both;
+		   -moz-animation-fill-mode: both;
+			-ms-animation-fill-mode: both;
+				animation-fill-mode: both;
+		-webkit-animation-duration: 0.6s;
+		   -moz-animation-duration: 0.6s;
+			-ms-animation-duration: 0.6s;
+				animation-duration: 0.6s;
+	}
+	@-webkit-keyframes shake {
+		0%, 100% { margin-left: 0; }
+		10%, 30%, 50%, 70%, 90% { margin-left: -1rem; }
+		20%, 40%, 60%, 80% { margin-left: 1rem; }
+	}
+	@-moz-keyframes shake {
+		0%, 100% { margin-left: 0; }
+		10%, 30%, 50%, 70%, 90% { margin-left: -1rem; }
+		20%, 40%, 60%, 80% { margin-left: 1rem; }
+	}
+	@keyframes shake {
+		0%, 100% { margin-left: 0; }
+		10%, 30%, 50%, 70%, 90% { margin-left: -1rem; }
+		20%, 40%, 60%, 80% { margin-left: 1rem; }
+	}
+	#login-form.shake [data-modal="wrapper"] {
+		-webkit-animation-name: shake;
+		   -moz-animation-name: shake;
+				animation-name: shake;
+	}
+
+	/* TV Mode Animation
+	---------------------------------------------------------------------------- */
+	@-webkit-keyframes tvMode {
+		0%, 50%, 100% { -webkit-transform: translateZ(0rem) translateX(0rem) rotateY(0deg); }
+		25% { -webkit-transform: translateZ(-10rem) translateX(-4rem) rotateY(6deg); }
+		75% { -webkit-transform: translateZ(-10rem) translateX(4rem) rotateY(-6deg); }
+	}
+	@-moz-keyframes tvMode {
+		0%, 50%, 100% { -moz-transform: translateZ(0rem) translateX(0rem) rotateY(0deg); }
+		25% { -moz-transform: translateZ(-10rem) translateX(-4rem) rotateY(6deg); }
+		75% { -moz-transform: translateZ(-10rem) translateX(4rem) rotateY(-6deg); }
+	}
+	@keyframes tvMode {
+		0%, 50%, 100% { -ms-transform: translateZ(0rem) translateX(0rem) rotateY(0deg); transform: translateZ(0rem) translateX(0rem) rotateY(0deg); }
+		25% { -ms-transform: translateZ(-10rem) translateX(-4rem) rotateY(6deg); transform: translateZ(-10rem) translateX(-4rem) rotateY(6deg); }
+		75% { -ms-transform: translateZ(-10rem) translateX(4rem) rotateY(-6deg); transform: translateZ(-10rem) translateX(4rem) rotateY(-6deg); }
+	}
+
+	/* TV Mode
+	---------------------------------------------------------------------------- */
+	#tv-mode main {
+		padding: 8rem 0 4rem 0;
+	}
+	#tv-mode main section {
+		-webkit-perspective: 100rem;
+		   -moz-perspective: 100rem;
+			-ms-perspective: 100rem;
+				perspective: 100rem;
+		-webkit-transform-style: preserve-3d;
+		   -moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+	}
+	#tv-mode main section article {
+/*
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		-webkit-transform: translate(-50%, -50%);
+		   -moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+*/
+		-webkit-animation: tvMode ease-in-out 180s infinite;
+		   -moz-animation: tvMode ease-in-out 180s infinite;
+			-ms-animation: tvMode ease-in-out 180s infinite;
+				animation: tvMode ease-in-out 180s infinite;
+	}
+	/* --- Song Details --- */
+	#tv-mode main section article div[data-meta="song-details"] h1,
+	#tv-mode main section article div[data-meta="song-details"] h2,
+	#tv-mode main section article div[data-meta="song-details"] h3 {
+		font-size: 3.2rem;
+	}
+	/* --- Song Duration --- */
+	#tv-mode main section article div[data-control="song-duration"] span {
+		font-size: 1.8rem;
+		font-weight: 600;
+	}
+	#tv-mode main section article div[data-control="song-duration"] div[data-control="song-length"] {
+		min-height: 1.6rem;
+	}
+	#tv-mode main section article div[data-control="song-duration"] div[data-control="song-length"] div[data-control="song-progress"] {
+		min-height: 1.6rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Shared Components
+	---------------------------------------------------------------------------- */
+	/* --- Album Details --- */
+	[data-component="album-details"] {
+		padding-bottom: 1rem;
+	}
+	/* + scroll-wrap + */
+	[data-container="scroll-horizontal"]::before,
+	[data-container="scroll-horizontal"]::after {
+		top: 0;
+		bottom: 0;
+		width: 1rem;
+		height: 100%;
+	}
+	[data-container="scroll-horizontal"]::before {
+		left: 0;
+	}
+	[data-container="scroll-horizontal"]::after {
+		right: 0;
+		background-image: linear-gradient(to left, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] {
+		display: block;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		/* -webkit-overflow-scrolling: touch; */
+		white-space: nowrap;
+		height: 19.6rem; /* image height (244px) + scrollbar height (15px) - song-details height (63px)*/
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] li {
+		width: 36rem;
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] li a {
+		padding: 0.5rem 0;
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] li a span[data-meta^="song-number"],
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] li a span[data-meta^="song-time-length"] {
+		top: 0.8rem;
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] span.scroll-wrap {
+		display: inline-block;
+		vertical-align:top;
+		margin-right: 4.8rem;
+	}
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] span.scroll-wrap:last-child {
+		margin-right: 1rem;
+	}
+
+	/* Default View
+	---------------------------------------------------------------------------- */
+	/* --- Current Song --- */
+	/* + song details + */
+	#view_default [data-component="current-song"] div[data-meta="song-details"] {
+		margin-bottom: 3.2rem;
+	}
+	#view_default [data-component="current-song"] div[data-meta="song-details"] h1 {
+		margin-bottom: 0.6rem;
+		font-size: 2.2rem;
+	}
+	#view_default [data-component="current-song"] div[data-meta="song-details"] h2 {
+		font-size: 1.8rem;
+	}
+	/* + song specifics + */
+	#view_default [data-component="current-song"] ul[data-meta="song-specifics"] {
+		width: 32rem;
+	}
+	#view_default [data-component="current-song"] ul[data-meta="song-specifics"] li {
+		margin-bottom: 0.8rem;
+		font-size: 1.5rem;
+	}
+
+	/* Artist View
+	---------------------------------------------------------------------------- */
+	#view_artist aside {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 28rem;
+	}
+	#view_artist [data-component="artist-albums"] {
+		padding-left: 28rem;
+	}
+	/* --- Artists List --- */
+	#view_artist aside ul {
+		max-height: none;
+		height: 100%;
+	}
+	/* --- Album Details --- */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container^="column"] {
+		float: none;
+	}
+	/* + column one + */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-one"] {
+		margin: 0 auto 3.2rem auto;
+		width: 24.4rem;
+	}
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-one"] span[data-meta="album-cover_library"] {
+		margin: 0 auto;
+	}
+	/* + column two + */
+	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container="column-two"] {
+		width: auto;
+	}
+	/* + scroll wrap + */
+	#view_artist [data-container="scroll-horizontal"]::after {
+		background-image: linear-gradient(to left, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
+	}
+
+	/* Song View
+	---------------------------------------------------------------------------- */
+	/* --- Songs Table --- */
+	#view_song [data-component="songs-listing"] aside.thead ul li,
+	#view_song [data-component="songs-listing"] table thead tr th {
+		border-right: 0.1rem solid hsla(0,0%,22%,1);
+	}
+	#view_song [data-component="songs-listing"] table tbody tr td {
+		border-right: 0.1rem solid hsla(0,0%,52%,1);
+	}
+	/* + thead + */
+	#view_song [data-component="songs-listing"] aside.thead ul li,
+	#view_song [data-component="songs-listing"] table thead tr th {
+		font-size: 1.4rem;
+	}
+	/* + tbody + */
+	#view_song [data-component="songs-listing"] table tbody tr td {
+		font-size: 1.3rem;
+	}
+	/* + specific columns + */
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-time,
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-album,
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-genre {
+		display: block;
+		visibility: visible;
+	}
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-time"],
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-album"],
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-genre"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-time,
+	#view_song [data-component="songs-listing"] table tbody tr td.table-album,
+	#view_song [data-component="songs-listing"] table tbody tr td.table-genre {
+		display: table-cell;
+		visibility: visible;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-add,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-add"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-add {
+		width: 8%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-name,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-name"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-name {
+		width: 29%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-time,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-time"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-time {
+		width: 9%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-artist,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-artist"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-artist {
+		width: 20%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-album,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-album"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-album {
+		width: 20%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-genre,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-genre"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-genre {
+		width: 14%;
+		border-right: none;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album [data-component="album"] {
+		width: 20%; /* 100 / 5 = 20 */
+	}
+	/* + column two + */
+	#view_album > div.details-wrap [data-component="album-details"] div[data-container="column-two"] div[data-meta="song-details"] {
+		display: inline-block;
+		max-width: 60%;
+		padding-right: 0;
+	}
+	/* + scroll-wrap + */
+	#view_album [data-container="scroll-horizontal"]::after {
+		background-image: linear-gradient(to left, hsla(0,0%,12%,1), hsla(0,0%,12%,0));
+	}
+	/* + media actions + */
+	#view_album [data-compontent="media-actions"] {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 0 6rem;
+	}
+
+}
+
+/* 960px / 16px = 60em */
+@media only screen and (min-width: 60em) {
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Universal Links
+	---------------------------------------------------------------------------- */
+	#universal-links {
+		bottom: auto;
+		top: 2.8rem;
+		height: auto;
+	}
+	#universal-links a.common-button {
+		display: block;
+		position: absolute;
+		top: 0;
+		padding: 1.2rem 2.6rem 1.2rem 2.6rem;
+		width: auto;
+		height: auto;
+	}
+	#universal-links a.common-button i[data-icon] {
+		top: 1.8rem;
+	}
+	#universal-links a.common-button span[data-meta] {
+		font-size: 2.2rem;
+		font-weight: 700;
+	}
+	/* --- Media Player Button --- */
+	#universal-links a[title="Media Player"].common-button {
+		right: 1rem;
+		text-align: center;
+	}
+	#universal-links a[title="Media Player"].common-button span[data-meta] {
+		margin-right: 2rem;
+	}
+	#universal-links a[title="Media Player"].common-button span[data-meta] strong,
+	#universal-links a[title="Media Player"].common-button span[data-meta] em {
+		display: none;
+	}
+	#universal-links a[title="Media Player"].common-button i[data-icon="tri_eq-right"] {
+		right: 1.6rem;
+	}
+	/* --- Cancel & Save --- */
+	#universal-links a[title="Cancel"].common-button,
+	#universal-links a[title="Save"].common-button {
+		float: none;
+		width: 14.8rem;
+	}
+	#universal-links a[title="Cancel"].common-button {
+		left: 1rem;
+	}
+	#universal-links a[title="Save"].common-button {
+		right: 1rem;
+	}
+	/* --- Back To Dashboard --- */
+	#universal-links a[title="Back to Dashboard"].common-button {
+		left: 1rem;
+	}
+	#universal-links a[title="Back to Dashboard"].common-button span[data-meta] {
+		margin-left: 2rem;
+	}
+	#universal-links a[title="Back to Dashboard"].common-button i[data-icon="tri_eq-left"] {
+		display: block;
+		left: 1.6rem;
+	}
+	/* --- Views Links --- */
+	#universal-links a[title="Back to Dashboard"].views.common-button {
+		background: hsla(0,0%,22%,1);
+	}
+	/* + hover | active + */
+	#universal-links a[title="Back to Dashboard"].views.common-button:hover {
+		background: hsla(206,69%,54%,1);
+	}
+	#universal-links a[title="Back to Dashboard"].views.common-button:active {
+		background: hsla(206,69%,44%,1);
+	}
+	/* --- Internal / Generic Links --- */
+	#universal-links a[title="User Login"].internal-generic.common-button,
+	#universal-links a[title="Media Player"].internal-generic.common-button,
+	#universal-links a[title="Back to Dashboard"].internal-generic.common-button {
+		float: none;
+		width: auto;
+	}
+	#universal-links a[title="Media Player"].internal-generic.common-button i[data-icon="tri_eq-right"] {
+		display: block;
+	}
+	#universal-links a[title="Back to Dashboard"].internal-generic.common-button span.hide-mobile {
+		display: inline;
+	}
+	/* --- User Login --- */
+	#universal-links a[title="User Login"].internal-generic.common-button {
+		left: 1rem;
+	}
+
+/* ==|== internals ============================================================
+   ========================================================================= */
+
+	/* General Pages and Settings
+	---------------------------------------------------------------------------- */
+	main.internal-content section {
+		padding-bottom: 8rem;
+	}
+
+	/* Generic Pages
+	---------------------------------------------------------------------------- */
+	/* --- Content Box --- */
+	article.content-box {
+		padding: 8rem 3.2rem;
+	}
+	article.content-box h1 {
+		margin-bottom: 4rem;
+		font-size: 7.2rem;
+		letter-spacing: -0.4rem;
+	}
+	article.content-box p {
+		font-size: 2.8rem;
+	}
+
+	/* Dashboard
+	---------------------------------------------------------------------------- */
+	/* --- Content Box --- */
+	body.bryston main section article.content-box {
+		padding: 8rem 2rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* View Options
+	---------------------------------------------------------------------------- */
+	#view_default,
+	#view_artist,
+	#view_song {
+		padding-top: 0;
+	}
+
+	/* Default View
+	---------------------------------------------------------------------------- */
+	/* --- Current Song --- */
+	#view_default [data-component="current-song"] {
+		padding: 2rem;
+		width: 40%;
+		text-align: center;
+	}
+	/* + album cover + */
+	#view_default [data-component="current-song"] div.album-cover {
+		float: none;
+		margin: 0 auto 3.2rem auto;
+		width: auto;
+	}
+	/* + song details + */
+	#view_default [data-component="current-song"] div[data-meta="song-details"] {
+		float: none;
+		width: auto;
+	}
+	/* + song specifics + */
+	#view_default [data-component="current-song"] ul[data-meta="song-specifics"] {
+		float: none;
+		margin: 0 auto;
+	}
+	/* --- Common Elements --- */
+	#view_default [data-component="now-playing"],
+	#view_default [data-component="add-files"] {
+		position: absolute;
+		top: 26.2rem;
+		bottom: 10.3rem;
+		width: 30%;
+		max-width: 38rem;
+	}
+	/* + toggle button + */
+	#view_default [data-component] div.component-header a.toggle-button i[data-icon] {
+		-webkit-transform: rotate(0deg);
+		   -moz-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+				transform: rotate(0deg);
+	}
+	#view_default [data-component].closed div.component-header a.toggle-button i[data-icon] {
+		-webkit-transform: rotate(180deg);
+		   -moz-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+	}
+	/* + media list + */
+	#view_default [data-component] ol.media-list {
+		min-height: 100%;
+		max-height: none;
+		height: 100%;
+	}
+	#view_default [data-component].closed ol.media-list {
+		max-height: none;
+	}
+	/* --- Now Playing --- */
+	#view_default [data-component="now-playing"] {
+		left: 0;
+	}
+	#view_default [data-component="now-playing"].closed {
+		left: -30%;
+	}
+	/* + list header + */
+	#view_default [data-component="now-playing"].closed div.component-header a.toggle-button {
+		right: -4.6rem;
+	}
+	/* --- Add Files --- */
+	#view_default [data-component="add-files"] {
+		right: 0;
+	}
+	#view_default [data-component="add-files"].closed {
+		right: -30%;
+	}
+	/* + select dropdown + */
+	#view_default [data-component="add-files"] div.component-header select {
+		left: 15.4rem;
+	}
+	#view_default [data-component="add-files"] div.component-header div[data-ui="dropdown"] {
+		left: 15.4rem;
+	}
+	/* + list header + */
+	#view_default [data-component="add-files"] div.component-header {
+		padding-left: 5.6rem;
+	}
+	#view_default [data-component="add-files"] div.component-header a.toggle-button {
+		left: 0;
+	}
+	#view_default [data-component="add-files"].closed div.component-header a.toggle-button {
+		left: -4.6rem;
+	}
+	#view_default [data-component="add-files"] div.component-header a[data-control="back-library"] {
+		right: 1rem;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album {
+		padding-top: 1.6rem;
+	}
+	#view_album [data-component="album"] {
+		width: 16.66666666666667%; /* 100 / 6 = 16.66666666666667 */
+	}
+
+}
+
+/* 1024px / 16px = 64em */
+@media only screen and (min-width: 64em) {
+
+/* ==|== footer ===============================================================
+   ========================================================================= */
+
+	/* Main Components Nav
+	---------------------------------------------------------------------------- */
+	nav[role="primary"] > ul > li {
+		width: 25%;
+	}
+	/* + individual components + */
+	nav[role="primary"] > ul > li.nav-vfp {
+		border-left: 0.1rem solid hsla(0,0%,18%,1);
+	}
+
+	/* Settings Options
+	---------------------------------------------------------------------------- */
+	nav[role="secondary"] header.settings-header {
+		cursor: default;
+		padding: 1rem 0;
+		background: hsla(0,0%,8%,1);
+	}
+	nav[role="secondary"] header.settings-header:hover {
+		background: hsla(0,0%,8%,1);
+	}
+	nav[role="secondary"] header.settings-header:active {
+		background: hsla(0,0%,8%,1);
+	}
+	nav[role="secondary"] header.settings-header i[data-icon="ui_plus"] {
+		display: none;
+	}
+	nav[role="secondary"] header.settings-header h3 {
+		font-size: 1.7rem;
+		font-weight: 700;
+		letter-spacing: 0.2rem;
+		text-transform: uppercase;
+		color: hsla(0,0%,96%,1);
+	}
+	nav[role="secondary"] header.settings-header:hover {
+		background: hsla(0,0%,8%,1);
+	}
+	nav[role="secondary"] header.settings-header:active {
+		background: hsla(0,0%,8%,1);
+	}
+	/* --- Settings Mobile Overlay --- */
+	nav[role="secondary"] [data-modal="overlay"] {
+		z-index: 1000 !important;
+		position: static;
+		min-height: 0;
+		height: auto;
+		visibility: visible !important;
+		opacity: 1 !important;
+		background: none;
+	}
+	nav[role="secondary"] [data-modal="overlay"] [data-modal="wrapper"],
+	nav[role="secondary"] [data-modal="overlay"].visible [data-modal="wrapper"] {
+		z-index: 1001 !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		position: static;
+		top: auto;
+		left: auto;
+		width: auto;
+		background: none;
+		box-shadow: none;
+		-webkit-transform: translate(0, 0) scale(1);
+		   -moz-transform: translate(0, 0) scale(1);
+			-ms-transform: translate(0, 0) scale(1);
+				transform: translate(0, 0) scale(1);
+	}
+	nav[role="secondary"] [data-modal="header"] {
+		display: none;
+	}
+	/* --- Data Modal: Nav List --- */
+	nav[role="secondary"] ul[data-modal="nav-list"] {
+		overflow-x: visible;
+		padding: 0;
+		width: 100%;
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li {
+		margin: 0 !important;
+		width: 9.09090909090909%;
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a {
+		display: block;
+		padding: 1.6rem 1rem 0 1rem;
+		width: auto;
+		height: 10rem;
+		text-align: center;
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li:nth-child(even) a {
+		background: hsla(0,0%,14%,1);
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a:hover {
+		background: hsla(206,69%,54%,1);
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a:active {
+		background: hsla(206,69%,44%,1);
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a span[data-meta] {
+		line-height: 1.2;
+	}
+
+/* ==|== main content =========================================================
+   ========================================================================= */
+
+	/* TV Mode
+	---------------------------------------------------------------------------- */
+	/* --- Album Cover --- */
+	#tv-mode main section article div.album-cover {
+		width: 36%;
+	}
+	/* --- Song Details --- */
+	#tv-mode main section article div[data-meta="song-details"] {
+		padding-left: 42%;
+	}
+	#tv-mode main section article div[data-meta="song-details"] h1,
+	#tv-mode main section article div[data-meta="song-details"] h2,
+	#tv-mode main section article div[data-meta="song-details"] h3 {
+		font-size: 4rem;
+	}
+	#tv-mode main section article div[data-meta="song-details"] h1,
+	#tv-mode main section article div[data-meta="song-details"] h2 {
+		margin-bottom: 2.6rem;
+	}
+	/* --- Song Duration --- */
+	#tv-mode main section article div[data-control="song-duration"] {
+		padding-top: 6rem;
+	}
+	#tv-mode main section article div[data-control="song-duration"] span {
+		top: 4.8rem;
+		font-size: 2.8rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Shared Components
+	---------------------------------------------------------------------------- */
+	[data-component="album-details"] {
+		padding: 4rem 2.6rem 3.2rem 2.6rem;
+	}
+	/* + close button + */
+	[data-component="album-details"] a[data-control="close"] {
+		top: 4rem;
+		right: 2.6rem;
+	}
+	/* + column one + */
+	[data-component="album-details"] div[data-container="column-one"] {
+		position: absolute;
+		top: 4rem;
+		left: 2.6rem;
+		margin: 0;
+		width: 24.4rem;
+		height: 24.4rem;
+	}
+	/* + column two + */
+	[data-component="album-details"] div[data-container="column-two"] {
+		padding-left: 26rem; /* 244px + 16px */
+		width: 100%;
+		height: 25.9rem; /* image height (244px) + scrollbar height (15px) */
+	}
+	[data-component="album-details"] div[data-container="column-two"] div[data-meta="song-details"] {
+		padding-left: 1rem; /* width of scroll gradient */
+	}
+	[data-component="album-details"] div[data-container="column-two"] div[data-meta="song-details"] h1 {
+		font-size: 2.1rem;
+	}
+	[data-component="album-details"] div[data-container="column-two"] div[data-meta="song-details"] h2 {
+		font-size: 1.8rem;
+	}
+	/* + scroll-wrap + */
+	[data-container="scroll-horizontal"] ol[data-component="track-listing"] {
+		padding-left: 1rem; /* width of scroll gradient */
+	}
+
+	/* Artist View
+	---------------------------------------------------------------------------- */
+	/* --- Artist Header --- */
+	#view_artist [data-component="artist-albums"] [data-component="artist-header"] {
+		position: relative;
+		padding-left: 2.6rem;
+		padding-right: 2.6rem;
+		background: hsla(0,0%,8%,1);
+	}
+	/* + media actions + */
+	#view_artist [data-compontent="media-actions"] {
+		right: 2.6rem;
+	}
+	/* + selected artist + */
+	#view_artist [data-component="artist-albums"] [data-component="artist-header"] div.selected-artist h1,
+	#view_artist [data-component="artist-albums"] [data-component="artist-header"] div.selected-artist h2 {
+		font-size: 2.2rem;
+	}
+	/* --- Album Article --- */
+	#view_artist [data-component="artist-albums"] [data-container="scroll-horizontal"]::before {
+		background-image: linear-gradient(to right, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
+	}
+	#view_artist [data-component="artist-albums"] [data-container="scroll-horizontal"]::after {
+		background-image: linear-gradient(to left, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
+	}
+	/* --- Album Details --- */
+	/* + scroll wrap + */
+	#view_artist [data-container="scroll-horizontal"]::before {
+		background-image: linear-gradient(to right, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	/* --- Album Details --- */
+	/* + column one + */
+	#view_album > div.details-wrap [data-component="album-details"] div[data-container="column-one"] {
+		display: block;
+	}
+	/* + scroll wrap + */
+	#view_album [data-container="scroll-horizontal"]::before {
+		background-image: linear-gradient(to right, hsla(0,0%,12%,1), hsla(0,0%,12%,0));
+	}
+
+/* ==|== settings =============================================================
+   ========================================================================= */
+
+	/* Settings Specifics
+	---------------------------------------------------------------------------- */
+	#settings nav[role="secondary"] header.settings-header {
+		padding: 0;
+		height: 1.8rem;
+		background: hsla(206,69%,54%,1);
+	}
+	#settings nav[role="secondary"] header.settings-header h3 {
+		display: none;
+	}
+	#settings nav[role="secondary"] header.settings-header i[data-icon="tri_eq-down"] {
+		display: block;
+	}
+
+}
+
+/* 1280px / 16px = 80em */
+@media only screen and (min-width: 80em) {
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Header
+	---------------------------------------------------------------------------- */
+	header[data-site="header"] > [data-container="width-full"] {
+		padding-top: 2.8rem;
+		padding-bottom: 2.8rem;
+	}
+
+	/* Volume Control
+	---------------------------------------------------------------------------- */
+	#volume-control {
+		position: absolute;
+		bottom: 5.6rem;
+		left: 1rem;
+		margin: 0;
+	}
+
+	/* Audio Interface
+	---------------------------------------------------------------------------- */
+	/* --- Song Duration --- */
+	#audio-interface div[data-control="song-duration"] {
+		margin-bottom: 0;
+	}
+	/* --- Player Controls --- */
+	#audio-interface div[data-control="player-controls"] {
+		top: -1.2rem;
+	}
+	/* --- Library Control --- */
+	#audio-interface ul[data-control="library-control"] {
+		position: absolute;
+		top: auto;
+		bottom: 2.6rem;
+		left: 1rem;
+	}
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	#player-specifics {
+		position: absolute;
+		top: 2.8rem;
+		right: 1rem;
+		margin-top: 0;
+		width: 32.2rem;
+	}
+	/* --- Library Search --- */
+	#library-search {
+		float: none;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
+	/* --- Info / Settings --- */
+	#info-settings {
+		float: left;
+		padding-top: 1rem;
+		position: static;
+		top: 0;
+		right: 0;
+		width: auto;
+	}
+
+/* ==|== footer ===============================================================
+   ========================================================================= */
+
+	/* Main Components Nav
+	---------------------------------------------------------------------------- */
+	/* + individual components + */
+	nav[role="primary"] > ul > li > a span[data-meta] {
+		position: relative;
+	}
+	nav[role="primary"] > ul > li.nav-tvmode > a i[data-icon],
+	nav[role="primary"] > ul > li.nav-bradio > a i[data-icon] {
+		top: 0;
+		font-size: 3.4rem;
+	}
+	nav[role="primary"] > ul > li.nav-tvmode > a span[data-meta],
+	nav[role="primary"] > ul > li.nav-bradio > a span[data-meta] {
+		top: -0.5rem;
+	}
+	nav[role="primary"] > ul > li.nav-vfp > a i[data-icon] {
+		top: -0.4rem;
+		font-size: 4.2rem;
+	}
+	nav[role="primary"] > ul > li.nav-vfp > a span[data-meta] {
+		top: -1.3rem;
+	}
+	nav[role="primary"] > ul > li.nav-connected > a i[data-icon] {
+		top: 0.4rem;
+	}
+
+	/* Settings Options
+	---------------------------------------------------------------------------- */
+	/* --- Data Modal: Nav List --- */
+	nav[role="secondary"] ul[data-modal="nav-list"] li a {
+		padding: 2.2rem 1.6rem 0 1.6rem;
+		height: 13.2rem;
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a i[data-icon] {
+		margin-bottom: 1.4rem;
+		font-size: 2.4rem;
+	}
+	nav[role="secondary"] ul[data-modal="nav-list"] li a span[data-meta] {
+		font-size: 1.5rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Shared Components
+	---------------------------------------------------------------------------- */
+	/* + column two + */
+	[data-component="album-details"] div[data-container="column-two"] {
+		padding-left: 28rem;
+	}
+
+	/* Default View
+	---------------------------------------------------------------------------- */
+	/* --- Current Song --- */
+	#view_default [data-component="current-song"] {
+		padding: 4.6rem 2rem;
+	}
+	/* + song details + */
+	#view_default [data-component="current-song"] div[data-meta="song-details"] h1 {
+		font-size: 3.4rem;
+	}
+	#view_default [data-component="current-song"] div[data-meta="song-details"] h2 {
+		font-size: 2.8rem;
+	}
+	/* --- Common Elements --- */
+	#view_default [data-component="now-playing"],
+	#view_default [data-component="add-files"] {
+		top: 19rem;
+	}
+	#view_default [data-component] div.component-header {
+		padding: 1.2rem 2rem;
+	}
+	/* + media list + */
+	#view_default [data-component] ol.media-list li .list-wrap {
+		padding: 0.7rem 2rem 0 2rem;
+	}
+	/* --- Now Playing --- */
+	#view_default [data-component="now-playing"].closed {
+		left: -38rem;
+	}
+	/* --- Add Files --- */
+	#view_default [data-component="add-files"].closed {
+		right: -38rem;
+	}
+	/* + select dropdown + */
+	#view_default [data-component="add-files"] div.component-header select {
+		left: 17.4rem;
+	}
+	#view_default [data-component="add-files"] div.component-header div[data-ui="dropdown"] {
+		left: 17.4rem;
+	}
+	/* + list header + */
+	#view_default [data-component="add-files"] div.component-header {
+		padding-left: 6.6rem;
+	}
+	#view_default [data-component="add-files"] div.component-header a[data-control="back-library"] {
+		right: 2rem;
+	}
+	/* + add all songs + */
+	#view_default [data-component="add-files"] ol.media-list li a[data-control="add-all"] {
+		padding: 1.6rem 2rem 1.2rem 2rem;
+	}
+
+	/* Song View
+	---------------------------------------------------------------------------- */
+	/* --- Songs Table --- */
+	/* + specific columns + */
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-add,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-add"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-add {
+		width: 5%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-name,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-name"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-name {
+		width: 37%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-time,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-time"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-time {
+		width: 6%;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li.table-genre,
+	#view_song [data-component="songs-listing"] table thead tr th[data-control="table-genre"],
+	#view_song [data-component="songs-listing"] table tbody tr td.table-genre {
+		width: 12%;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album [data-component="album"] {
+		width: 14.28571428571429%; /* 100 / 7 = 14.28571428571429 */
+	}
+
+}
+
+/* 1440px / 16px = 90em */
+@media only screen and (min-width: 90em) {
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Volume Control
+	---------------------------------------------------------------------------- */
+	#volume-control {
+		left: 3.2rem;
+	}
+
+	/* Audio Interface
+	---------------------------------------------------------------------------- */
+	/* --- Library Control --- */
+	#audio-interface ul[data-control="library-control"] {
+		left: 3.2rem;
+	}
+
+	/* Universal Links
+	---------------------------------------------------------------------------- */
+	/* --- Media Player Button --- */
+	#universal-links a[title="Media Player"].common-button {
+		right: 3.2rem;
+	}
+	/* --- Cancel & Save --- */
+	#universal-links a[title="Cancel"].common-button {
+		left: 3.2rem;
+	}
+	#universal-links a[title="Save"].common-button {
+		right: 3.2rem;
+	}
+	/* --- Back To Dashboard --- */
+	#universal-links a[title="Back to Dashboard"].common-button {
+		left: 3.2rem;
+	}
+	/* --- User Login --- */
+	#universal-links a[title="User Login"].internal-generic.common-button {
+		left: 3.2rem;
+	}
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	#player-specifics {
+		right: 3.2rem;
+	}
+
+/* ==|== views ================================================================
+   ========================================================================= */
+
+	/* Shared Components
+	---------------------------------------------------------------------------- */
+	[data-component="album-details"] {
+		padding-left: 3.2rem;
+		padding-right: 3.2rem;
+	}
+	/* + close button + */
+	[data-component="album-details"] a[data-control="close"] {
+		right: 3.2rem;
+	}
+	/* + column one + */
+	[data-component="album-details"] div[data-container="column-one"] {
+		left: 3.2rem;
+	}
+
+	/* Artist View
+	---------------------------------------------------------------------------- */
+	/* --- Artist Header --- */
+	#view_artist [data-component="artist-albums"] [data-component="artist-header"] {
+		padding-left: 3.2rem;
+		padding-right: 3.2rem;
+	}
+	/* + media actions + */
+	#view_artist [data-compontent="media-actions"] {
+		right: 3.2rem;
+	}
+
+	/* Album View
+	---------------------------------------------------------------------------- */
+	#view_album [data-component="album"] {
+		padding: 2.2rem;
+		width: 12.32010582010582%;
+	}
+	#view_album [data-component="album"]:nth-of-type(8n-7) {
+		padding-left: 3.2rem;
+		width: 13.03968253968254%;
+	}
+	#view_album [data-component="album"]:nth-of-type(8n) {
+		padding-right: 3.2rem;
+		width: 13.03968253968254%;
+	}
+
+}
+
+/* 1600px / 16px = 100em */
+@media only screen and (min-width: 100em) {
+
+/* ==|== footer ===============================================================
+   ========================================================================= */
+
+	/* Settings Options
+	---------------------------------------------------------------------------- */
+	/* --- Data Modal: Nav List --- */
+	nav[role="secondary"] ul[data-modal="nav-list"] li a {
+		padding: 3rem 2.4rem 0 2.4rem;
+		height: 14.8rem;
+	}
+
+}

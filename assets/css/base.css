@@ -1,0 +1,414 @@
+/* ==|== normalize v1.1.2 =====================================================
+   AUTHORS: Nicolas Gallagher / Jonathan Neal
+   MIT License | git.io/normalize
+   ========================================================================= */
+
+/* HTML5 Display Definitions
+---------------------------------------------------------------------------- */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; height: 0; }
+audio { width: 100%; }
+[hidden] { display: none; }
+
+/* Base
+---------------------------------------------------------------------------- */
+html { font-size: 62.5%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; }
+body { margin: 0;}
+
+/* Links
+---------------------------------------------------------------------------- */
+a { text-decoration: none; }
+a:focus { outline: none; }
+a:active, a:hover { outline: 0; }
+
+/* Typography
+---------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd { margin: 0; padding: 0; font-size: 10px; font-weight: 400; font-style: normal; line-height: 1; }
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 0; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 0; padding: 0; }
+mark { background: #ff0; color: #000; }
+code, kbd, pre, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 10px; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q::before, q::after { content: ''; content: none; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* Lists
+---------------------------------------------------------------------------- */
+ul, ol { list-style: none; }
+nav ul, nav ol { list-style-image: none; }
+
+/* Embedded Content
+---------------------------------------------------------------------------- */
+img { display: block; max-width: 100%; height: auto; border: 0; -ms-interpolation-mode: bicubic; }
+svg:not(:root) { overflow: hidden; }
+
+/* Figures
+---------------------------------------------------------------------------- */
+figure { margin: 0; }
+
+/* Forms
+---------------------------------------------------------------------------- */
+form { margin: 0; }
+fieldset { border: 1px solid #ccc; margin: 0; padding: 0; }
+legend { border: 0; padding: 0; white-space: normal; *margin-left: -7px; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: 1; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; *overflow: visible; }
+button[disabled], html input[disabled] { cursor: default; }
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], input[type="submit"], input[type="reset"], textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; -webkit-border-radius: 0; border-radius: 0; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px; *width: 13px; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; }
+/*
+input:focus, input:required, input:invalid, textarea:focus, textarea:required, textarea:invalid { box-shadow: none !important; }
+*/
+
+/* Tables
+---------------------------------------------------------------------------- */
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+th { text-align: left; }
+
+
+/* ==|== non-semantic helper classes ==========================================
+   ========================================================================= */
+
+/* Image replacement */
+.ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }
+.ir::before { content: ""; display: block; width: 0; height: 150%; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { clip: rect(0 0 0 0); overflow: hidden; position: absolute; margin: -1px; padding: 0; width: 1px; height: 1px; border: 0; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; overflow: visible; position: static; margin: 0; width: auto; height: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Clearfix: contain floats */
+.clearfix::before, .clearfix::after { content: " "; display: table; }
+.clearfix::after { clear: both; }
+.clearfix { *zoom: 1; /* For IE 6/7 only, include this rule to trigger hasLayout and contain floats */ }
+
+/* Horizontal and vertical centering */
+.outer-balance { overflow: hidden; display: table; width: 100%; height: 100%; }
+.inner-balance { vertical-align: middle; display: table-cell; margin: 0 auto; width: 100%; /* text-align: center; */ }
+
+/* Truncate text */
+.truncate { overflow: hidden; padding-bottom: 0.2em; width: 100%; text-overflow: ellipsis; white-space: nowrap; }
+
+
+/* ==|== bryston font =========================================================
+   AUTHORS: Mandira Midha / CURTIS DULMAGE
+   ========================================================================= */
+
+/* LICENSE
+ *
+ * The Bryston webfont is property of Bryston Ltd and Mandira Midha.
+ * You are not authorized to reuse this webfont in its entirety or any individual icon.
+ *
+ * Creation of the webfont was achieved using Icomoon's awesome HTML5 web app.
+ * Much thanks to Icomoon for the awesome resource. Check them out:
+ * http://icomoon.io/
+ *
+*/
+
+/* Narmy Styles
+---------------------------------------------------------------------------- */
+@font-face {
+	font-family: 'bryston';
+	src:url('../fonts/bryston/bryston.eot');
+	src:url('../fonts/bryston/bryston.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/bryston/bryston.woff') format('woff'),
+		url('../fonts/bryston/bryston.svg#bryston') format('svg'),
+		url('../fonts/bryston/bryston.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+i[data-icon]::before {
+	font-family: 'bryston';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+i[data-icon="disk_sata"]::before {
+	content: "\21";
+}
+i[data-icon="disk_partition"]::before {
+	content: "\22";
+}
+i[data-icon="disk_network"]::before {
+	content: "\23";
+}
+i[data-icon="nav_tvmode"]::before {
+	content: "\24";
+}
+i[data-icon="nav_bradio"]::before {
+	content: "\25";
+}
+i[data-icon="nav_vfp"]::before {
+	content: "\26";
+}
+i[data-icon="nav_connected"]::before {
+	content: "\27";
+}
+i[data-icon="settings_system"]::before {
+	content: "\28";
+}
+i[data-icon="settings_disk-info"]::before {
+	content: "\29";
+}
+i[data-icon="settings_album-art-db"]::before {
+	content: "\30";
+}
+i[data-icon="settings_network-interfaces"]::before {
+	content: "\31";
+}
+i[data-icon="settings_update-firmware"]::before {
+	content: "\32";
+}
+i[data-icon="settings_mpd"]::before {
+	content: "\33";
+}
+i[data-icon="settings_system-log"]::before {
+	content: "\34";
+}
+i[data-icon="settings_startup-script"]::before {
+	content: "\35";
+}
+i[data-icon="settings_nas-setup"]::before {
+	content: "\36";
+}
+i[data-icon="settings_services"]::before {
+	content: "\37";
+}
+i[data-icon="settings_license"]::before {
+	content: "\38";
+}
+i[data-icon="song_previous"]::before {
+	content: "\39";
+}
+i[data-icon="song_next"]::before {
+	content: "\40";
+}
+i[data-icon="song_stop"]::before {
+	content: "\41";
+}
+i[data-icon="song_pause"]::before {
+	content: "\42";
+}
+i[data-icon="song_play"]::before {
+	content: "\43";
+}
+i[data-icon="song_repeat"]::before {
+	content: "\44";
+}
+i[data-icon="song_shuffle"]::before {
+	content: "\45";
+}
+i[data-icon="song_queued"]::before {
+	content: "\46";
+}
+i[data-icon="ui_volume-down"]::before {
+	content: "\47";
+}
+i[data-icon="ui_volume-up"]::before {
+	content: "\48";
+}
+i[data-icon="ui_search"]::before {
+	content: "\49";
+}
+i[data-icon="ui_plus"]::before {
+	content: "\50";
+}
+i[data-icon="ui_minus"]::before {
+	content: "\51";
+}
+i[data-icon="ui_checkmark"]::before {
+	content: "\52";
+}
+i[data-icon="ui_close"]::before {
+	content: "\53";
+}
+i[data-icon="ui_more"]::before {
+	content: "\54";
+}
+i[data-icon="ui_lock"]::before {
+	content: "\55";
+}
+i[data-icon="ui_unlock"]::before {
+	content: "\56";
+}
+i[data-icon="tri_eq-up"]::before {
+	content: "\57";
+}
+i[data-icon="tri_eq-right"]::before {
+	content: "\58";
+}
+i[data-icon="tri_eq-down"]::before {
+	content: "\59";
+}
+i[data-icon="tri_eq-left"]::before {
+	content: "\60";
+}
+i[data-icon="ui_arrow-left"]::before {
+	content: "\61";
+}
+i[data-icon="ui_arrow-right"]::before {
+	content: "\62";
+}
+i[data-icon="view_default"]::before {
+	content: "\63";
+}
+i[data-icon="view_song"]::before {
+	content: "\64";
+}
+i[data-icon="view_artist"]::before {
+	content: "\65";
+}
+i[data-icon="view_album"]::before {
+	content: "\66";
+}
+
+
+/* ==|== open sans font =======================================================
+   AUTHORS: Steve Matteson
+   ========================================================================= */
+
+/* LICENSE
+ *
+ * The license for this font can be found in the same directory as the font files:
+ * assets/fonts/open-sans/apache-license.txt
+ *
+*/
+
+
+/* Open Sans
+---------------------------------------------------------------------------- */
+/* --- Light --- */
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/light/OpenSans-Light.eot');
+	src: url('../fonts/open-sans/light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/light/OpenSans-Light.woff') format('woff'),
+		 url('../fonts/open-sans/light/OpenSans-Light.ttf') format('truetype'),
+		 url('../fonts/open-sans/light/OpenSans-Light.svg#open-sans') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/light/OpenSans-LightItalic.eot');
+	src: url('../fonts/open-sans/light/OpenSans-LightItalic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/light/OpenSans-LightItalic.woff') format('woff'),
+		 url('../fonts/open-sans/light/OpenSans-LightItalic.ttf') format('truetype'),
+		 url('../fonts/open-sans/light/OpenSans-LightItalic.svg#open-sans') format('svg');
+	font-weight: 300;
+	font-style: italic;
+}
+/* --- Regular --- */
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/regular/OpenSans-Regular.eot');
+	src: url('../fonts/open-sans/regular/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/regular/OpenSans-Regular.woff') format('woff'),
+		 url('../fonts/open-sans/regular/OpenSans-Regular.ttf') format('truetype'),
+		 url('../fonts/open-sans/regular/OpenSans-Regular.svg#open-sans') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/regular/OpenSans-RegularItalic.eot');
+	src: url('../fonts/open-sans/regular/OpenSans-RegularItalic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/regular/OpenSans-RegularItalic.woff') format('woff'),
+		 url('../fonts/open-sans/regular/OpenSans-RegularItalic.ttf') format('truetype'),
+		 url('../fonts/open-sans/regular/OpenSans-RegularItalic.svg#open-sans') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+/* --- Semi Bold --- */
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/semi-bold/OpenSans-SemiBold.eot');
+	src: url('../fonts/open-sans/semi-bold/OpenSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBold.woff') format('woff'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBold.ttf') format('truetype'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBold.svg#open-sans') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/semi-bold/OpenSans-SemiBoldItalic.eot');
+	src: url('../fonts/open-sans/semi-bold/OpenSans-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBoldItalic.woff') format('woff'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBoldItalic.ttf') format('truetype'),
+		 url('../fonts/open-sans/semi-bold/OpenSans-SemiBoldItalic.svg#open-sans') format('svg');
+	font-weight: 600;
+	font-style: italic;
+}
+/* --- Bold --- */
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/bold/OpenSans-Bold.eot');
+	src: url('../fonts/open-sans/bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/bold/OpenSans-Bold.woff') format('woff'),
+		 url('../fonts/open-sans/bold/OpenSans-Bold.ttf') format('truetype'),
+		 url('../fonts/open-sans/bold/OpenSans-Bold.svg#open-sans') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/bold/OpenSans-BoldItalic.eot');
+	src: url('../fonts/open-sans/bold/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/bold/OpenSans-BoldItalic.woff') format('woff'),
+		 url('../fonts/open-sans/bold/OpenSans-BoldItalic.ttf') format('truetype'),
+		 url('../fonts/open-sans/bold/OpenSans-BoldItalic.svg#open-sans') format('svg');
+	font-weight: 700;
+	font-style: italic;
+}
+/* --- Extra Bold --- */
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/extra-bold/OpenSans-ExtraBold.eot');
+	src: url('../fonts/open-sans/extra-bold/OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBold.woff') format('woff'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBold.ttf') format('truetype'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBold.svg#open-sans') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'open-sans';
+	src: url('../fonts/open-sans/extra-bold/OpenSans-ExtraBoldItalic.eot');
+	src: url('../fonts/open-sans/extra-bold/OpenSans-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBoldItalic.woff') format('woff'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBoldItalic.ttf') format('truetype'),
+		 url('../fonts/open-sans/extra-bold/OpenSans-ExtraBoldItalic.svg#open-sans') format('svg');
+	font-weight: 800;
+	font-style: italic;
+}
