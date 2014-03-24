@@ -4,8 +4,6 @@
 
 	<?php
 
-		// this line was:
-		// if ( ($directoryTitle === "views") || ($generic) ) {
 		if ( ($directoryTitle === "views") ) {
 
 			include_once("footer/footer_copyright.php");
@@ -14,7 +12,7 @@
 
 			include_once("footer/footer_settings-options.php");
 
-		} elseif ( ($directoryTitle === "bryston") || ($directoryTitle === "pages") ) {
+		} elseif ( ($directoryTitle === "bryston") || ($directoryTitle === "pages") || ($generic) ) {
 
 			include_once("footer/footer_main-components.php");
 			include_once("footer/footer_settings-options.php");

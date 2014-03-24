@@ -4,21 +4,18 @@
 
 				<li class="nav-tvmode">
 					<a href="<?php echo $hostPath; ?>/tv-mode/" title="TV Mode">
-						<i data-icon="nav_tvmode"></i>
 						<span data-meta="link-title">TV Mode</span>
 					</a>
 				</li>
 
 				<li class="nav-bradio">
 					<a href="<?php echo $hostPath; ?>/bradio/" title="bRadio">
-						<i data-icon="nav_bradio"></i>
 						<span data-meta="link-title">bRadio</span>
 					</a>
 				</li>
 
 				<li class="nav-vfp">
 					<a href="<?php echo $hostPath; ?>/vfp/" title="Virtual Front Panel">
-						<i data-icon="nav_vfp"></i>
 						<span data-meta="link-title">Virtual Front Panel</span>
 					</a>
 				</li>
@@ -26,7 +23,6 @@
 				<li data-modal="parent" class="nav-connected">
 
 					<a href="#" title="Connected Devices" data-modal="controller" data-meta="connected-modal">
-						<i data-icon="nav_connected"></i>
 						<span data-meta="link-title">Connected Devices</span>
 					</a>
 

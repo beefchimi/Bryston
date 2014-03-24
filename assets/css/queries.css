@@ -8,7 +8,7 @@
 	---------------------------------------------------------------------------- */
 	/* --- Data Modal Header --- */
 	[data-modal="header"] [data-container="contained"] {
-		max-width: 40.6rem;
+		max-width: 38.6rem;
 	}
 
 	/* Connected Device & Settings Nav List
@@ -21,6 +21,17 @@
 	}
 	ul[data-modal="nav-list"] li:nth-child(4n) {
 		margin-right: 0;
+	}
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	/* --- Library Search --- */
+	/* + text input + */
+	body.search-focused form.search-form input[type="text"] {
+		width: 34.6rem;
 	}
 
 /* ==|== views ================================================================
@@ -142,6 +153,56 @@
 		margin-right: 0;
 	}
 
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Audio Interface
+	---------------------------------------------------------------------------- */
+	/* --- Song Details --- */
+	#views #audio-interface div[data-meta="song-details"] {
+		padding: 0 3.6rem;
+	}
+
+	/* Universal Links
+	---------------------------------------------------------------------------- */
+	#views #universal-links {
+		bottom: auto;
+		top: 2rem;
+		height: 0;
+	}
+	/* --- Views Links --- */
+	#universal-links a[title="Back to Dashboard"].views.common-button {
+		position: absolute;
+		top: 0;
+		left: 1rem;
+		width: 3.6rem;
+		height: 3.6rem;
+	}
+	#universal-links a[title="Back to Dashboard"].views.common-button i[data-icon="ui_arrow-left"] {
+		display: block;
+		top: 0.8rem;
+		left: 1rem;
+	}
+	#universal-links a[title="Back to Dashboard"].views.common-button span[data-meta] {
+		display: none;
+	}
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	#player-specifics {
+		position: static;
+		padding-top: 1rem;
+	}
+	/* --- View Options --- */
+	#view-options {
+		margin-right: 0;
+	}
+	/* --- Library Search --- */
+	form.search-form {
+		top: 2rem;
+		right: 1rem;
+	}
+
 /* ==|== footer ===============================================================
    ========================================================================= */
 
@@ -166,15 +227,14 @@
 	/* Settings Options
 	---------------------------------------------------------------------------- */
 	nav[role="secondary"] header.settings-header {
-		padding: 1.6rem 1rem;
 		text-align: center;
 	}
-	nav[role="secondary"] header.settings-header i[data-icon="ui_plus"] {
+	nav[role="secondary"] header.settings-header h3 {
 		display: inline-block;
-		position: relative;
-		top: 0.2rem;
-		left: 0;
-		margin-right: 1.6rem;
+		padding-left: 0;
+	}
+	nav[role="secondary"] header.settings-header h3::before {
+		left: -3.6rem;
 	}
 
 /* ==|== internals ============================================================
@@ -264,8 +324,29 @@
 		width: 28%;
 	}
 
+	/* Default View
+	---------------------------------------------------------------------------- */
+	#view_default {
+		padding-top: 3.4rem;
+	}
+
+	/* Artist View
+	---------------------------------------------------------------------------- */
+	#view_artist {
+		padding-top: 0;
+	}
+
+	/* Song View
+	---------------------------------------------------------------------------- */
+	#view_song {
+		padding-top: 0;
+	}
+
 	/* Album View
 	---------------------------------------------------------------------------- */
+	#view_album {
+		padding-top: 1rem;
+	}
 	#view_album [data-component="album"] {
 		width: 25%; /* 100 / 4 = 25 */
 	}
@@ -292,8 +373,20 @@
 		margin: 0 3% 0 0;
 		width: 65%;
 	}
+	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] [data-content="box"] {
+		min-height: 14.4rem;
+	}
 	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-two"] {
 		width: 32%;
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
+		float: left;
+		margin: 0 1rem 0 0;
+		width: auto;
+	}
+	#settings_system [data-content="parent"] [data-content="body"].actions a:only-child,
+	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
+		margin-right: 0;
 	}
 
 	/* Disk Information
@@ -354,24 +447,6 @@
 	#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul[data-component="network-actions"] {
 		margin-bottom: 3.2rem;
 		text-align: left;
-	}
-
-/* ==|== settings =============================================================
-   ========================================================================= */
-
-	/* System
-	---------------------------------------------------------------------------- */
-	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] [data-content="box"] {
-		min-height: 14.4rem;
-	}
-	#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
-		float: left;
-		margin: 0 1rem 0 0;
-		width: auto;
-	}
-	#settings_system [data-content="parent"] [data-content="body"].actions a:only-child,
-	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
-		margin-right: 0;
 	}
 
 	/* Album Art Database
@@ -449,7 +524,7 @@
 		margin-bottom: 0;
 	}
 	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em::before {
-		content: "\2014";
+		content: "\2014"; /* em dash */
 		margin: 0 0.4rem;
 	}
 	/* --- Actions --- */
@@ -621,29 +696,26 @@
 	---------------------------------------------------------------------------- */
 	[data-modal="overlay"] {
 		overflow-y: visible;
+		-webkit-overflow-scrolling: auto;
 		background: hsla(0,0%,20%,0.98);
 	}
 	[data-modal="overlay"] [data-modal="wrapper"] {
-		visibility: hidden;
-		opacity: 0;
 		position: fixed;
 		top: 50%;
 		left: 50%;
 		width: 56rem;
 		background: hsla(0,0%,14%,1);
 		box-shadow: 0 0.4rem 0.6rem hsla(0,0%,0%,0.4);
-		-webkit-transform: translate(-50%, -50%) scale(0.7);
-		   -moz-transform: translate(-50%, -50%) scale(0.7);
-			-ms-transform: translate(-50%, -50%) scale(0.7);
-				transform: translate(-50%, -50%) scale(0.7);
+		-webkit-transform: translate(-50%,-50%) scale(0.7);
+		   -moz-transform: translate(-50%,-50%) scale(0.7);
+			-ms-transform: translate(-50%,-50%) scale(0.7);
+				transform: translate(-50%,-50%) scale(0.7);
 	}
 	[data-modal="overlay"].visible [data-modal="wrapper"] {
-		visibility: visible;
-		opacity: 1;
-		-webkit-transform: translate(-50%, -50%) scale(1);
-		   -moz-transform: translate(-50%, -50%) scale(1);
-			-ms-transform: translate(-50%, -50%) scale(1);
-				transform: translate(-50%, -50%) scale(1);
+		-webkit-transform: translate(-50%,-50%) scale(1);
+		   -moz-transform: translate(-50%,-50%) scale(1);
+			-ms-transform: translate(-50%,-50%) scale(1);
+				transform: translate(-50%,-50%) scale(1);
 	}
 	/* --- Data Modal Header --- */
 	[data-modal="header"] {
@@ -675,62 +747,31 @@
 
 	/* Audio Interface
 	---------------------------------------------------------------------------- */
+	/* --- Song Details --- */
+	#views #audio-interface div[data-meta="song-details"] {
+		padding: 0;
+	}
 	/* --- Song Duration --- */
-	#audio-interface div[data-control="song-duration"] {
-		margin: 0 auto 1.4rem auto;
-		padding-top: 0;
-		width: 64.8rem;
-	}
-	#audio-interface div[data-control="song-duration"] span {
-		top: -0.4rem;
-		width: 5.4rem;
-	}
-	#audio-interface div[data-control="song-duration"] div[data-control="song-length"] {
-		margin-left: 5.4rem;
-		width: 54rem;
+	#audio-interface div[data-control="song-duration"] span[data-meta] {
+		position: absolute;
+		top: -0.5rem;
+		width: 6.8rem;
 	}
 	/* + individual song duration times + */
 	#audio-interface div[data-control="song-duration"] span[data-meta="song-time-elapsed_current"] {
+		left: 0;
 		padding-right: 1.2rem;
 		text-align: right;
 	}
+	#audio-interface div[data-control="song-duration"] span[data-meta="song-time-elapsed_current"]::after {
+		content: "";
+		display: none;
+		margin: 0;
+	}
 	#audio-interface div[data-control="song-duration"] span[data-meta="song-time-length_current"] {
+		right: 0;
 		padding-left: 1.2rem;
 		text-align: left;
-	}
-	/* --- Player Controls --- */
-	#audio-interface div[data-control="player-controls"] {
-		top: -2.6rem;
-		margin: 0 auto;
-		width: 72.8rem;
-	}
-
-	/* Player Specific
-	---------------------------------------------------------------------------- */
-	#player-specifics {
-		margin-top: 2rem;
-	}
-	/* --- Library Search --- */
-	#library-search {
-		float: left;
-		margin: 0;
-		width: 26rem;
-	}
-	/* --- Info / Settings --- */
-	#info-settings {
-		float: none;
-		padding-top: 0;
-		position: absolute;
-		top: 1rem;
-		right: 16.8rem;
-		width: auto;
-	}
-	#info-settings > li > a {
-		font-size: 1.6rem;
-	}
-	/* + individual info / settings + */
-	#info-settings > li.view-info::after {
-		font-size: 1.6rem;
 	}
 
 /* ==|== footer ===============================================================
@@ -739,22 +780,17 @@
 	/* Main Components Nav
 	---------------------------------------------------------------------------- */
 	nav[role="primary"] > ul > li > a {
-		padding: 2rem 1rem 2rem 1rem;
-		height: 7rem;
 		text-align: center;
 	}
-	nav[role="primary"] > ul > li > a i[data-icon] {
-		display: inline-block;
-		position: relative;
-		top: 0.4rem;
-		left: auto;
-		margin-right: 2.4rem;
-		font-size: 2.8rem;
+	nav[role="primary"] > ul > li > a span[data-meta] {
+		padding-left: 3.2rem;
+	}
+	nav[role="primary"] > ul > li > a span[data-meta]::before {
+		left: -1.4rem;
 	}
 	/* + individual components + */
-	nav[role="primary"] > ul > li.nav-vfp > a i[data-icon],
-	nav[role="primary"] > ul > li.nav-connected > a i[data-icon] {
-		top: 0.6rem;
+	nav[role="primary"] > ul > li.nav-vfp > a span[data-meta]::before {
+		left: -2.4rem;
 	}
 
 /* ==|== internals ============================================================
@@ -829,16 +865,6 @@
 				transform-style: preserve-3d;
 	}
 	#tv-mode main section article {
-/*
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 100%;
-		-webkit-transform: translate(-50%, -50%);
-		   -moz-transform: translate(-50%, -50%);
-			-ms-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-*/
 		-webkit-animation: tvMode ease-in-out 180s infinite;
 		   -moz-animation: tvMode ease-in-out 180s infinite;
 			-ms-animation: tvMode ease-in-out 180s infinite;
@@ -938,6 +964,9 @@
 
 	/* Artist View
 	---------------------------------------------------------------------------- */
+	#view_artist {
+		position: relative;
+	}
 	#view_artist aside {
 		position: absolute;
 		top: 0;
@@ -947,10 +976,47 @@
 	#view_artist [data-component="artist-albums"] {
 		padding-left: 28rem;
 	}
+	/* --- Artists Modal --- */
+	#view_artist aside a[data-modal="controller"],
+	#view_artist aside [data-modal="overlay"] [data-modal="wrapper"] [data-modal="header"] {
+		display: none;
+	}
+	#view_artist aside [data-modal="overlay"] {
+		display: block !important;
+	}
+	#view_artist aside [data-modal="overlay"] [data-modal="wrapper"] {
+		width: 100%;
+		box-shadow: none;
+	}
+	#view_artist aside [data-modal="overlay"],
+	#view_artist aside [data-modal="overlay"] [data-modal="wrapper"] {
+		position: static;
+		height: 100%;
+		background: none;
+		opacity: 1;
+		visibility: visible;
+	}
+	#view_artist aside [data-modal="overlay"] [data-modal="wrapper"],
+	#view_artist aside [data-modal="overlay"].visible [data-modal="wrapper"] {
+		-webkit-transform: none;
+		   -moz-transform: none;
+			-ms-transform: none;
+				transform: none;
+	}
 	/* --- Artists List --- */
 	#view_artist aside ul {
-		max-height: none;
 		height: 100%;
+	}
+	#view_artist aside ul li:nth-child(odd) a,
+	#view_artist aside ul li:nth-child(even) a {
+		background: hsla(0,0%,22%,1);
+	}
+	#view_artist aside ul li a:hover,
+	#view_artist aside ul li[data-state="selected"] a {
+		background: hsla(0,0%,14%,1);
+	}
+	#view_artist aside ul li a:active {
+		background: hsla(0,0%,16%,1);
 	}
 	/* --- Album Details --- */
 	#view_artist [data-component="artist-albums"] [data-component="album-details"] div[data-container^="column"] {
@@ -1074,46 +1140,43 @@
 	---------------------------------------------------------------------------- */
 	#universal-links {
 		bottom: auto;
-		top: 2.8rem;
-		height: auto;
+		top: 2rem;
+		height: 0;
 	}
 	#universal-links a.common-button {
-		display: block;
 		position: absolute;
 		top: 0;
-		padding: 1.2rem 2.6rem 1.2rem 2.6rem;
-		width: auto;
-		height: auto;
+		padding-top: 0.8rem;
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+
+		background: hsla(0,0%,12%,1);
+		border: 0.2rem solid hsla(0,0%,96%,1);
 	}
-	#universal-links a.common-button i[data-icon] {
-		top: 1.8rem;
+	#universal-links a.common-button:hover {
+		color: hsla(206,69%,54%,1);
+		background: hsla(0,0%,12%,1);
+		border: 0.2rem solid hsla(206,69%,54%,1);
 	}
-	#universal-links a.common-button span[data-meta] {
-		font-size: 2.2rem;
-		font-weight: 700;
+	#universal-links a.common-button:active {
+		color: hsla(206,69%,44%,1);
+		background: hsla(0,0%,12%,1);
+		border: 0.2rem solid hsla(206,69%,44%,1);
+	}
+	#universal-links a.common-button span[data-meta] .for-mobile {
+		display: none;
 	}
 	/* --- Media Player Button --- */
 	#universal-links a[title="Media Player"].common-button {
 		right: 1rem;
-		text-align: center;
 	}
-	#universal-links a[title="Media Player"].common-button span[data-meta] {
-		margin-right: 2rem;
-	}
-	#universal-links a[title="Media Player"].common-button span[data-meta] strong,
-	#universal-links a[title="Media Player"].common-button span[data-meta] em {
-		display: none;
-	}
-	#universal-links a[title="Media Player"].common-button i[data-icon="tri_eq-right"] {
-		right: 1.6rem;
-	}
-	/* --- Cancel & Save --- */
-	#universal-links a[title="Cancel"].common-button,
+	/* --- Back & Save --- */
+	#universal-links a[title="Back"].common-button,
 	#universal-links a[title="Save"].common-button {
 		float: none;
-		width: 14.8rem;
+		width: auto;
 	}
-	#universal-links a[title="Cancel"].common-button {
+	#universal-links a[title="Back"].common-button {
 		left: 1rem;
 	}
 	#universal-links a[title="Save"].common-button {
@@ -1123,23 +1186,16 @@
 	#universal-links a[title="Back to Dashboard"].common-button {
 		left: 1rem;
 	}
-	#universal-links a[title="Back to Dashboard"].common-button span[data-meta] {
-		margin-left: 2rem;
-	}
-	#universal-links a[title="Back to Dashboard"].common-button i[data-icon="tri_eq-left"] {
-		display: block;
-		left: 1.6rem;
-	}
 	/* --- Views Links --- */
 	#universal-links a[title="Back to Dashboard"].views.common-button {
-		background: hsla(0,0%,22%,1);
+		width: auto;
+		height: 4.6rem;
 	}
-	/* + hover | active + */
-	#universal-links a[title="Back to Dashboard"].views.common-button:hover {
-		background: hsla(206,69%,54%,1);
+	#universal-links a[title="Back to Dashboard"].views.common-button i[data-icon="ui_arrow-left"] {
+		display: none;
 	}
-	#universal-links a[title="Back to Dashboard"].views.common-button:active {
-		background: hsla(206,69%,44%,1);
+	#universal-links a[title="Back to Dashboard"].views.common-button span[data-meta] {
+		display: block;
 	}
 	/* --- Internal / Generic Links --- */
 	#universal-links a[title="User Login"].internal-generic.common-button,
@@ -1148,15 +1204,16 @@
 		float: none;
 		width: auto;
 	}
-	#universal-links a[title="Media Player"].internal-generic.common-button i[data-icon="tri_eq-right"] {
-		display: block;
-	}
-	#universal-links a[title="Back to Dashboard"].internal-generic.common-button span.hide-mobile {
-		display: inline;
-	}
 	/* --- User Login --- */
 	#universal-links a[title="User Login"].internal-generic.common-button {
 		left: 1rem;
+	}
+
+	/* Player Specific
+	---------------------------------------------------------------------------- */
+	#player-specifics {
+		margin-top: -1.4rem;
+		padding-top: 0;
 	}
 
 /* ==|== internals ============================================================
@@ -1205,7 +1262,7 @@
 	---------------------------------------------------------------------------- */
 	/* --- Current Song --- */
 	#view_default [data-component="current-song"] {
-		padding: 2rem;
+		padding: 4.6rem 2rem;
 		width: 40%;
 		text-align: center;
 	}
@@ -1229,7 +1286,7 @@
 	#view_default [data-component="now-playing"],
 	#view_default [data-component="add-files"] {
 		position: absolute;
-		top: 26.2rem;
+		top: 22.2rem;
 		bottom: 10.3rem;
 		width: 30%;
 		max-width: 38rem;
@@ -1309,6 +1366,34 @@
 /* 1024px / 16px = 64em */
 @media only screen and (min-width: 64em) {
 
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Foundation
+	---------------------------------------------------------------------------- */
+	/* compensate for the lost height of the now fixed header */
+	body:not(.tv-mode):not(#views) {
+		padding-top: 20rem;
+	}
+	#views {
+		padding-top: 22.2rem;
+	}
+
+/* ==|== universal player =====================================================
+   ========================================================================= */
+
+	/* Header
+	---------------------------------------------------------------------------- */
+	header[data-site="header"] {
+		display: block;
+		position: fixed;
+		z-index: 200;
+		top: 0;
+		left: 0;
+		height: auto;
+		box-shadow: 0 0.1rem 0.2rem 0.1rem hsla(0,0%,0%,0.4);
+	}
+
 /* ==|== footer ===============================================================
    ========================================================================= */
 
@@ -1317,16 +1402,27 @@
 	nav[role="primary"] > ul > li {
 		width: 25%;
 	}
+	nav[role="primary"] > ul > li > a {
+		padding: 1.8rem 0 0 0;
+		height: 5.2rem;
+	}
+	nav[role="primary"] > ul > li > a span[data-meta] {
+		font-size: 1.8rem;
+	}
 	/* + individual components + */
 	nav[role="primary"] > ul > li.nav-vfp {
 		border-left: 0.1rem solid hsla(0,0%,18%,1);
+	}
+	nav[role="primary"] > ul > li.nav-vfp > a span[data-meta]::before {
+		left: -1.8rem;
 	}
 
 	/* Settings Options
 	---------------------------------------------------------------------------- */
 	nav[role="secondary"] header.settings-header {
 		cursor: default;
-		padding: 1rem 0;
+		padding: 1.2rem 0;
+		height: auto;
 		background: hsla(0,0%,8%,1);
 	}
 	nav[role="secondary"] header.settings-header:hover {
@@ -1339,20 +1435,20 @@
 		display: none;
 	}
 	nav[role="secondary"] header.settings-header h3 {
-		font-size: 1.7rem;
+		position: static;
+		font-size: 1.6rem;
 		font-weight: 700;
 		letter-spacing: 0.2rem;
 		text-transform: uppercase;
 		color: hsla(0,0%,96%,1);
 	}
-	nav[role="secondary"] header.settings-header:hover {
-		background: hsla(0,0%,8%,1);
-	}
-	nav[role="secondary"] header.settings-header:active {
-		background: hsla(0,0%,8%,1);
+	nav[role="secondary"] header.settings-header h3::before {
+		content: none;
+		display: none;
 	}
 	/* --- Settings Mobile Overlay --- */
 	nav[role="secondary"] [data-modal="overlay"] {
+		display: block !important;
 		z-index: 1000 !important;
 		position: static;
 		min-height: 0;
@@ -1372,10 +1468,10 @@
 		width: auto;
 		background: none;
 		box-shadow: none;
-		-webkit-transform: translate(0, 0) scale(1);
-		   -moz-transform: translate(0, 0) scale(1);
-			-ms-transform: translate(0, 0) scale(1);
-				transform: translate(0, 0) scale(1);
+		-webkit-transform: translate(0,0) scale(1);
+		   -moz-transform: translate(0,0) scale(1);
+			-ms-transform: translate(0,0) scale(1);
+				transform: translate(0,0) scale(1);
 	}
 	nav[role="secondary"] [data-modal="header"] {
 		display: none;
@@ -1514,6 +1610,19 @@
 		background-image: linear-gradient(to right, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
 	}
 
+	/* Song View
+	---------------------------------------------------------------------------- */
+	/* sticky class no longer needed! */
+	#view_song [data-component="songs-listing"] aside.thead,
+	#view_song [data-component="songs-listing"] aside.thead.sticky {
+		display: block;
+		top: 22.2rem;
+	}
+	#view_song [data-component="songs-listing"] aside.thead ul li {
+		padding-top: 1.1rem;
+		padding-bottom: 1.1rem;
+	}
+
 	/* Album View
 	---------------------------------------------------------------------------- */
 	/* --- Album Details --- */
@@ -1548,6 +1657,19 @@
 /* 1280px / 16px = 80em */
 @media only screen and (min-width: 80em) {
 
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Foundation
+	---------------------------------------------------------------------------- */
+	/* compensate for the lost height of the now fixed header */
+	body:not(.tv-mode):not(#views) {
+		padding-top: 17.8rem;
+	}
+	#views {
+		padding-top: 17.8rem;
+	}
+
 /* ==|== universal player =====================================================
    ========================================================================= */
 
@@ -1556,15 +1678,6 @@
 	header[data-site="header"] > [data-container="width-full"] {
 		padding-top: 2.8rem;
 		padding-bottom: 2.8rem;
-	}
-
-	/* Volume Control
-	---------------------------------------------------------------------------- */
-	#volume-control {
-		position: absolute;
-		bottom: 5.6rem;
-		left: 1rem;
-		margin: 0;
 	}
 
 	/* Audio Interface
@@ -1585,29 +1698,92 @@
 		left: 1rem;
 	}
 
+	/* Universal Links
+	---------------------------------------------------------------------------- */
+	#universal-links,
+	#views #universal-links {
+		top: 2.4rem;
+	}
+
 	/* Player Specific
 	---------------------------------------------------------------------------- */
 	#player-specifics {
 		position: absolute;
-		top: 2.8rem;
+		top: 3rem;
 		right: 1rem;
 		margin-top: 0;
-		width: 32.2rem;
+		width: 24.4rem;
+		height: 12.2rem;
 	}
-	/* --- Library Search --- */
-	#library-search {
+	/* --- Info / Settings & View Options --- */
+	#view-options,
+	#info-settings {
 		float: none;
-		margin-bottom: 2rem;
-		width: 100%;
+		position: absolute;
+		top: 8.6rem;
 	}
 	/* --- Info / Settings --- */
 	#info-settings {
-		float: left;
-		padding-top: 1rem;
-		position: static;
+		right: 17rem;
+		margin-right: 0;
+	}
+	/* --- View Options --- */
+	#view-options {
+		right: 0;
+	}
+	/* --- Library Search --- */
+	form.search-form {
 		top: 0;
 		right: 0;
-		width: auto;
+		width: 34.6rem;
+		background: none;
+	}
+	form.search-form:hover {
+		background: none;
+	}
+	div.search-overlay {
+		display: none;
+	}
+	body.search-focused div.search-overlay,
+	form.search-form:hover [data-ui="tooltip"]  {
+		opacity: 0;
+		visibility: hidden;
+	}
+	/* + text input + */
+	form.search-form input[type="text"] {
+		cursor: auto;
+		padding-right: 3.6rem;
+		width: 100%;
+		color: hsla(0,0%,22%,1);
+		background: hsla(0,0%,96%,1);
+	}
+	body.search-focused form.search-form input[type="text"] {
+		width: 100%;
+		box-shadow: inset 0 0 0 0.2rem hsla(206,69%,54%,1);
+	}
+	form.search-form input[type="text"]::-webkit-input-placeholder {
+		color: hsla(0,0%,62%,1);
+	}
+	form.search-form input[type="text"]::-moz-placeholder {
+		color: hsla(0,0%,62%,1);
+	}
+	form.search-form input[type="text"]:-ms-input-placeholder {
+		color: hsla(0,0%,62%,1);
+	}
+	/* + input submit + */
+	form.search-form input[type="submit"] {
+		opacity: 0.8;
+		visibility: visible;
+	}
+	form.search-form input[type="submit"]:hover {
+		opacity: 1;
+	}
+	form.search-form input[type="submit"]:active {
+		opacity: 0.9;
+	}
+	form.search-form input[type="submit"]:hover + [data-ui="tooltip"] {
+		opacity: 1;
+		visibility: visible;
 	}
 
 /* ==|== footer ===============================================================
@@ -1615,28 +1791,28 @@
 
 	/* Main Components Nav
 	---------------------------------------------------------------------------- */
-	/* + individual components + */
+	nav[role="primary"] > ul > li > a {
+		padding-top: 2.4rem;
+		height: 6.4rem;
+	}
 	nav[role="primary"] > ul > li > a span[data-meta] {
-		position: relative;
+		font-size: 1.9rem;
 	}
-	nav[role="primary"] > ul > li.nav-tvmode > a i[data-icon],
-	nav[role="primary"] > ul > li.nav-bradio > a i[data-icon] {
-		top: 0;
-		font-size: 3.4rem;
+	nav[role="primary"] > ul > li > a span[data-meta]::before {
+		left: -2rem;
 	}
-	nav[role="primary"] > ul > li.nav-tvmode > a span[data-meta],
-	nav[role="primary"] > ul > li.nav-bradio > a span[data-meta] {
-		top: -0.5rem;
+	/* + individual components + */
+	nav[role="primary"] > ul > li.nav-tvmode > a span[data-meta]::before,
+	nav[role="primary"] > ul > li.nav-bradio > a span[data-meta]::before {
+		font-size: 2.8rem;
 	}
-	nav[role="primary"] > ul > li.nav-vfp > a i[data-icon] {
-		top: -0.4rem;
-		font-size: 4.2rem;
-	}
-	nav[role="primary"] > ul > li.nav-vfp > a span[data-meta] {
+	nav[role="primary"] > ul > li.nav-vfp > a span[data-meta]::before {
 		top: -1.3rem;
+		left: -3.4rem;
+		font-size: 4.6rem;
 	}
-	nav[role="primary"] > ul > li.nav-connected > a i[data-icon] {
-		top: 0.4rem;
+	nav[role="primary"] > ul > li.nav-connected > a span[data-meta]::before {
+		font-size: 3rem;
 	}
 
 	/* Settings Options
@@ -1680,7 +1856,7 @@
 	/* --- Common Elements --- */
 	#view_default [data-component="now-playing"],
 	#view_default [data-component="add-files"] {
-		top: 19rem;
+		top: 17.8rem;
 	}
 	#view_default [data-component] div.component-header {
 		padding: 1.2rem 2rem;
@@ -1718,6 +1894,10 @@
 
 	/* Song View
 	---------------------------------------------------------------------------- */
+	#view_song [data-component="songs-listing"] aside.thead,
+	#view_song [data-component="songs-listing"] aside.thead.sticky {
+		top: 17.8rem;
+	}
 	/* --- Songs Table --- */
 	/* + specific columns + */
 	#view_song [data-component="songs-listing"] aside.thead ul li.table-add,
@@ -1755,12 +1935,6 @@
 /* ==|== universal player =====================================================
    ========================================================================= */
 
-	/* Volume Control
-	---------------------------------------------------------------------------- */
-	#volume-control {
-		left: 3.2rem;
-	}
-
 	/* Audio Interface
 	---------------------------------------------------------------------------- */
 	/* --- Library Control --- */
@@ -1774,8 +1948,8 @@
 	#universal-links a[title="Media Player"].common-button {
 		right: 3.2rem;
 	}
-	/* --- Cancel & Save --- */
-	#universal-links a[title="Cancel"].common-button {
+	/* --- Back & Save --- */
+	#universal-links a[title="Back"].common-button {
 		left: 3.2rem;
 	}
 	#universal-links a[title="Save"].common-button {
@@ -1783,6 +1957,10 @@
 	}
 	/* --- Back To Dashboard --- */
 	#universal-links a[title="Back to Dashboard"].common-button {
+		left: 3.2rem;
+	}
+	/* --- Views Links --- */
+	#universal-links a[title="Back to Dashboard"].views.common-button {
 		left: 3.2rem;
 	}
 	/* --- User Login --- */

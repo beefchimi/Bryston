@@ -62,7 +62,7 @@ form { margin: 0; }
 fieldset { border: 1px solid #ccc; margin: 0; padding: 0; }
 legend { border: 0; padding: 0; white-space: normal; *margin-left: -7px; }
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
-button, input { line-height: 1; }
+button, input { line-height: normal; }
 button, select { text-transform: none; }
 button, html input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; *overflow: visible; }
 button[disabled], html input[disabled] { cursor: default; }
@@ -133,11 +133,11 @@ th { text-align: left; }
 ---------------------------------------------------------------------------- */
 @font-face {
 	font-family: 'bryston';
-	src:url('../fonts/bryston/bryston.eot');
-	src:url('../fonts/bryston/bryston.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/bryston/bryston.woff') format('woff'),
-		url('../fonts/bryston/bryston.svg#bryston') format('svg'),
-		url('../fonts/bryston/bryston.ttf') format('truetype');
+	src:url('../fonts/bryston/bryston.eot?qd9kwr');
+	src:url('../fonts/bryston/bryston.eot?#iefixqd9kwr') format('embedded-opentype'),
+		url('../fonts/bryston/bryston.woff?qd9kwr') format('woff'),
+		url('../fonts/bryston/bryston.ttf?qd9kwr') format('truetype'),
+		url('../fonts/bryston/bryston.svg?qd9kwr#bryston') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -154,142 +154,148 @@ i[data-icon]::before {
 	-moz-osx-font-smoothing: grayscale;
 }
 i[data-icon="disk_sata"]::before {
-	content: "\21";
+	content: "\e600";
 }
 i[data-icon="disk_partition"]::before {
-	content: "\22";
+	content: "\e601";
 }
 i[data-icon="disk_network"]::before {
-	content: "\23";
+	content: "\e602";
 }
 i[data-icon="nav_tvmode"]::before {
-	content: "\24";
+	content: "\e603";
 }
 i[data-icon="nav_bradio"]::before {
-	content: "\25";
+	content: "\e604";
 }
 i[data-icon="nav_vfp"]::before {
-	content: "\26";
+	content: "\e605";
 }
 i[data-icon="nav_connected"]::before {
-	content: "\27";
+	content: "\e606";
 }
 i[data-icon="settings_system"]::before {
-	content: "\28";
+	content: "\e607";
 }
 i[data-icon="settings_disk-info"]::before {
-	content: "\29";
+	content: "\e608";
 }
-i[data-icon="settings_album-art-db"]::before {
-	content: "\30";
+i[data-icon="settings_audio-devices"]::before {
+	content: "\e609";
 }
 i[data-icon="settings_network-interfaces"]::before {
-	content: "\31";
+	content: "\e60a";
 }
 i[data-icon="settings_update-firmware"]::before {
-	content: "\32";
+	content: "\e60b";
 }
 i[data-icon="settings_mpd"]::before {
-	content: "\33";
+	content: "\e60c";
 }
 i[data-icon="settings_system-log"]::before {
-	content: "\34";
+	content: "\e60d";
 }
 i[data-icon="settings_startup-script"]::before {
-	content: "\35";
+	content: "\e60e";
 }
 i[data-icon="settings_nas-setup"]::before {
-	content: "\36";
+	content: "\e60f";
 }
 i[data-icon="settings_services"]::before {
-	content: "\37";
+	content: "\e610";
 }
 i[data-icon="settings_license"]::before {
-	content: "\38";
+	content: "\e611";
 }
 i[data-icon="song_previous"]::before {
-	content: "\39";
+	content: "\e612";
 }
 i[data-icon="song_next"]::before {
-	content: "\40";
+	content: "\e613";
 }
 i[data-icon="song_stop"]::before {
-	content: "\41";
+	content: "\e614";
 }
 i[data-icon="song_pause"]::before {
-	content: "\42";
+	content: "\e615";
 }
 i[data-icon="song_play"]::before {
-	content: "\43";
-}
-i[data-icon="song_repeat"]::before {
-	content: "\44";
+	content: "\e616";
 }
 i[data-icon="song_shuffle"]::before {
-	content: "\45";
+	content: "\e617";
+}
+i[data-icon="song_repeat"]::before {
+	content: "\e618";
 }
 i[data-icon="song_queued"]::before {
-	content: "\46";
-}
-i[data-icon="ui_volume-down"]::before {
-	content: "\47";
-}
-i[data-icon="ui_volume-up"]::before {
-	content: "\48";
-}
-i[data-icon="ui_search"]::before {
-	content: "\49";
-}
-i[data-icon="ui_plus"]::before {
-	content: "\50";
-}
-i[data-icon="ui_minus"]::before {
-	content: "\51";
-}
-i[data-icon="ui_checkmark"]::before {
-	content: "\52";
-}
-i[data-icon="ui_close"]::before {
-	content: "\53";
-}
-i[data-icon="ui_more"]::before {
-	content: "\54";
-}
-i[data-icon="ui_lock"]::before {
-	content: "\55";
-}
-i[data-icon="ui_unlock"]::before {
-	content: "\56";
+	content: "\e619";
 }
 i[data-icon="tri_eq-up"]::before {
-	content: "\57";
+	content: "\e61a";
 }
 i[data-icon="tri_eq-right"]::before {
-	content: "\58";
+	content: "\e61b";
 }
 i[data-icon="tri_eq-down"]::before {
-	content: "\59";
+	content: "\e61c";
 }
 i[data-icon="tri_eq-left"]::before {
-	content: "\60";
-}
-i[data-icon="ui_arrow-left"]::before {
-	content: "\61";
+	content: "\e61d";
 }
 i[data-icon="ui_arrow-right"]::before {
-	content: "\62";
+	content: "\e61e";
+}
+i[data-icon="ui_arrow-left"]::before {
+	content: "\e61f";
+}
+i[data-icon="ui_volume-down"]::before {
+	content: "\e620";
+}
+i[data-icon="ui_volume-up"]::before {
+	content: "\e621";
+}
+i[data-icon="ui_plus"]::before {
+	content: "\e622";
+}
+i[data-icon="ui_minus"]::before {
+	content: "\e623";
+}
+i[data-icon="ui_checkmark"]::before {
+	content: "\e624";
+}
+i[data-icon="ui_close"]::before {
+	content: "\e625";
+}
+i[data-icon="ui_lock"]::before {
+	content: "\e626";
+}
+i[data-icon="ui_unlock"]::before {
+	content: "\e627";
+}
+i[data-icon="ui_more"]::before {
+	content: "\e628";
+}
+i[data-icon="ui_search"]::before {
+	content: "\e629";
+}
+i[data-icon="ui_info"]::before {
+	content: "\e62a";
+}
+i[data-icon="ui_settings"]::before {
+	content: "\e62b";
 }
 i[data-icon="view_default"]::before {
-	content: "\63";
-}
-i[data-icon="view_song"]::before {
-	content: "\64";
+	content: "\e62c";
 }
 i[data-icon="view_artist"]::before {
-	content: "\65";
+	content: "\e62d";
+}
+i[data-icon="view_song"]::before {
+	content: "\e62e";
 }
 i[data-icon="view_album"]::before {
-	content: "\66";
+	content: "\e62f";
 }
 
 
@@ -303,7 +309,6 @@ i[data-icon="view_album"]::before {
  * assets/fonts/open-sans/apache-license.txt
  *
 */
-
 
 /* Open Sans
 ---------------------------------------------------------------------------- */

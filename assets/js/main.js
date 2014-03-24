@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 
 				setTimeout(function() {
 					$loginForm.removeClass('shake');
-				}, 600)
+				}, 600);
 
 			}
 
@@ -41,22 +41,62 @@ jQuery(document).ready(function($) {
 	initErrorHandler();
 
 
+	/* Search Library :focus
+	---------------------------------------------------------------------------- */
+	function initSearchFocus() {
+
+		var $searchLibrary = $('#library-search input[type="text"]');
+
+		// var searchValue = $.trim( $searchLibrary.val() );
+		// if ( searchValue.length > 0 ) { }
+
+		$searchLibrary.focus(function() {
+			$body.addClass('search-focused');
+		});
+
+		$searchLibrary.blur(function() {
+
+			setTimeout(function() {
+				$body.removeClass('search-focused');
+			}, 200);
+
+		});
+
+	}
+
+
 	/* Modal Controller
 	---------------------------------------------------------------------------- */
 	function initModalController() {
 
-		$('[data-modal="controller"]').click( function(e) {
+		$('[data-modal="overlay"]').css('display', 'none');
 
-			var thisMeta = $(this).attr('data-meta'),
-				target = $('#'+thisMeta).addClass('visible');
+		$('[data-modal="controller"]').on('click', function() {
 
-			e.preventDefault();
+			var thisMeta = $(this).attr('data-meta');
+
+			$('#'+thisMeta).css('display', 'block');
+
+			if ( $('#'+thisMeta).css('display') == 'block') {
+				$('#'+thisMeta).addClass('visible');
+			}
+
+			return false;
 
 		});
 
-		$('[data-modal="overlay"] [data-modal="header"] a[data-modal="close"]').click( function(e) {
-			$(this).closest('[data-modal="overlay"]').removeClass('visible');
-			e.preventDefault();
+		$('[data-modal="overlay"] [data-modal="header"] a[data-modal="close"]').on('click', function() {
+
+			var $thisOverlay = $(this).closest('[data-modal="overlay"]');
+
+			$thisOverlay.removeClass('visible');
+
+			setTimeout(function() {
+				$thisOverlay.css('display', 'none');
+			}, 400); // twice as long as it takes to transition
+
+			return false;
+
 		});
 
 	}
@@ -446,15 +486,23 @@ jQuery(document).ready(function($) {
 
 	/* Initialize Plugins / Functions
 	---------------------------------------------------------------------------- */
-	if ( $body.hasClass('song') ) {
-		initSongViewSticky();
-	}
+	$(window).load(function() {
 
-	initModalController();
-	initMediaListToggle();
-	initDropdownSelect();
-	initAlbumViewToggle();
-	initEnquire();
+		if ( $body.hasClass('song') ) {
+			initSongViewSticky();
+		}
+
+		// if ( $body.attr('id') == 'views' ) {
+			initSearchFocus();
+		// }
+
+		initModalController();
+		initMediaListToggle();
+		initDropdownSelect();
+		initAlbumViewToggle();
+		initEnquire();
+
+	});
 
 
 });

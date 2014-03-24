@@ -1,4 +1,4 @@
 				<a href="<?php echo $hostPath; ?>/" title="Back to Dashboard" class="views common-button">
-					<i data-icon="tri_eq-left"></i>
-					<span data-meta="link-title">Back to Dashboard</span>
+					<i data-icon="ui_arrow-left"></i>
+					<span data-meta="link-title"><em class="for-mobile">Back to </em>Dashboard</span>
 				</a>

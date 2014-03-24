@@ -13,11 +13,32 @@
 
 			<aside id="artists">
 
-				<ul data-compontent="artist-list">
+				<a href="#" title="View Artists" data-modal="controller" data-meta="artists-modal">
+					<span data-meta="link-title">View Artists</span>
+				</a>
 
-					<?php include_once('../assets/inc/views/artist_list.php'); ?>
 
-				</ul>
+				<div id="artists-modal" data-modal="overlay">
+
+					<div data-modal="wrapper">
+
+						<header data-modal="header">
+							<div data-container="contained">
+								<h4>View Artists</h4>
+								<a href="#" data-modal="close">
+									<i data-icon="ui_close"></i>
+								</a>
+							</div>
+						</header>
+
+						<ul data-compontent="artist-list">
+							<?php include_once('../assets/inc/views/artist_list.php'); ?>
+						</ul>
+
+					</div>
+
+				</div>
+
 
 			</aside>
 

@@ -14,13 +14,13 @@
 	$fileParts      = explode(".", $fileName);
 	$pageTitle      = ucfirst($fileParts[0]);
 
-	if( substr($fileParts[0], 0, 1) != '?' ) {
+	if ( substr($fileParts[0], 0, 1) != '?' ) {
 		$bodyClass = $fileParts[0];
 	} else {
 		$bodyClass = $directoryTitle;
 	}
 
-	if( ($directoryTitle === "bradio") || ($directoryTitle === "vfp") || ($directoryTitle === "devices") || ($fileParts[0] === "404") ) {
+	if ( ($directoryTitle === "bradio") || ($directoryTitle === "vfp") || ($directoryTitle === "devices") || ($fileParts[0] === "404") ) {
 		$generic = true;
 		$genericClass = " generic";
 	}
@@ -80,10 +80,6 @@
 
 </head>
 
-<!--
-	this line was:
-	<body id="<?php echo $directoryTitle; ?>" class="<?php echo $bodyClass . $genericClass; ?>">
--->
 <body id="<?php echo $directoryTitle; ?>" class="<?php if (!isset($genericClass)) { $genericClass = ''; } echo $bodyClass . $genericClass; ?>">
 
 <?php if ($directoryTitle != "tv-mode") : ?>
@@ -95,13 +91,20 @@
 			<section id="audio-interface">
 
 				<div data-meta="song-details">
-					<h1 data-meta="song-title_current" class="truncate">Bryston BDP</h1>
+					<h1 data-meta="song-title_current" class="truncate">Bryston BDP - The Longest Temporary Title In The History of The Everness</h1>
 					<h2 class="song-artist-album truncate">
-						<span data-meta="song-artist_current"></span> &mdash; <span data-meta="song-album_current"></span>
+						<span data-meta="song-artist_current"></span>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. &mdash; Donec sed odio dui.<span data-meta="song-album_current"></span>
 					</h2>
 				</div>
 
-				<ul data-control="song-controls" class="clearfix">
+				<ul data-control="song-controls">
+
+					<!-- data-state: none, repeat, repeat-once -->
+					<li class="song-repeat">
+						<a onclick="toggle('+"'repeat'"+')" title="repeat" data-control="song-repeat" data-state="repeat-once">
+							<i data-icon="song_repeat" class="toggled"></i>
+						</a>
+					</li>
 
 					<li class="song-previous">
 						<a onclick="sendcom('+"'previous'"+')" title="Previous" data-control="song-previous">
@@ -131,30 +134,25 @@
 						</a>
 					</li>
 
+					<!-- data-state: none, shuffle -->
+					<li class="song-shuffle">
+						<a onclick="toggle('+"'shuffle'"+')" title="shuffle" data-control="song-shuffle" data-state="shuffle">
+							<i data-icon="song_shuffle" class=""></i>
+						</a>
+					</li>
+
 				</ul>
 
 				<div data-control="song-duration">
 
-					<div data-control="song-length" class="progress-container">
-						<div data-control="song-progress" class="progress-bar" style="width:50%;"></div>
-					</div>
-
 					<span data-meta="song-time-elapsed_current">0:00</span>
 					<span data-meta="song-time-length_current">0:00</span>
 
-				</div>
-
-				<div data-control="player-controls">
-
-					<!-- data-state: none, repeat, repeat-once -->
-					<a onclick="toggle('+"'repeat'"+')" title="repeat" data-control="player-repeat" data-state="repeat-once">
-						<i data-icon="song_repeat" class="toggled"></i>
-					</a>
-
-					<!-- data-state: none, shuffle -->
-					<a onclick="toggle('+"'shuffle'"+')" title="shuffle" data-control="player-shuffle" data-state="shuffle">
-						<i data-icon="song_shuffle" class=""></i>
-					</a>
+					<div data-control="song-length" class="progress-container">
+						<div data-control="song-progress" class="progress-bar" style="width:50%;">
+							<span data-control="song-scrub" class="progress-needle"></span>
+						</div>
+					</div>
 
 				</div>
 

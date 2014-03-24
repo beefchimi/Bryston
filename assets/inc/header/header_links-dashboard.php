@@ -1,9 +1,6 @@
-<!--
 				<a href="<?php echo $hostPath; ?>/views/default.php" title="Media Player" class="common-button">
-					<span data-meta="link-title"><strong>Launch </strong>Media<em> Player</em></span>
-					<i data-icon="tri_eq-right"></i>
+					<span data-meta="link-title"><em class="for-mobile">Launch </em>Media Player</span>
 				</a>
--->
 
 				<!-- if (logged in) { add class: logged-in | "Logout" } else { remove class: logged-in | "Login" } -->
 
@@ -15,7 +12,11 @@
 				</a>
 				-->
 
+<!-- CHRIS must have added this? breaks layout for mobile... the original markup above is intentional
+
 				<a href="<?php echo $hostPath; ?>/views/default.php" class="internal-generic common-button" title="Media Player">
 					<span data-meta="link-title">Media</span>
 					<i data-icon="tri_eq-right"></i>
 				</a>
+
+-->

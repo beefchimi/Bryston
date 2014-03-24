@@ -1,7 +1,6 @@
 		<nav id="settings-options" role="secondary" data-modal="parent">
 
 			<header data-modal="controller" data-meta="settings-modal" class="settings-header">
-				<i data-icon="ui_plus"></i>
 				<h3>Settings</h3>
 				<i data-icon="tri_eq-down"></i>
 			</header>
