@@ -91,9 +91,9 @@
 			<section id="audio-interface">
 
 				<div data-meta="song-details">
-					<h1 data-meta="song-title_current" class="truncate">Bryston BDP - The Longest Temporary Title In The History of The Everness</h1>
+					<h1 data-meta="song-title_current" class="truncate">Bryston BDP</h1>
 					<h2 class="song-artist-album truncate">
-						<span data-meta="song-artist_current"></span>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. &mdash; Donec sed odio dui.<span data-meta="song-album_current"></span>
+						<span data-meta="song-artist_current"></span> &mdash; <span data-meta="song-album_current"></span>
 					</h2>
 				</div>
 

@@ -1182,10 +1182,6 @@ body.search-focused form.search-form input[type="submit"]:active {
 	opacity: 0.9;
 }
 
-form.search-form input[type="submit"]:focus {
-	background: hsla(0,0%,0%,0.4);
-}
-
 /* ==|== footer ===============================================================
    ========================================================================= */
 

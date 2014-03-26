@@ -48,16 +48,6 @@
 						</div>
 					</li>
 
-					<li class="view-artist">
-						<a href="<?php echo $hostPath; ?>/views/artist.php" data-control="view-artist" title="Artist View">
-							<i data-icon="view_artist"></i>
-						</a>
-						<div data-ui="tooltip">
-							<i data-icon="tri_eq-up"></i>
-							<span data-meta="tooltip-title">Artist View</span>
-						</div>
-					</li>
-
 					<li class="view-song">
 						<a href="<?php echo $hostPath; ?>/views/song.php" data-control="view-song" title="Song View">
 							<i data-icon="view_song"></i>
@@ -65,6 +55,16 @@
 						<div data-ui="tooltip">
 							<i data-icon="tri_eq-up"></i>
 							<span data-meta="tooltip-title">Song View</span>
+						</div>
+					</li>
+
+					<li class="view-artist">
+						<a href="<?php echo $hostPath; ?>/views/artist.php" data-control="view-artist" title="Artist View">
+							<i data-icon="view_artist"></i>
+						</a>
+						<div data-ui="tooltip">
+							<i data-icon="tri_eq-up"></i>
+							<span data-meta="tooltip-title">Artist View</span>
 						</div>
 					</li>
 

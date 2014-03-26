@@ -288,10 +288,10 @@ i[data-icon="ui_settings"]::before {
 i[data-icon="view_default"]::before {
 	content: "\e62c";
 }
-i[data-icon="view_artist"]::before {
+i[data-icon="view_song"]::before {
 	content: "\e62d";
 }
-i[data-icon="view_song"]::before {
+i[data-icon="view_artist"]::before {
 	content: "\e62e";
 }
 i[data-icon="view_album"]::before {
