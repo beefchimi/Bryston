@@ -21,6 +21,7 @@
 			$fileName       = basename($requestURI);
 		}
 
+	// else if running from BDP or local environment
 	} else {
 
 		$requestURI     = $_SERVER['REQUEST_URI'];
