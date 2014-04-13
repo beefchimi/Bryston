@@ -3,16 +3,39 @@
 
 <?php
 
-	$requestURI     = $_SERVER['REQUEST_URI'];
-	$directoryArray = explode('/',$requestURI);
-	$hostPath       = "http://" . $_SERVER['HTTP_HOST'] . "/" . $directoryArray[1];
+	// if my server...
+	if ($_SERVER['HTTP_HOST'] === 'bryston.curtisdulmage.com') {
 
-	end($directoryArray);
+		$requestURI = $_SERVER['REQUEST_URI'];
+		$hostPath   = "http://" . $_SERVER['HTTP_HOST'];
 
-	$directoryTitle = prev($directoryArray);
-	$fileName       = basename($requestURI);
-	$fileParts      = explode(".", $fileName);
-	$pageTitle      = ucfirst($fileParts[0]);
+		$directoryArray = explode('/', $requestURI);
+		end($directoryArray);
+		// count($directoryArray);
+
+		if ($requestURI === "/") {
+			$directoryTitle = "bryston";
+			$fileName       = "bryston";
+		} else {
+			$directoryTitle = prev($directoryArray);
+			$fileName       = basename($requestURI);
+		}
+
+	} else {
+
+		$requestURI     = $_SERVER['REQUEST_URI'];
+		$directoryArray = explode('/',$requestURI);
+		$hostPath       = "http://" . $_SERVER['HTTP_HOST'] . "/" . $directoryArray[1];
+
+		end($directoryArray);
+
+		$directoryTitle = prev($directoryArray);
+		$fileName       = basename($requestURI);
+
+	}
+
+	$fileParts = explode(".", $fileName);
+	$pageTitle = ucfirst($fileParts[0]);
 
 	if ( substr($fileParts[0], 0, 1) != '?' ) {
 		$bodyClass = $fileParts[0];

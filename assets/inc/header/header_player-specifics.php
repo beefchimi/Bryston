@@ -1,10 +1,15 @@
 <?php
 
-	$infoModal = $_SERVER['DOCUMENT_ROOT'];
-	$infoModal .= "/bryston/assets/inc/views/modal_info.php";
-
+	$infoModal     = $_SERVER['DOCUMENT_ROOT'];
 	$settingsModal = $_SERVER['DOCUMENT_ROOT'];
-	$settingsModal .= "/bryston/assets/inc/views/modal_settings.php";
+
+	if ($_SERVER['HTTP_HOST'] === 'bryston.curtisdulmage.com') {
+		$infoModal .= "/assets/inc/views/modal_info.php";
+		$settingsModal .= "/assets/inc/views/modal_settings.php";
+	} else {
+		$infoModal .= "/bryston/assets/inc/views/modal_info.php";
+		$settingsModal .= "/bryston/assets/inc/views/modal_settings.php";
+	}
 
 ?>
 
