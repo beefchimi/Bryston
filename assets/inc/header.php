@@ -3,7 +3,7 @@
 
 <?php
 
-	// if my server...
+	// if running on my domain...
 	if ($_SERVER['HTTP_HOST'] === 'bryston.curtisdulmage.com') {
 
 		$requestURI = $_SERVER['REQUEST_URI'];
