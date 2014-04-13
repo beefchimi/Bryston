@@ -3,7 +3,7 @@
 
 <?php
 
-	// if running on my domain...
+	// if my server...
 	if ($_SERVER['HTTP_HOST'] === 'bryston.curtisdulmage.com') {
 
 		$requestURI = $_SERVER['REQUEST_URI'];
@@ -21,7 +21,6 @@
 			$fileName       = basename($requestURI);
 		}
 
-	// else if running from BDP or local environment
 	} else {
 
 		$requestURI     = $_SERVER['REQUEST_URI'];
@@ -104,7 +103,26 @@
 
 </head>
 
-<body id="<?php echo $directoryTitle; ?>" class="<?php if (!isset($genericClass)) { $genericClass = ''; } echo $bodyClass . $genericClass; ?>">
+<body id="<?php echo $directoryTitle; ?>" class="<?php if ( !isset($genericClass) ) { $genericClass = ''; } echo $bodyClass . $genericClass; ?>">
+
+<section id="test">
+<?php
+
+	echo '<p>$requestURI: ' . $requestURI . '</p>';
+	echo '<p>$hostPath: ' . $hostPath . '</p>';
+	echo '<p>$directoryTitle: ' . $directoryTitle . '</p>';
+
+	echo '<p>$directoryArray: '; print_r($directoryArray); echo '</p>';
+	echo '<p>$directoryArray[1]: ' . $directoryArray[1] . '</p>';
+
+	echo 'Array Count: ' . count($directoryArray) . '</p>';
+
+	echo '<p>$fileName: ' . $fileName . '</p>';
+	echo '<p>$fileParts: '; print_r($fileParts); echo '</p>';
+	echo '<p>$pageTitle: ' . $pageTitle . '</p>';
+
+?>
+</section>
 
 <?php if ($directoryTitle != "tv-mode") : ?>
 

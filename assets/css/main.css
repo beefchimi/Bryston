@@ -112,6 +112,7 @@ input[type="checkbox"] + label::after,
 span.dropdown-header,
 #view_default [data-component],
 ol.media-list li div.list-wrap,
+aside.alert-notification,
 #login-form form div.input-wrap span[data-meta] {
 /*
 	-webkit-backface-visibility: hidden;
@@ -611,6 +612,94 @@ div[data-ui="dropdown"] ul li.select-option a:active {
 	background: hsla(0,0%,76%,1);
 }
 
+/* Notifications
+---------------------------------------------------------------------------- */
+aside.alert-notification {
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 0;
+	width: 100%;
+	min-height: 5.4rem;
+	opacity: 0;
+	visibility: hidden;
+}
+aside.alert-notification.ready {
+	opacity: 1;
+	visibility: visible;
+}
+aside.alert-notification a {
+	display: block;
+	position: relative;
+	color: hsla(206,69%,44%,1);
+	background: hsla(0,0%,96%,1);
+	box-shadow: 0 0.2rem 0.4rem 0.1rem hsla(0,0%,0%,0.6);
+}
+aside.alert-notification a:hover {
+	opacity: 0.96;
+}
+aside.alert-notification a:active {
+	opacity: 1;
+}
+aside.alert-notification a i[data-icon] {
+	position: absolute;
+	top: 50%;
+	top: 1rem;
+	left: 1rem;
+	font-size: 2.4rem;
+/*
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+*/
+}
+aside.alert-notification a div.alert-message {
+	padding: 1rem 1rem 1.2rem 4.6rem;
+}
+aside.alert-notification a div.alert-message p {
+	margin-bottom: 0.6rem;
+	font-size: 1.3rem;
+	font-weight: 600;
+	line-height: 1.3;
+}
+aside.alert-notification a div.alert-message p:last-child,
+aside.alert-notification a div.alert-message p:only-child {
+	margin-bottom: 0;
+}
+/* --- Notification Demo --- */
+#bradio a[data-control="alert"] {
+	display: inline-block;
+	margin-top: 3.2rem;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: hsla(206,69%,54%,1);
+}
+#bradio a[data-control="alert"]:hover {
+	color: hsla(206,69%,44%,1);
+}
+#bradio a[data-control="alert"]:active {
+	color: hsla(206,69%,54%,1);
+}
+
+
+/*
+
+
+	<aside data-alert="notification" class="alert-notification ready">
+		<a title="Click here to resolve this alert" href="#">
+			<i data-icon="ui_alert"></i>
+			<div class="alert-message">
+				<p>Error establishing connection to database. Please check your MPD configuration.</p>
+				<p>There may also be a problem with your anus. Should have that checked out.</p>
+			</div>
+		</a>
+	</aside>
+
+*/
+
+
 /* Data Modal
 ---------------------------------------------------------------------------- */
 [data-modal="overlay"] {
@@ -756,6 +845,32 @@ header[data-site="header"] > [data-container="width-full"] {
 	padding-top: 2rem;
 	padding-bottom: 2.4rem;
 }
+
+#test {
+
+	display: none !important;
+	visibility: hidden !important;
+
+	z-index: 9999;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 2rem;
+	min-width: 50rem;
+	height: 25rem;
+	background: hsla(0,0%,60%,1);
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+}
+#test p {
+	margin-bottom: 0.6rem;
+	font-size: 2rem;
+	color: hsla(0,0%,100%,1);
+	white-space: nowrap;
+}
+
 
 /* Audio Interface
 ---------------------------------------------------------------------------- */

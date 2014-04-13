@@ -16,6 +16,8 @@
 				<h1>bRadio</h1>
 				<p>This page is a placeholder for the bRadio component.</p>
 
+				<a href="#" id="alert-test" data-control="alert" title="Trigger Alert">Trigger Notification Alert</a>
+
 			</article>
 
 		</section>

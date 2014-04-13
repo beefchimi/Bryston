@@ -38,7 +38,106 @@ jQuery(document).ready(function($) {
 
 	}
 
-	initErrorHandler();
+
+	/* Temporary Alert Trigger
+	---------------------------------------------------------------------------- */
+	function initAlertTrigger() {
+
+		// define required variables
+		var $alertTrigger       = $('#alert-test'),
+			$insertAfterElement = null,
+			alertCounter        = 0;
+
+		// should be on error... instead of on click
+		$alertTrigger.on('click', function() {
+
+			// define demo variables
+			var $tempMessage          = $('<p>Error establishing connection to database. Please check your MPD configuration.</p>'),
+				$tempDestination      = '#',
+				$mostRecentAlert      = $('#alert-' + alertCounter),
+				mostRecentAlertHeight = 0;
+
+			// check if a alert-notification already exists...
+			// if yes, we will insert our new alert after
+			if ( $mostRecentAlert.length > 0 ) {
+
+				$insertAfterElement = '#alert-' + alertCounter;
+
+				// mostRecentAlertHeight = $mostRecentAlert.height();
+
+				// var mostRecentAlertPosition = $mostRecentAlert.position();
+
+				// $mostRecentAlert.css('top', mostRecentAlertPosition + );
+
+			// else, insert after the footer
+			} else {
+
+				$insertAfterElement = 'footer[data-site="footer"]';
+
+			}
+
+			// each time $alertTrigger is clicked, increment the alertCounter...
+			// once in production, we need to instead increment this based on errors encountered
+			alertCounter++;
+
+			// create aside element, insert after footer or most recent alert
+			$('<aside/>', {
+				id: 'alert-' + alertCounter,
+				class: 'alert-notification',
+				'data-alert': 'notification'
+			}).insertAfter($insertAfterElement);
+
+			// build the modal content, including the HREF desintation for this alert
+			$('#alert-' + alertCounter).html(
+				'<a href="' + $tempDestination + '" title="Click here to resolve this alert!">'+
+					'<i data-icon="ui_alert"></i>'+
+					'<div class="alert-message"></div>'+
+				'</a>'
+			);
+
+			// load alert message and append it to div.alert-message...
+			// pass this data however works best. the following code is only for demonstration!
+			$tempMessage.appendTo('#alert-' + alertCounter + ' div.alert-message');
+
+			// once the #alert-notification has been created, allow enough time for css transition (200ms)...
+			// add the "ready" class... wait 6 seconds... remove "ready" class... wait 1 second... remove <aside> from DOM
+			// allow the notification to remain visible for 3 seconds...
+			$('#alert-' + alertCounter).wait(200).addClass('ready').wait(6000).removeClass('ready').wait(1000).remove();
+
+
+			// temporary top calculation for previous alert
+			if ( $mostRecentAlert.length > 0 ) {
+
+				var newestAlertHeight = $('#alert-' + alertCounter).height(),
+					mostRecentAlertPosition = $mostRecentAlert.position();
+
+				$mostRecentAlert.css('top', mostRecentAlertPosition.top + newestAlertHeight);
+
+			}
+
+
+
+			return false;
+
+		});
+
+	}
+
+/*
+
+	// in case we need to do anything special with clicking the notification link
+
+	function initFollowAlert() {
+
+		$('#alert-notification').on('click', function() {
+
+			var alertURL = $(this).attr('href');
+
+		});
+
+	}
+
+*/
 
 
 	/* Search Library :focus
@@ -487,6 +586,10 @@ jQuery(document).ready(function($) {
 	/* Initialize Plugins / Functions
 	---------------------------------------------------------------------------- */
 	$(window).load(function() {
+
+		// DEMO FUNCTIONS
+		initErrorHandler();
+		initAlertTrigger();
 
 		if ( $body.hasClass('song') ) {
 			initSongViewSticky();

@@ -12,6 +12,22 @@
 */
 
 
+/*
+// Add temp class: $el.addTempClass('class', 600); | Script by Dan S | http://stackoverflow.com/questions/5066962/jquery-add-class-for-certain-time
+(function($){$.fn.extend({addTempClass:function(className,duration){var elements=this;setTimeout(function(){elements.removeClass(className);},duration);return this.each(function(){$(this).addClass(className);});}});})(jQuery);
+*/
+
+
+/*
+// Element exists check: $el.exists(function() { do.stuff(); }); | Copyright Chris Goodchild | https://gist.github.com/jCrip/6430660
+$.fn.exists = function(callback) { var args = [].slice.call(arguments, 1); if (this.length) { callback.call(this, args); } return this; };
+*/
+
+
+// jquery.wait | @author Matthew Lee matt@madleedesign.com | https://github.com/madbook/jquery.wait
+(function($){function jQueryDummy($real,delay,_fncQueue){var dummy=this;this._fncQueue=(typeof _fncQueue==='undefined')?[]:_fncQueue;this._delayCompleted=false;this._$real=$real;if(typeof delay==='number'&&delay>=0&&delay<Infinity) this.timeoutKey=window.setTimeout(function(){dummy._performDummyQueueActions();},delay);else if(delay!==null&&typeof delay==='object'&&typeof delay.promise==='function') delay.then(function(){dummy._performDummyQueueActions();});else if(typeof delay==='string') $real.one(delay,function(){dummy._performDummyQueueActions();});else return $real;} jQueryDummy.prototype._addToQueue=function(fnc,arg){this._fncQueue.unshift({fnc:fnc,arg:arg});if(this._delayCompleted) return this._performDummyQueueActions();else return this;};jQueryDummy.prototype._performDummyQueueActions=function(){this._delayCompleted=true;var next;while(this._fncQueue.length>0){next=this._fncQueue.pop();if(next.fnc==='wait'){next.arg.push(this._fncQueue);return this._$real=this._$real[next.fnc].apply(this._$real,next.arg);} this._$real=this._$real[next.fnc].apply(this._$real,next.arg);} return this;};$.fn.wait=function(delay,_queue){return new jQueryDummy(this,delay,_queue);};for(var fnc in $.fn){if(typeof $.fn[fnc]!=='function'||!$.fn.hasOwnProperty(fnc)) continue;jQueryDummy.prototype[fnc]=(function(fnc){return function(){var arg=Array.prototype.slice.call(arguments);return this._addToQueue(fnc,arg);};})(fnc);}})(jQuery);
+
+
 // Mousescroll.js | Copyright (c) 2013 Brandon Aaron (http://brandon.aaron.sh) | Licensed under the MIT License | v3.1.4
 (function(factory){if(typeof define==='function'&&define.amd){define(['jquery'],factory);}else if(typeof exports==='object'){module.exports=factory;}else{factory(jQuery);}}(function($){var toFix=['wheel','mousewheel','DOMMouseScroll','MozMousePixelScroll'];var toBind='onwheel'in document||document.documentMode>=9?['wheel']:['mousewheel','DomMouseScroll','MozMousePixelScroll'];var lowestDelta,lowestDeltaXY;if($.event.fixHooks){for(var i=toFix.length;i;){$.event.fixHooks[toFix[--i]]=$.event.mouseHooks;}} $.event.special.mousewheel={setup:function(){if(this.addEventListener){for(var i=toBind.length;i;){this.addEventListener(toBind[--i],handler,false);}}else{this.onmousewheel=handler;}},teardown:function(){if(this.removeEventListener){for(var i=toBind.length;i;){this.removeEventListener(toBind[--i],handler,false);}}else{this.onmousewheel=null;}}};$.fn.extend({mousewheel:function(fn){return fn?this.bind('mousewheel',fn):this.trigger('mousewheel');},unmousewheel:function(fn){return this.unbind('mousewheel',fn);}});function handler(event){var orgEvent=event||window.event,args=[].slice.call(arguments,1),delta=0,deltaX=0,deltaY=0,absDelta=0,absDeltaXY=0,fn;event=$.event.fix(orgEvent);event.type='mousewheel';if(orgEvent.wheelDelta){delta=orgEvent.wheelDelta;} if(orgEvent.detail){delta=orgEvent.detail*-1;} deltaY=delta;if(orgEvent.axis!==undefined&&orgEvent.axis===orgEvent.HORIZONTAL_AXIS){deltaY=0;deltaX=delta*-1;} if(orgEvent.deltaY){deltaY=orgEvent.deltaY*-1;delta=deltaY;} if(orgEvent.deltaX){deltaX=orgEvent.deltaX;delta=deltaX*-1;} if(orgEvent.wheelDeltaY!==undefined){deltaY=orgEvent.wheelDeltaY;} if(orgEvent.wheelDeltaX!==undefined){deltaX=orgEvent.wheelDeltaX*-1;} absDelta=Math.abs(delta);if(!lowestDelta||absDelta<lowestDelta){lowestDelta=absDelta;} absDeltaXY=Math.max(Math.abs(deltaY),Math.abs(deltaX));if(!lowestDeltaXY||absDeltaXY<lowestDeltaXY){lowestDeltaXY=absDeltaXY;} fn=delta>0?'floor':'ceil';delta=Math[fn](delta/lowestDelta);deltaX=Math[fn](deltaX/lowestDeltaXY);deltaY=Math[fn](deltaY/lowestDeltaXY);args.unshift(event,delta,deltaX,deltaY);return($.event.dispatch||$.event.handle).apply(this,args);}}));
 
