@@ -108,6 +108,7 @@
 <section id="test">
 <?php
 
+/*
 	echo '<p>$requestURI: ' . $requestURI . '</p>';
 	echo '<p>$hostPath: ' . $hostPath . '</p>';
 	echo '<p>$directoryTitle: ' . $directoryTitle . '</p>';
@@ -120,6 +121,7 @@
 	echo '<p>$fileName: ' . $fileName . '</p>';
 	echo '<p>$fileParts: '; print_r($fileParts); echo '</p>';
 	echo '<p>$pageTitle: ' . $pageTitle . '</p>';
+*/
 
 ?>
 </section>

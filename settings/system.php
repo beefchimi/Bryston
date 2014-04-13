@@ -87,6 +87,7 @@
 
 					</div>
 
+<!--
 					<div data-content="body" class="actions clearfix">
 
 						<a onclick="sysReboot();" class="common-button" title="Reboot BDP">
@@ -100,6 +101,27 @@
 						</a>
 
 					</div>
+-->
+
+					<ul data-content="body" class="actions clearfix">
+
+						<li class="action-item">
+							<a onclick="sysReboot();" class="common-button" title="Reboot BDP">
+								<span data-meta="link-title">Reboot BDP</span>
+							</a>
+						</li>
+						<li class="action-item">
+							<a onclick="sysResetToFact();" class="common-button" title="Reset To Factory">
+								<span data-meta="link-title">Reset To Factory</span>
+							</a>
+						</li>
+						<li class="action-item">
+							<a onclick="sysShutdown();" class="common-button" title="Shut Down">
+								<span data-meta="link-title">Shut Down</span>
+							</a>
+						</li>
+
+					</ul>
 
 				</article>
 

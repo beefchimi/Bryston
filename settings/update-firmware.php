@@ -38,21 +38,24 @@
 
 						</div>
 
-						<div data-content="body" class="actions clearfix">
+						<ul data-content="body" class="actions clearfix">
 
-							<a class="common-button" title="Update">
-								<span data-meta="link-title">Update</span>
-							</a>
+							<li class="action-item">
+								<a href="#" class="common-button" title="Update">
+									<span data-meta="link-title">Update</span>
+								</a>
+							</li>
 
-							<a href="../../../firmware" class="common-button" title="Update From USB">
-								<span data-meta="link-title">Advanced</span>
-							</a>
+							<li class="action-item">
+								<a href="../../../firmware" class="common-button" title="Update From USB">
+									<span data-meta="link-title">Advanced</span>
+								</a>
+							</li>
 
-<!-- don't know what to do about this subscript
+							<!-- don't know what to do about this subscript... not sure where it came from -->
 							<script type="text/javascript" src="updatefirmware.js"></script>
--->
 
-						</div>
+						</ul>
 
 					</form>
 

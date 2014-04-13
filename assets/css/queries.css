@@ -275,6 +275,22 @@
 /* ==|== internals ============================================================
    ========================================================================= */
 
+	/* General Pages and Settings
+	---------------------------------------------------------------------------- */
+	/* --- Content Body --- */
+	/* + actions list + */
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+		text-align: right;
+	}
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions li {
+		display: inline-block;
+		margin-left: 1rem;
+		text-align: left;
+	}
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions li .common-button {
+		width: auto;
+	}
+
 	/* Dashboard
 	---------------------------------------------------------------------------- */
 	/* --- User Login --- */
@@ -391,6 +407,7 @@
 
 	/* System
 	---------------------------------------------------------------------------- */
+/*
 	#settings_system [data-content="parent"] [data-content="body"].actions {
 		border-top: 0.1rem solid hsla(0,0%,22%,1);
 	}
@@ -401,6 +418,7 @@
 	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
 		margin-bottom: 0;
 	}
+*/
 	#settings_system [data-content="parent"] [data-content="body"] [data-container^="column"] {
 		float: left;
 	}
@@ -414,6 +432,8 @@
 	#settings_system [data-content="parent"] [data-content="body"] [data-container="column-two"] {
 		width: 32%;
 	}
+/*
+
 	#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
 		float: left;
 		margin: 0 1rem 0 0;
@@ -423,6 +443,7 @@
 	#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
 		margin-right: 0;
 	}
+*/
 
 	/* Disk Information
 	---------------------------------------------------------------------------- */
@@ -500,11 +521,14 @@
 	#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"] input {
 		float: left;
 		width: 80%;
+		width: calc(100% - 10.8rem);
 	}
 	/* --- Content Actions --- */
+/*
 	#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"].actions {
 		border-top: 0.1rem solid hsla(0,0%,22%,1);
 	}
+*/
 
 	/* Music Player Daemon
 	---------------------------------------------------------------------------- */
@@ -538,6 +562,7 @@
 	/* NAS Setup
 	---------------------------------------------------------------------------- */
 	/* --- Actions --- */
+/*
 	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
 		text-align: right;
 	}
@@ -546,15 +571,10 @@
 		margin-left: 1rem;
 		text-align: left;
 	}
-/*
-	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li:last-child,
-	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li:only-child {
-		margin-right: 0rem;
-	}
-*/
 	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
 		width: auto;
 	}
+*/
 
 	/* Services
 	---------------------------------------------------------------------------- */
@@ -661,6 +681,7 @@
 	main.internal-content section [data-content="parent"] [data-content="body"] {
 		padding: 2.6rem;
 	}
+	/* + actions list + */
 	main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
 		padding-bottom: 1rem;
 	}

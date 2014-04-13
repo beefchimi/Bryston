@@ -1559,10 +1559,12 @@ main {
 	margin-bottom: 1.2rem;
 }
 /* + content common button + */
+/*
 main section [data-content="parent"] [data-content="body"] .common-button {
 	margin-right: 0.6rem;
 	font-weight: 700;
 }
+*/
 /* + content list-styles class + */
 [data-content="box"].list-styles ol,
 [data-content="box"].list-styles ul {
@@ -1669,9 +1671,6 @@ main.internal-content section [data-content="parent"] [data-content="header"] i[
 main.internal-content section [data-content="parent"] [data-content="body"] {
 	padding: 2rem 1rem;
 }
-main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
-	padding-bottom: 0.4rem;
-}
 main.internal-content section [data-content="parent"] [data-content="body"] h5 {
 	margin-bottom: 1.6rem;
 	font-size: 1.7rem;
@@ -1682,6 +1681,19 @@ main.internal-content section [data-content="parent"] [data-content="body"] h5 e
 	font-weight: 300;
 	font-style: normal;
 	color: hsla(206,69%,64%,1);
+}
+/* + actions list + */
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+	padding-bottom: 0.4rem;
+	border-top: 0.1rem solid hsla(0,0%,22%,1);
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions li {
+	margin-bottom: 1.6rem;
+	text-align: center;
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions li .common-button {
+	margin-right: 0rem;
+	width: 20rem;
 }
 
 /* Generic Pages
@@ -2795,8 +2807,16 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	left: 95.361328125%;
 }
 
+
+
+
+
+
+
 /* System
 ---------------------------------------------------------------------------- */
+
+/*
 #settings_system [data-content="parent"] [data-content="body"].actions {
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
@@ -2809,6 +2829,8 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 #settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
 	margin-bottom: 0;
 }
+*/
+
 #settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] {
 	margin-bottom: 2rem;
 }
@@ -3025,9 +3047,11 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	margin-bottom: 1rem;
 }
 /* --- Content Actions --- */
+/*
 #settings_update-firmware [data-content="parent"] form.content-form [data-content="body"].actions {
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
+*/
 
 /* Music Player Daemon
 ---------------------------------------------------------------------------- */
@@ -3099,8 +3123,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 
 /* NAS Setup
 ---------------------------------------------------------------------------- */
-
-/* --- Actions --- */
+/*
 #settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
@@ -3112,12 +3135,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	margin-right: 0rem;
 	width: 20rem;
 }
-
-
-
-
-
-
+*/
 
 /* Services
 ---------------------------------------------------------------------------- */
@@ -3179,6 +3197,13 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 }
 #settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions {
 	margin-top: 3.2rem;
+}
+#settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions a {
+	margin-right: 1rem;
+}
+#settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions a:last-child,
+#settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions a:only-child {
+	margin-right: 0rem;
 }
 
 /* License
