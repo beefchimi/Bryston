@@ -68,7 +68,7 @@
 
 							</div>
 
-							<ul class="checkbox-list">
+							<ul class="list_radio-checkbox">
 
 								<li id="mpd-1" class="clearfix">
 									<input type="checkbox" name="mpd_enable_update" id="mpd_enable_update" />

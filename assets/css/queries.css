@@ -134,6 +134,41 @@
 /* ==|== primary styles =======================================================
    ========================================================================= */
 
+	/* Forms
+	---------------------------------------------------------------------------- */
+	/* --- List: Radio / Checkbox --- */
+	ul.list_radio-checkbox li label span.name-ip,
+	ul.list_radio-checkbox li label span.network-type {
+		float: left;
+		width: 50%;
+	}
+	ul.list_radio-checkbox li label span.name-ip {
+		padding-right: 0.8rem;
+	}
+	ul.list_radio-checkbox li label span.network-type {
+		margin-top: 0;
+		padding-left: 0.8rem;
+		text-align: right;
+	}
+	ul.list_radio-checkbox li label span strong,
+	ul.list_radio-checkbox li label span em {
+		display: inline-block;
+	}
+	ul.list_radio-checkbox li label span strong {
+		margin-bottom: 0;
+	}
+	ul.list_radio-checkbox li label span em::before {
+		content: "\2014"; /* em dash */
+		margin: 0 0.4rem;
+	}
+	/* + radio list + */
+	ul.list_radio-checkbox li input[type="radio"] + label::before {
+		top: 0.8rem;
+	}
+	ul.list_radio-checkbox li input[type="radio"] + label::after {
+		top: 1.6rem;
+	}
+
 	/* Data Modal
 	---------------------------------------------------------------------------- */
 	/* --- Data Modal Header --- */
@@ -502,39 +537,23 @@
 
 	/* NAS Setup
 	---------------------------------------------------------------------------- */
-	/* + data meta text + */
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.name-ip,
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.network-type {
-		float: left;
-		width: 50%;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.name-ip {
-		padding-right: 0.8rem;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.network-type {
-		margin-top: 0;
-		padding-left: 0.8rem;
-		text-align: right;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong,
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em {
-		display: inline-block;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong {
-		margin-bottom: 0;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em::before {
-		content: "\2014"; /* em dash */
-		margin: 0 0.4rem;
-	}
 	/* --- Actions --- */
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions {
+	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
 		text-align: right;
 	}
-	#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions .common-button {
+	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li {
 		display: inline-block;
+		margin-left: 1rem;
+		text-align: left;
+	}
+/*
+	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li:last-child,
+	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li:only-child {
+		margin-right: 0rem;
+	}
+*/
+	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
 		width: auto;
-		margin: 0 0 0 1rem;
 	}
 
 	/* Services
@@ -580,13 +599,27 @@
 		height: 1.9rem;
 		font-size: 1.6rem;
 	}
-	/* + checkbox lists + */
-	ul.checkbox-list li {
+	/* --- List: Radio / Checkbox --- */
+	ul.list_radio-checkbox li {
 		margin-bottom: 2rem;
 	}
-	ul.checkbox-list li:last-child,
-	ul.checkbox-list li:only-child {
+	ul.list_radio-checkbox li:last-child,
+	ul.list_radio-checkbox li:only-child {
 		margin-bottom: 0;
+	}
+	/* + radio list + */
+	ul.list_radio-checkbox li input[type="radio"] + label {
+		padding: 2rem 1.6rem 1.9rem 7rem;
+		min-height: 5.4rem;
+		font-size: 1.5rem;
+	}
+	ul.list_radio-checkbox li input[type="radio"] + label::before {
+		top: 1.4rem;
+		left: 1.6rem;
+	}
+	ul.list_radio-checkbox li input[type="radio"] + label::after {
+		top: 2.2rem;
+		left: 2.4rem;
 	}
 
 /* ==|== main content =========================================================
@@ -627,6 +660,9 @@
 	/* --- Content Body --- */
 	main.internal-content section [data-content="parent"] [data-content="body"] {
 		padding: 2.6rem;
+	}
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+		padding-bottom: 1rem;
 	}
 
 /* ==|== settings =============================================================
@@ -1159,10 +1195,6 @@
 	#universal-links a.common-button {
 		position: absolute;
 		top: 0;
-		padding-top: 0.8rem;
-		padding-left: 1.6rem;
-		padding-right: 1.6rem;
-
 		background: hsla(0,0%,12%,1);
 		border: 0.2rem solid hsla(0,0%,96%,1);
 	}

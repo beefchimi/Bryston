@@ -239,15 +239,29 @@ span.progress-needle,
 /* --- Common Button --- */
 .common-button {
 	display: inline-block;
-	padding: 1rem 2rem;
+	min-height: 4.4rem;
 	font-size: 1.6rem;
 	font-weight: 600;
+	line-height: 1;
 	text-align: center;
+	vertical-align: top;
+	white-space: normal;
 	color: hsla(0,0%,96%,1);
 	background: hsla(0,0%,22%,1);
 }
+a.common-button {
+	padding: 1.2rem 2rem;
+}
+input.common-button {
+	padding: 1rem 2rem;
+}
 .common-button i[data-icon] {
 	color: hsla(0,0%,96%,1);
+}
+.common-button span[data-meta] {
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
 }
 .common-button span[data-meta] em {
 	font-style: normal;
@@ -364,6 +378,7 @@ input[type="radio"] + label::before {
 	width: 2.4rem;
 	height: 2.4rem;
 	background: hsla(0,0%,82%,1);
+	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,0);
 }
 input[type="radio"] + label::after {
 	speak: none;
@@ -371,7 +386,19 @@ input[type="radio"] + label::after {
 	left: 0.8rem;
 	width: 0.8rem;
 	height: 0.8rem;
-	background: hsla(0,0%,42%,1);
+	background: hsla(0,0%,42%,0);
+}
+input[type="radio"]:focus + label::before {
+	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+}
+input[type="radio"]:hover + label {
+	color: hsla(0,0%,92%,1);
+}
+input[type="radio"]:hover + label::before {
+	background: hsla(0,0%,96%,1);
+}
+input[type="radio"]:active + label {
+	opacity: 0.8;
 }
 input[type="radio"]:checked + label::before {
 	background: hsla(0,0%,92%,1);
@@ -381,12 +408,6 @@ input[type="radio"]:checked + label {
 }
 input[type="radio"]:checked + label::after {
 	background: hsla(206,69%,54%,1);
-}
-input[type="radio"]:hover + label::before {
-	background: hsla(0,0%,92%,1);
-}
-input[type="radio"]:active + label::before {
-	background: hsla(0,0%,82%,1);
 }
 /* --- Checkboxes --- */
 input[type="checkbox"] + label {
@@ -406,6 +427,7 @@ input[type="checkbox"] + label::before {
 	background: hsla(0,0%,82%,1);
 }
 input[type="checkbox"] + label::after {
+	content: "\e624"; /* checkmark */
 	speak: none;
 	top: 1rem;
 	left: 1rem;
@@ -417,34 +439,99 @@ input[type="checkbox"] + label::after {
 	font-weight: normal;
 	font-style: normal;
 	text-transform: none;
-	color: hsla(0,0%,62%,1);
+	color: hsla(0,0%,52%,0);
 	background: hsla(0,0%,96%,1);
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+input[type="checkbox"]:focus + label,
+input[type="checkbox"]:hover + label {
+	background: hsla(0,0%,92%,1);
+}
+input[type="checkbox"]:focus + label::before,
+input[type="checkbox"]:hover + label::before {
+	background: hsla(0,0%,72%,1);
+}
+input[type="checkbox"]:active + label {
+	opacity: 0.8;
+}
 input[type="checkbox"]:checked + label::before {
 	background: hsla(206,69%,54%,1);
 }
 input[type="checkbox"]:checked + label::after {
-	content: "\e624"; /* checkmark */
+	color: hsla(0,0%,52%,1);
 }
-input[type="checkbox"]:hover + label::before,
-input[type="checkbox"]:focus + label::before {
-	background: hsla(206,69%,64%,1);
+input[type="checkbox"]:checked:focus + label,
+input[type="checkbox"]:checked:hover + label {
+	background: hsla(0,0%,96%,1);
 }
-input[type="checkbox"]:active + label {
-	opacity: 0.9;
+input[type="checkbox"]:checked:focus + label::before,
+input[type="checkbox"]:checked:hover + label::before {
+	background: hsla(206,69%,58%,1);
 }
-/* + checkbox lists + */
-ul.checkbox-list li {
+input[type="checkbox"]:checked:focus + label::after,
+input[type="checkbox"]:checked:hover + label::after {
+	color: hsla(0,0%,52%,0.8);
+}
+/* --- List: Radio / Checkbox --- */
+ul.list_radio-checkbox li {
 	margin-bottom: 1.4rem;
 }
-ul.checkbox-list li:last-child,
-ul.checkbox-list li:only-child {
+ul.list_radio-checkbox li:last-child,
+ul.list_radio-checkbox li:only-child {
 	margin-bottom: 0;
 }
-/* --- Common Form--- */
+ul.list_radio-checkbox li label span {
+	display: block;
+}
+ul.list_radio-checkbox li label span.network-type {
+	margin-top: 1.4rem;
+}
+ul.list_radio-checkbox li label span strong,
+ul.list_radio-checkbox li label span em {
+	display: block;
+}
+ul.list_radio-checkbox li label span strong {
+	margin-bottom: 0.2rem;
+	font-weight: 600;
+}
+ul.list_radio-checkbox li label span em {
+	font-weight: 400;
+	font-style: normal;
+}
+/* + radio list + */
+ul.list_radio-checkbox li input[type="radio"] + label {
+	padding: 1.4rem 1rem 1.3rem 5rem;
+	min-height: 4rem;
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: hsla(0,0%,32%,1);
+	background: hsla(0,0%,96%,1);
+}
+ul.list_radio-checkbox li input[type="radio"] + label::before {
+	top: 1.2rem;
+	left: 1rem;
+	background: hsla(0,0%,96%,1);
+	box-shadow: 0rem 0rem 0rem 0.2rem hsla(0,0%,42%,1);
+}
+ul.list_radio-checkbox li input[type="radio"] + label::after {
+	top: 2rem;
+	left: 1.8rem;
+}
+ul.list_radio-checkbox li input[type="radio"]:focus + label,
+ul.list_radio-checkbox li input[type="radio"]:hover + label {
+	background: hsla(0,0%,92%,1);
+}
+ul.list_radio-checkbox li input[type="radio"]:focus + label::before,
+ul.list_radio-checkbox li input[type="radio"]:hover + label::before {
+	background: hsla(0,0%,92%,1);
+	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+}
+ul.list_radio-checkbox li input[type="radio"]:checked + label::before {
+	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+}
+/* --- Common Form --- */
 form.common-form p {
 	margin-bottom: 2rem;
 	font-size: 1.6rem;
@@ -764,6 +851,11 @@ aside.alert-notification a div.alert-message p:only-child {
 [data-modal="header"] a[data-modal="close"]:active {
 	color: hsla(206,54%,32%,1);
 }
+
+/* added by chris... change the markup! */
+[data-modal="header"] h4 i[data-control="wait-thorbber"] {
+}
+
 /* --- Data Modal Content--- */
 [data-modal="content"] {
 	padding: 2rem 1rem;
@@ -1058,14 +1150,10 @@ header[data-site="header"] > [data-container="width-full"] {
 }
 #universal-links a.common-button {
 	display: block;
-	padding: 1rem 1rem 0rem 1rem;
 	height: 4.6rem;
 }
 #universal-links a.common-button i[data-icon] {
 	position: absolute;
-/*
-	top: 1.4rem;
-*/
 	font-size: 1.5rem;
 }
 #universal-links a.common-button span[data-meta] {
@@ -1580,6 +1668,9 @@ main.internal-content section [data-content="parent"] [data-content="header"] i[
 /* --- Content Body --- */
 main.internal-content section [data-content="parent"] [data-content="body"] {
 	padding: 2rem 1rem;
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+	padding-bottom: 0.4rem;
 }
 main.internal-content section [data-content="parent"] [data-content="body"] h5 {
 	margin-bottom: 1.6rem;
@@ -2972,7 +3063,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	width: 8rem;
 }
 /* + mpd checkbox list + */
-#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form ul.checkbox-list {
+#settings_mpd [data-content="parent"] [data-content="body"].mpd_settings form.content-form ul.list_radio-checkbox {
 	margin-bottom: 2rem;
 }
 /* --- Last FM --- */
@@ -3008,36 +3099,25 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 
 /* NAS Setup
 ---------------------------------------------------------------------------- */
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span {
-	display: block;
-}
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span.network-type {
-	margin-top: 1.4rem;
-}
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong,
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em {
-	display: block;
-}
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span strong {
-	margin-bottom: 0.2rem;
-	font-weight: 600;
-}
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"] ul.checkbox-list li label span em {
-	font-weight: 400;
-	font-style: normal;
-}
+
 /* --- Actions --- */
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions {
+#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions .common-button {
-	display: block;
+#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li {
+	margin-bottom: 1.6rem;
+	text-align: center;
+}
+#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
+	margin-right: 0rem;
 	width: 20rem;
-	margin: 0 auto 1.6rem auto;
 }
-#settings_nas-setup [data-content="parent"] form.content-form [data-content="body"].actions a.common-button {
-	margin-bottom: 0;
-}
+
+
+
+
+
+
 
 /* Services
 ---------------------------------------------------------------------------- */

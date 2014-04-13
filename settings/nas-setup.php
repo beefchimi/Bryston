@@ -24,10 +24,10 @@
 
 						<div data-content="body" class="clearfix">
 
-							<ul class="checkbox-list">
+							<ul class="list_radio-checkbox">
 
 								<li id="nas-1" class="clearfix">
-									<input type="checkbox" name="nas_server_1" id="nas_server_1" />
+									<input type="radio" value="0" name="nas_server_1" id="nas_server_1" />
 									<label for="nas_server_1" class="clearfix">
 										<span class="name-ip truncate">
 											<strong data-meta="server-name">RAIDSERVER</strong>
@@ -41,7 +41,7 @@
 								</li>
 
 								<li id="nas-2" class="clearfix">
-									<input type="checkbox" name="nas_server_2" id="nas_server_2" />
+									<input type="radio" value="1" name="nas_server_1" id="nas_server_2" />
 									<label for="nas_server_2" class="clearfix">
 										<span class="name-ip truncate">
 											<strong data-meta="server-name">beefchimi-mac.local</strong>
@@ -58,17 +58,24 @@
 
 						</div>
 
-						<div data-content="body" class="actions clearfix">
+						<ul data-content="body" class="actions clearfix">
 
-							<input type="submit" value="Update" class="common-button" />
-							<input type="submit" value="Speed Test" class="common-button" />
-							<input type="submit" value="Remove" class="common-button" />
+							<li class="action-item">
+								<input type="submit" value="Update" class="common-button" />
+							</li>
+							<li class="action-item">
+								<input type="submit" value="Speed Test" class="common-button" />
+							</li>
+							<li class="action-item">
+								<input type="submit" value="Remove" class="common-button" />
+							</li>
+							<li class="action-item">
+								<a onclick="issueCommand('nas add share')" class="common-button" title="Add Share">
+									<span data-meta="link-title">Add Share</span>
+								</a>
+							</li>
 
-							<a onclick="issueCommand('nas add share')" class="common-button" title="Add Share">
-								<span data-meta="link-title">Add Share</span>
-							</a>
-
-						</div>
+						</ul>
 
 					</form>
 
