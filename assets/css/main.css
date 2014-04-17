@@ -285,19 +285,21 @@ label {
 	font-size: 1.4rem;
 	color: hsla(0,0%,82%,1);
 }
+textarea,
+input[type="tel"],
 input[type="text"],
-input[type="password"],
-textarea {
+input[type="email"],
+input[type="number"],
+input[type="password"] {
 	padding: 0 1rem;
 	width: 100%;
+/*
 	font-size: 1.5rem;
+*/
+	font-size: 1.6rem;
 	color: hsla(0,0%,12%,1);
 	background: #fff;
 	box-shadow: inset 0 0 0 0.2rem hsla(206,69%,54%,0);
-}
-input[type="text"],
-input[type="password"] {
-	height: 4.3rem;
 }
 textarea {
 	padding-top: 1rem;
@@ -305,29 +307,46 @@ textarea {
 	min-height: 22rem;
 	max-height: 42rem;
 }
-input[type="tel"] {
-	-webkit-appearance: none;
+input[type="tel"],
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+	height: 4.4rem;
 }
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
+textarea:focus,
+input[type="tel"]:focus,
 input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus {
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
 	box-shadow: inset 0 0 0 0.2rem hsla(206,69%,54%,1);
 }
 ::-webkit-input-placeholder {
 	color: hsla(0,0%,32%,1);
 }
 ::-moz-placeholder {
-	opacity: 1 !important;
 	color: hsla(0,0%,32%,1);
 }
 :-ms-input-placeholder {
 	color: hsla(0,0%,32%,1);
 }
+
+/*
+button,
+input[type="button"],
+input[type="submit"] {
+}
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+}
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+}
+*/
+
 /* --- Radio / Checkbox Inputs --- */
 input[type="radio"],
 input[type="checkbox"] {
@@ -356,6 +375,10 @@ input[type="checkbox"] + label::after {
 	display: block;
 	position: absolute;
 }
+input[type="radio"] + label::after,
+input[type="checkbox"] + label::after {
+	color: hsla(206,69%,54%,0);
+}
 /* --- Radios --- */
 input[type="radio"] + label {
 	padding: 0.4rem 0 0 3.6rem;
@@ -378,7 +401,7 @@ input[type="radio"] + label::before {
 	width: 2.4rem;
 	height: 2.4rem;
 	background: hsla(0,0%,82%,1);
-	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,0);
+	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,0);
 }
 input[type="radio"] + label::after {
 	speak: none;
@@ -389,7 +412,7 @@ input[type="radio"] + label::after {
 	background: hsla(0,0%,42%,0);
 }
 input[type="radio"]:focus + label::before {
-	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
 }
 input[type="radio"]:hover + label {
 	color: hsla(0,0%,92%,1);
@@ -439,7 +462,9 @@ input[type="checkbox"] + label::after {
 	font-weight: normal;
 	font-style: normal;
 	text-transform: none;
+/*
 	color: hsla(0,0%,52%,0);
+*/
 	background: hsla(0,0%,96%,1);
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
@@ -460,7 +485,7 @@ input[type="checkbox"]:checked + label::before {
 	background: hsla(206,69%,54%,1);
 }
 input[type="checkbox"]:checked + label::after {
-	color: hsla(0,0%,52%,1);
+	color: hsla(206,69%,54%,1);
 }
 input[type="checkbox"]:checked:focus + label,
 input[type="checkbox"]:checked:hover + label {
@@ -472,7 +497,7 @@ input[type="checkbox"]:checked:hover + label::before {
 }
 input[type="checkbox"]:checked:focus + label::after,
 input[type="checkbox"]:checked:hover + label::after {
-	color: hsla(0,0%,52%,0.8);
+	color: hsla(206,69%,54%,0.8);
 }
 /* --- List: Radio / Checkbox --- */
 ul.list_radio-checkbox li {
@@ -513,7 +538,7 @@ ul.list_radio-checkbox li input[type="radio"] + label::before {
 	top: 1.2rem;
 	left: 1rem;
 	background: hsla(0,0%,96%,1);
-	box-shadow: 0rem 0rem 0rem 0.2rem hsla(0,0%,42%,1);
+	box-shadow: 0 0 0 0.2rem hsla(0,0%,42%,1);
 }
 ul.list_radio-checkbox li input[type="radio"] + label::after {
 	top: 2rem;
@@ -526,10 +551,10 @@ ul.list_radio-checkbox li input[type="radio"]:hover + label {
 ul.list_radio-checkbox li input[type="radio"]:focus + label::before,
 ul.list_radio-checkbox li input[type="radio"]:hover + label::before {
 	background: hsla(0,0%,92%,1);
-	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
 }
 ul.list_radio-checkbox li input[type="radio"]:checked + label::before {
-	box-shadow: 0rem 0rem 0rem 0.2rem hsla(206,69%,54%,1);
+	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
 }
 /* --- Common Form --- */
 form.common-form p {
@@ -645,20 +670,21 @@ div[data-ui="dropdown"] span.dropdown-header::after {
 	content: "\e61c"; /* tri_eq-down */
 	display: block;
 	position: absolute;
-	top: 1.2rem;
+	top: 1.4rem;
 	right: 1.2rem;
 	font-family: 'bryston';
 }
 div[data-ui="dropdown"] ul {
 	display: none;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-	z-index: 8000;
+	z-index: 100;
 	position: absolute;
 	top: 4.4rem;
 	left: 0;
 	max-height: 20rem;
+	background: hsla(0,0%,82%,1);
 	box-shadow: 0 0.3rem 0.4rem hsla(0,0%,0%,0.6);
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 div[data-ui="dropdown"] ul li {
 	overflow: hidden;
@@ -1327,7 +1353,9 @@ form.search-form input[type="text"] {
 	right: 0;
 	width: 3.6rem;
 	height: 3.6rem;
+/*
 	font-size: 1.6rem;
+*/
 	color: hsla(0,0%,22%,0);
 	background: hsla(0,0%,22%,0);
 }
@@ -1692,7 +1720,7 @@ main.internal-content section [data-content="parent"] ul[data-content="body"].ac
 	text-align: center;
 }
 main.internal-content section [data-content="parent"] ul[data-content="body"].actions li .common-button {
-	margin-right: 0rem;
+	margin-right: 0;
 	width: 20rem;
 }
 
@@ -3132,7 +3160,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	text-align: center;
 }
 #settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
-	margin-right: 0rem;
+	margin-right: 0;
 	width: 20rem;
 }
 */
@@ -3203,7 +3231,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 }
 #settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions a:last-child,
 #settings_services [data-content="parent"] [data-content="body"] [data-container="column-two"] [data-services="services-info"] div.actions a:only-child {
-	margin-right: 0rem;
+	margin-right: 0;
 }
 
 /* License

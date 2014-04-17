@@ -210,7 +210,9 @@
 		position: absolute;
 		top: 0;
 		left: 1rem;
+		padding: 0;
 		width: 3.6rem;
+		min-height: 0;
 		height: 3.6rem;
 	}
 	#universal-links a[title="Back to Dashboard"].views.common-button i[data-icon="ui_arrow-left"] {
@@ -759,7 +761,7 @@
 		visibility: visible;
 	}
 	aside.alert-notification.ready {
-		right: 0rem;
+		right: 0;
 	}
 
 	/* Data Modal
@@ -1203,6 +1205,21 @@
 /* 960px / 16px = 60em */
 @media only screen and (min-width: 60em) {
 
+/* ==|== primary styles =======================================================
+   ========================================================================= */
+
+	/* Forms
+	---------------------------------------------------------------------------- */
+	/* --- Inputs --- */
+	textarea,
+	input[type="tel"],
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"] {
+		font-size: 1.5rem;
+	}
+
 /* ==|== universal player =====================================================
    ========================================================================= */
 
@@ -1254,6 +1271,7 @@
 	}
 	/* --- Views Links --- */
 	#universal-links a[title="Back to Dashboard"].views.common-button {
+		padding: 1.2rem 2rem;
 		width: auto;
 		height: 4.6rem;
 	}

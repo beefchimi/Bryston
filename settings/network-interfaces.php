@@ -26,7 +26,7 @@
 
 							<ul data-component="network-list">
 
-<!--
+
 
 								<li data-network="type-wired">
 									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wired (eth0) 82583V">
@@ -70,7 +70,7 @@
 									</a>
 								</li>
 
--->
+
 
 							</ul>
 
@@ -80,7 +80,7 @@
 
 							<form id="network-interfaces-form" class="content-form">
 
-<!--
+
 
 								<ul data-component="network-actions">
 
@@ -99,27 +99,27 @@
 
 									<li class="ip-address">
 										<label for="dhcp_ip-address">IP Address:</label>
-										<input type="text" name="dhcp_ip-address" id="dhcp_ip-address" value="176.592.168.240" />
+										<input type="text" name="dhcp_ip-address" id="dhcp_ip-address" value="" placeholder="ex: 176.592.168.240" />
 									</li>
 
 									<li class="net-mask">
 										<label for="dhcp_net-mask">Net Mask:</label>
-										<input type="text" name="dhcp_net-mask" id="dhcp_net-mask" value="Example of a Net Mask" />
+										<input type="text" name="dhcp_net-mask" id="dhcp_net-mask" value="" placeholder="ex: 255.255.255.255" />
 									</li>
 
 									<li class="gateway">
 										<label for="dhcp_gateway">Gateway:</label>
-										<input type="text" name="dhcp_gateway" id="dhcp_gateway" value="Gateway Example" />
+										<input type="text" name="dhcp_gateway" id="dhcp_gateway" value="" placeholder="ex: 10.1.1.1" />
 									</li>
 
 									<li class="dns">
-										<label for="dhcp_dns">Gateway:</label>
-										<input type="text" name="dhcp_dns" id="dhcp_dns" value="192.168.0.1" />
+										<label for="dhcp_dns">DNS:</label>
+										<input type="text" name="dhcp_dns" id="dhcp_dns" value="" placeholder="ex: 192.168.0.1" />
 									</li>
 
 									<li class="bssid">
 										<label for="dhcp_bssid">BSSID:</label>
-										<input type="text" name="dhcp_bssid" id="dhcp_bssid" value="BrystonSound" />
+										<input type="text" name="dhcp_bssid" id="dhcp_bssid" value="" placeholder="ex: BrystonSound" />
 									</li>
 
 									<li class="security">
@@ -161,7 +161,7 @@
 
 									<li class="password">
 										<label for="dhcp_password">Password:</label>
-										<input type="password" name="dhcp_password" id="dhcp_password" value="password123" />
+										<input type="password" name="dhcp_password" id="dhcp_password" value="" placeholder="enter secure password" />
 									</li>
 
 									<li class="mode">
@@ -208,7 +208,7 @@
 
 								<input type="submit" value="Apply" class="common-button" />
 
--->
+
 
 							</form>
 

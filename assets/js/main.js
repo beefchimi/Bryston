@@ -7,13 +7,18 @@ var albumColumns = 2,
 
 jQuery(document).ready(function($) {
 
+
 	// cache elements for speed
 	var $html     = $('html'),
 		$body     = $('body'),
-		$dropdown = $('div[data-ui="dropdown"]');
+		$document = $(document),
+		$window   = $(window);
+
+	// var $dropdown = $('div[data-ui="dropdown"]');
 
 
 	/* Temporary Form Error Handler
+	 * ! this function is for demo purposes only !
 	---------------------------------------------------------------------------- */
 	function initErrorHandler() {
 
@@ -40,6 +45,7 @@ jQuery(document).ready(function($) {
 
 
 	/* Temporary Alert Trigger
+	 * ! this function is for demo purposes only !
 	---------------------------------------------------------------------------- */
 	function initAlertTrigger() {
 
@@ -104,7 +110,6 @@ jQuery(document).ready(function($) {
 			// allow the notification to remain visible for 3 seconds...
 			$('#alert-' + alertCounter).wait(200).addClass('ready').wait(6000).removeClass('ready').wait(1000).remove();
 
-
 			// temporary top calculation for previous alert
 			if ( $mostRecentAlert.length > 0 ) {
 
@@ -114,8 +119,6 @@ jQuery(document).ready(function($) {
 				$mostRecentAlert.css('top', mostRecentAlertPosition.top + newestAlertHeight);
 
 			}
-
-
 
 			return false;
 
@@ -149,10 +152,12 @@ jQuery(document).ready(function($) {
 		// var searchValue = $.trim( $searchLibrary.val() );
 		// if ( searchValue.length > 0 ) { }
 
+		// on :focus of search input, add "search-focused" class to <body>
 		$searchLibrary.focus(function() {
 			$body.addClass('search-focused');
 		});
 
+		// off :focus of search input, wait 200ms then remove "seach-focused" class from <body>
 		$searchLibrary.blur(function() {
 
 			setTimeout(function() {
@@ -168,14 +173,19 @@ jQuery(document).ready(function($) {
 	---------------------------------------------------------------------------- */
 	function initModalController() {
 
+		// set all overlays to display: none; on window load
 		$('[data-modal="overlay"]').css('display', 'none');
 
+		// on click of any data-modal controller...
 		$('[data-modal="controller"]').on('click', function() {
 
+			// grab the value from this controller's data-meta...
 			var thisMeta = $(this).attr('data-meta');
 
+			// and use that value to find the target overlay, setting display: block;
 			$('#'+thisMeta).css('display', 'block');
 
+			// once display: block; is set, add the "visible" class to allow overlay fadeIn
 			if ( $('#'+thisMeta).css('display') == 'block') {
 				$('#'+thisMeta).addClass('visible');
 			}
@@ -184,12 +194,16 @@ jQuery(document).ready(function($) {
 
 		});
 
+		// on click of any data-modal close link
 		$('[data-modal="overlay"] [data-modal="header"] a[data-modal="close"]').on('click', function() {
 
+			// find the parent overlay for this close link...
 			var $thisOverlay = $(this).closest('[data-modal="overlay"]');
 
+			// and remove the "visible" class
 			$thisOverlay.removeClass('visible');
 
+			// wait 400ms before setting display: none;
 			setTimeout(function() {
 				$thisOverlay.css('display', 'none');
 			}, 400); // twice as long as it takes to transition
@@ -205,15 +219,14 @@ jQuery(document).ready(function($) {
 	---------------------------------------------------------------------------- */
 	function initMediaListToggle() {
 
-		$('#view_default [data-component] div.component-header a.toggle-button').click( function(e) {
+		// on click of any #view_default a.toggle-button
+		$('#view_default [data-component] div.component-header a.toggle-button').on('click', function() {
 
-/*
-			$(this).toggleClass('closed');
-			$(this).closest('[data-component]').find('ol.media-list').toggleClass('closed');
-*/
-
+			// find the parent [data-component] and toggle the "closed" class
 			$(this).closest('[data-component]').toggleClass('closed');
-			e.preventDefault();
+
+			return false;
+
 		});
 
 	}
@@ -221,33 +234,34 @@ jQuery(document).ready(function($) {
 
 	/* Dropdown Select
 	---------------------------------------------------------------------------- */
-	function initCloseDropdown() {
-
-		$dropdown.removeClass('toggled');
-		// $html.removeClass('cursor-pointer');
-
-	}
-
 	function initDropdownSelect() {
 
-		var $dropdownHeader = $dropdown.find('span.dropdown-header');
+		var $dropdown       = $('div[data-ui="dropdown"]'),
+			$dropdownHeader = $dropdown.find('span.dropdown-header');
 
-		$dropdownHeader.click(function() {
+		// on click of any span.dropdown-header
+		$dropdownHeader.on('click', function() {
 
-			var $selectedDropdown = $(this).parent();
+			var $thisDropdownHeader    = $(this),
+				$selectedDropdown      = $thisDropdownHeader.parent(),
+				$selectedDropdownLinks = $selectedDropdown.find('ul li a');
 
+			// toggle the "toggled" class on [data-ui="dropdown"]
 			$selectedDropdown.toggleClass('toggled');
 			// $html.toggleClass('cursor-pointer');
 
-			// on click, change span value with selected list item and close dropdown
-			$selectedDropdown.find('ul li a').click(function(e) {
+			// on click of any of the dropdown links...
+			$selectedDropdownLinks.on('click', function() {
 
 				var linkText = $(this).text();
 
-				$selectedDropdown.find('span.dropdown-header').text(linkText);
+				// replace span.dropdown-header text with that of the clicked link
+				$thisDropdownHeader.text(linkText);
 
+				// close the dropdown
 				initCloseDropdown();
-				e.preventDefault();
+
+				return false;
 
 			});
 
@@ -256,7 +270,7 @@ jQuery(document).ready(function($) {
 /*
 		if ( $dropdown.hasClass('toggled') ) {
 
-			$(document).click(function() {
+			$document.click(function() {
 				initCloseDropdown();
 			});
 
@@ -264,7 +278,7 @@ jQuery(document).ready(function($) {
 */
 
 		// Esc keypress event
-		$(document).keyup(function(event) {
+		$document.keyup(function(event) {
 			if (event.keyCode == 27) {
 				initCloseDropdown();
 			}
@@ -272,8 +286,16 @@ jQuery(document).ready(function($) {
 
 	}
 
+	function initCloseDropdown() {
+
+		$('div[data-ui="dropdown"]').removeClass('toggled');
+		// $html.removeClass('cursor-pointer');
+
+	}
+
 
 	/* Toggle Fullscreen
+	 * MAY NEED TO UPDATE: http://www.sitepoint.com/use-html5-full-screen-api/
 	---------------------------------------------------------------------------- */
 	function toggleFullScreen() {
 
@@ -344,7 +366,7 @@ jQuery(document).ready(function($) {
 
 		var makeSticky = function() {
 
-			var scrollTop = $(window).scrollTop();
+			var scrollTop = $window.scrollTop();
 
 			if (scrollTop > stickyTop) {
 				$asideHead.addClass('sticky');
@@ -356,7 +378,7 @@ jQuery(document).ready(function($) {
 
 		makeSticky();
 
-		$(window).scroll(function() {
+		$window.scroll(function() {
 			makeSticky();
 		});
 
@@ -585,7 +607,7 @@ jQuery(document).ready(function($) {
 
 	/* Initialize Plugins / Functions
 	---------------------------------------------------------------------------- */
-	$(window).load(function() {
+	$window.load(function() {
 
 		// DEMO FUNCTIONS
 		initErrorHandler();

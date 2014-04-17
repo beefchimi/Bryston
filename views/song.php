@@ -13,6 +13,7 @@
 
 			<article data-component="songs-listing">
 
+				<!-- would love to replace this approach with something like: http://salzerdesign.com/blog/?p=191 -->
 				<aside class="thead">
 
 					<ul class="clearfix">
