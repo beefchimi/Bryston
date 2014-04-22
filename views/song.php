@@ -28,7 +28,7 @@
 				</aside>
 
 				<!-- browsers do not yet support native sorting... but soon! -->
-				<table>
+				<table id="song-table">
 
 					<thead>
 

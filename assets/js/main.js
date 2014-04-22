@@ -352,21 +352,15 @@ jQuery(document).ready(function($) {
 
 	/* Song View Sticky Table Header
 	---------------------------------------------------------------------------- */
-
-	// currently bugged in that it doesn't accomodate for responsive...
-	// it will only calculate the offset based on initial load,
-	// resizing after the fact will always use that initial value.
-	// also, buggy on mobile as I believe it is including the chrome height (url bar, etc) as well.
-
 	function initSongViewSticky() {
 
 		var $asideHead = $('#view_song article aside.thead'),
-			$tableHead = $('#view_song article table thead'),
-			stickyTop  = $tableHead.offset().top;
+			$tableHead = $('#view_song article table thead');
 
 		var makeSticky = function() {
 
-			var scrollTop = $window.scrollTop();
+			var scrollTop = $window.scrollTop(),
+				stickyTop = $tableHead.offset().top;
 
 			if (scrollTop > stickyTop) {
 				$asideHead.addClass('sticky');
