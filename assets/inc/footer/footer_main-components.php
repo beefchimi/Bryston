@@ -20,19 +20,19 @@
 					</a>
 				</li>
 
-				<li data-modal="parent" class="nav-connected">
+				<li data-modal="parent" class="nav-applications">
 
-					<a href="#" title="Connected Devices" data-modal="controller" data-meta="connected-modal">
-						<span data-meta="link-title">Connected Devices</span>
+					<a href="#" title="Applications" data-modal="controller" data-meta="applications-modal">
+						<span data-meta="link-title">Applications</span>
 					</a>
 
-					<div id="connected-modal" data-modal="overlay">
+					<div id="applications-modal" data-modal="overlay">
 
 						<div data-modal="wrapper">
 
 							<header data-modal="header">
 								<div data-container="contained">
-									<h4>Connected Devices</h4>
+									<h4>Applications</h4>
 									<a href="#" data-modal="close">
 										<i data-icon="ui_close"></i>
 									</a>

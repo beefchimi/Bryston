@@ -136,11 +136,11 @@ td, th { padding: 0; }
 ---------------------------------------------------------------------------- */
 @font-face {
 	font-family: 'bryston';
-	src:url('../fonts/bryston/bryston.eot?qd9kwr');
-	src:url('../fonts/bryston/bryston.eot?#iefixqd9kwr') format('embedded-opentype'),
-		url('../fonts/bryston/bryston.woff?qd9kwr') format('woff'),
-		url('../fonts/bryston/bryston.ttf?qd9kwr') format('truetype'),
-		url('../fonts/bryston/bryston.svg?qd9kwr#bryston') format('svg');
+	src:url('../fonts/bryston/bryston.eot?hikmx4');
+	src:url('../fonts/bryston/bryston.eot?#iefixhikmx4') format('embedded-opentype'),
+		url('../fonts/bryston/bryston.woff?hikmx4') format('woff'),
+		url('../fonts/bryston/bryston.ttf?hikmx4') format('truetype'),
+		url('../fonts/bryston/bryston.svg?hikmx4#bryston') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -174,7 +174,7 @@ i[data-icon="nav_bradio"]::before {
 i[data-icon="nav_vfp"]::before {
 	content: "\e605";
 }
-i[data-icon="nav_connected"]::before {
+i[data-icon="nav_applications"]::before {
 	content: "\e606";
 }
 i[data-icon="settings_system"]::before {
@@ -291,17 +291,26 @@ i[data-icon="ui_settings"]::before {
 i[data-icon="ui_alert"]::before {
 	content: "\e62c";
 }
-i[data-icon="view_default"]::before {
+i[data-icon="ui_folder"]::before {
 	content: "\e62d";
 }
-i[data-icon="view_song"]::before {
+i[data-icon="ui_playlist"]::before {
 	content: "\e62e";
 }
-i[data-icon="view_artist"]::before {
+i[data-icon="ui_single-song"]::before {
 	content: "\e62f";
 }
-i[data-icon="view_album"]::before {
+i[data-icon="view_default"]::before {
 	content: "\e630";
+}
+i[data-icon="view_song"]::before {
+	content: "\e631";
+}
+i[data-icon="view_artist"]::before {
+	content: "\e632";
+}
+i[data-icon="view_album"]::before {
+	content: "\e633";
 }
 
 

@@ -257,7 +257,7 @@
 		border-top: none;
 	}
 	nav[role="primary"] > ul > li.nav-bradio,
-	nav[role="primary"] > ul > li.nav-connected {
+	nav[role="primary"] > ul > li.nav-applications {
 		border-left: 0.1rem solid hsla(0,0%,18%,1);
 	}
 
@@ -1895,7 +1895,7 @@
 		left: -3.4rem;
 		font-size: 4.6rem;
 	}
-	nav[role="primary"] > ul > li.nav-connected > a span[data-meta]::before {
+	nav[role="primary"] > ul > li.nav-applications > a span[data-meta]::before {
 		font-size: 3rem;
 	}
 
@@ -1957,6 +1957,13 @@
 	#view_default [data-component="add-files"].closed {
 		right: -38rem;
 	}
+	/* + list header + */
+	#view_default [data-component="add-files"] div.component-header {
+		padding-left: 6.6rem;
+	}
+	#view_default [data-component="add-files"] div.component-header a[data-control="back-library"] {
+		right: 2rem;
+	}
 	/* + select dropdown + */
 	#view_default [data-component="add-files"] div.component-header select {
 		left: 17.4rem;
@@ -1964,12 +1971,12 @@
 	#view_default [data-component="add-files"] div.component-header div[data-ui="dropdown"] {
 		left: 17.4rem;
 	}
-	/* + list header + */
-	#view_default [data-component="add-files"] div.component-header {
-		padding-left: 6.6rem;
+	/* + add files list + */
+	#view_default [data-component="add-files"] ol.media-list li div.list-wrap {
+		padding-left: 6rem;
 	}
-	#view_default [data-component="add-files"] div.component-header a[data-control="back-library"] {
-		right: 2rem;
+	#view_default [data-component="add-files"] ol.media-list li div.list-wrap::before {
+		left: 2rem;
 	}
 	/* + add all songs + */
 	#view_default [data-component="add-files"] ol.media-list li a[data-control="add-all"] {

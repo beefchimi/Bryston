@@ -1482,7 +1482,7 @@ nav[role="primary"] > ul > li.nav-vfp > a span[data-meta]::before {
 	left: 0.6rem;
 	font-size: 3.4rem;
 }
-nav[role="primary"] > ul > li.nav-connected > a span[data-meta]::before {
+nav[role="primary"] > ul > li.nav-applications > a span[data-meta]::before {
 	content: "\e606";
 }
 
@@ -2414,11 +2414,39 @@ span[data-meta="album-cover_library"] {
 	position: relative;
 }
 #view_default [data-component="add-files"] ol.media-list li div.list-wrap {
-	color: hsla(0,0%,22%,1);
+	padding-left: 5rem;
 	background: hsla(0,0%,72%,1);
+}
+#view_default [data-component="add-files"] ol.media-list li div.list-wrap::before {
+	speak: none;
+	position: absolute;
+	top: 1.3rem;
+	left: 1rem;
+	font-family: 'bryston';
+	font-size: 1.8rem;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	color: hsla(0,0%,28%,1);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#view_default [data-component="add-files"] ol.media-list li.view_folder div.list-wrap::before {
+	content: "\e62d";
+}
+#view_default [data-component="add-files"] ol.media-list li.view_playlist div.list-wrap::before {
+	content: "\e62e";
+}
+#view_default [data-component="add-files"] ol.media-list li.view_single-song div.list-wrap::before {
+	content: "\e62f";
 }
 #view_default [data-component="add-files"] ol.media-list li:nth-child(2n+3) div.list-wrap {
 	background: hsla(0,0%,62%,1);
+}
+#view_default [data-component="add-files"] ol.media-list li div.list-wrap div.track-details {
+	color: hsla(0,0%,22%,1);
 }
 #view_default [data-component="add-files"] ol.media-list li a[data-control="add-song"]:hover + div.list-wrap {
 	background: hsla(0,0%,80%,1);
