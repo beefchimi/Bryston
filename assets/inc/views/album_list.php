@@ -14,7 +14,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-0_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -94,7 +94,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-1_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -174,7 +174,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-2_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -256,7 +256,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-3_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -336,7 +336,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-4_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -416,7 +416,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-5_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -498,7 +498,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-6_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -578,7 +578,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-7_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -658,7 +658,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-8_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -740,7 +740,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-9_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -820,7 +820,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-10_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -900,7 +900,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-11_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -982,7 +982,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-12" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1062,7 +1062,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-13_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1142,7 +1142,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-14_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1224,7 +1224,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-15_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1304,7 +1304,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-16_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1384,7 +1384,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-17_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1466,7 +1466,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-18_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1546,7 +1546,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-19_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 
@@ -1626,7 +1626,7 @@
 
 				</a>
 
-				<div class="details-wrap">
+				<div id="album-20_details" class="details-wrap">
 
 					<aside data-component="album-details" class="clearfix">
 

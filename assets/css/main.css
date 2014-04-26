@@ -114,48 +114,24 @@ span.dropdown-header,
 ol.media-list li div.list-wrap,
 aside.alert-notification,
 #login-form form div.input-wrap span[data-meta] {
-/*
-	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-			backface-visibility: hidden;
-*/
 	-webkit-transition: all 0.2s ease-in-out;
 	   -moz-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 			transition: all 0.2s ease-in-out;
 }
 form.search-form {
-/*
-	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-			backface-visibility: hidden;
-*/
 	-webkit-transition: background 0.2s ease-in-out;
 	   -moz-transition: background 0.2s ease-in-out;
 		-ms-transition: background 0.2s ease-in-out;
 			transition: background 0.2s ease-in-out;
 }
 div.search-overlay {
-/*
-	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-			backface-visibility: hidden;
-*/
 	-webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 	   -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 		-ms-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 #view_default [data-component] ol.media-list {
-/*
-	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-			backface-visibility: hidden;
-*/
 	-webkit-transition: max-height 0.2s ease-in-out;
 	   -moz-transition: max-height 0.2s ease-in-out;
 		-ms-transition: max-height 0.2s ease-in-out;
@@ -163,29 +139,24 @@ div.search-overlay {
 }
 span.progress-needle,
 #view_album [data-component="album"] {
-/*
-	-webkit-backface-visibility: hidden;
-	   -moz-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-			backface-visibility: hidden;
-*/
 	-webkit-transition: opacity 0.2s ease-in-out;
 	   -moz-transition: opacity 0.2s ease-in-out;
 		-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
 }
 #view_album [data-component="album"]::after {
+	-webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	   -moz-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+		-ms-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+			transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
 /*
 	-webkit-backface-visibility: hidden;
 	   -moz-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
 			backface-visibility: hidden;
 */
-	-webkit-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
-	   -moz-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
-		-ms-transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
-			transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
 
 /* Containers
 ---------------------------------------------------------------------------- */
@@ -2735,6 +2706,7 @@ span[data-meta="album-cover_library"] {
 	border-left: 2rem solid transparent;
 	border-right: 2rem solid transparent;
 	border-bottom: 2rem solid hsla(0,0%,12%,1);
+	visibility: hidden;
 	opacity: 0;
 	-webkit-transform: translateX(-50%);
 	   -moz-transform: translateX(-50%);
@@ -2743,6 +2715,7 @@ span[data-meta="album-cover_library"] {
 }
 #view_album [data-component="album"].toggled::after {
 	bottom: -0.3rem;
+	visibility: visible;
 	opacity: 1;
 }
 /* --- Album Preview --- */

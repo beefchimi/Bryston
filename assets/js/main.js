@@ -1,8 +1,5 @@
 // global variables for Album View
-var albumColumns = 2,
-	$thisAlbum,
-	$thisAlbumNumber,
-	$clonedDetails;
+var globalAlbumColumns;
 
 
 jQuery(document).ready(function($) {
@@ -387,84 +384,149 @@ jQuery(document).ready(function($) {
 		var $albumContainer = $('#view_album'),
 			$albumArticles  = $('#view_album article[data-component="album"]'),
 			$albumLink      = $('#view_album article[data-component="album"] a[data-component="album-preview"]'),
-			$albumDetails   = null,
-			$albumClose     = null;
+			thisAlbumNumber,
+			$thisDetail,
+			$clonedDetails;
 
-		$albumLink.on("click", function(e) {
+		// count number of albums per row
+		initAlbumViewRowCount();
 
-			$thisAlbum       = $(this).parent(); // capture parent article[data-component="album"] of this link
-			$thisAlbumNumber = $thisAlbum.index() + 1; // update global variable with new number (albums are zero-based, so we must add 1)
-			var $thisDetail  = $(this).next('div.details-wrap'); // grab this links sibling div.details-wrap
-			$clonedDetails   = $thisDetail.clone(true, true); // peform a deep clone on the div.details-wrap
+		// on click of $albumLink
+		$albumLink.on('click', function() {
+
+			$thisAlbum      = $(this).parent(); // capture parent article[data-component="album"] of this link
+			thisAlbumNumber = $thisAlbum.index() + 1; // update global variable with new number (albums are zero-based, so we must add 1)
+
+			/*
+			 * rather than finding the sibling div.details-wrap and cloning it...
+			 * we should be querying a database and pulling this in via AJAX
+			*/
+
+			$thisDetail    = $(this).next('div.details-wrap'); // grab this links sibling div.details-wrap
+			$clonedDetails = $thisDetail.clone(true, true); // peform a deep clone on the div.details-wrap
 
 			// as long as what we are clicking does not have the disabled or toggled class,
 			// we will allow our interaction to proceed
 			if ( !($thisAlbum.hasClass('disabled') || $thisAlbum.hasClass('toggled')) ) {
 
-				$albumContainer.addClass('album-opened');
-				$thisAlbum.addClass('toggled');
+				$albumContainer.addClass('album-opened'); // does not apply any styles, added only to be used as a hook in js
+				$thisAlbum.addClass('toggled'); // styling for ::after element and used for js
 
 				// toggle our disabled class on all articles except the one clicked
 				$albumArticles.not($thisAlbum).addClass('disabled');
 
-				initAlbumViewLayout();
+				initAlbumViewLayout($albumArticles, $clonedDetails, thisAlbumNumber, $thisAlbum);
 
 				// in order for our Close click to work, these variables need to be defined after the cloned element is in the DOM
-				var $albumDetails = $('#view_album > div.details-wrap'),
-					$albumClose   = $('#view_album > div.details-wrap aside[data-component="album-details"] a[data-control="close"]');
+				var $albumClose   = $('#view_album > div.details-wrap aside[data-component="album-details"] a[data-control="close"]');
 
-				// click the X to slideUp and remove cloned element
-				$albumClose.click(function(e) {
+				$albumClose.on('click', function() {
 
-					$albumDetails.slideUp( function(){ $(this).remove(); } );
-					$albumContainer.removeClass('album-opened');
-					$thisAlbum.removeClass('toggled');
-					$albumArticles.removeClass('disabled');
-					e.preventDefault();
+					closeExpandedAlbum($thisAlbum);
+
+					return false;
 
 				});
 
 			} else if ( $thisAlbum.hasClass('toggled') ) {
 
-				$('#view_album > div.details-wrap').slideUp( function(){ $(this).remove(); } );
-				$albumContainer.removeClass('album-opened');
-				$thisAlbum.removeClass('toggled');
-				$albumArticles.removeClass('disabled');
+				closeExpandedAlbum($thisAlbum);
 
 			}
 
-			e.preventDefault();
+			return false;
 
 		});
+
+		function closeExpandedAlbum($passed_thisAlbum) {
+
+			// after slidingUp the cloned div.details-wrap...
+			$('#view_album > div.details-wrap').slideUp(function() {
+				$(this).remove(); // we can safely remove it from the DOM
+			});
+
+			// remove all classes added on click of $albumLink
+			$albumContainer.removeClass('album-opened');
+			$passed_thisAlbum.removeClass('toggled');
+			$albumArticles.removeClass('disabled');
+
+		}
 
 	}
 
 
-	function initAlbumViewLayout() {
+	function initAlbumViewRowCount() {
 
-		if ( ($thisAlbumNumber % albumColumns === 0) || ($thisAlbum.next('article').length === 0) ) {
+		var albumsInRow = 0,
+			$theAlbums  = $('#view_album article[data-component="album"]');
 
-			$thisAlbum.after($clonedDetails);
-			$thisAlbum.next('div.details-wrap').slideDown();
+		$theAlbums.each(function() {
+
+			// if there is no previous album sibling...
+			if ( $(this).prev('article').length > 0 ) {
+
+				// if the top position of this album does not equal that of its previous album sibling
+				if ( $(this).position().top != $(this).prev('article').position().top ) {
+					return false;
+				}
+
+				albumsInRow++;
+
+			} else {
+
+				albumsInRow++;
+
+			}
+
+		});
+
+		// divide the number of albums in total by the number of albums in a row,
+		// and check to see if it has a remainder (ex: 21 / 2 = 10.5)
+		var albumsInLastRow = $theAlbums.length % albumsInRow;
+
+		// if there is no remainder, then we know the last row is equal to albumsInRow
+		if (albumsInLastRow == 0) {
+			albumsInLastRow = albumsInRow;
+		}
+
+		// used to set the globalAlbumColumns equal to albumsInRow,
+		// as well as destroy the expanded album view on window resize when required
+		if (globalAlbumColumns != albumsInRow) {
+
+			$('#view_album > div.details-wrap').remove();
+			$theAlbums.removeClass('disabled toggled');
+
+			globalAlbumColumns = albumsInRow;
+
+		}
+
+	}
+
+
+	function initAlbumViewLayout($passed_albumArticles, $passed_clonedDetails, passed_thisAlbumNumber, $passed_thisAlbum) {
+
+		// check to see if this is the very last album in the list...
+		// you can find column position with: thisAlbumNumber % globalAlbumColumns
+		if ( (passed_thisAlbumNumber % globalAlbumColumns == 0) || ($passed_thisAlbum.next('article').length == 0) ) {
+
+			$passed_thisAlbum.after($passed_clonedDetails);
+			$passed_thisAlbum.next('div.details-wrap').slideDown();
 
 		} else {
 
-			var endOfRow       = Math.ceil( $thisAlbumNumber / albumColumns ) * albumColumns,
-				numberOfAlbums = $('#view_album article[data-component="album"]').length,
-				$lastAlbum     = $('#view_album article[data-component="album"]').last();
-
-				console.log(endOfRow);
-				console.log(numberOfAlbums);
+			var endOfRow       = Math.ceil(passed_thisAlbumNumber / globalAlbumColumns) * globalAlbumColumns,
+				numberOfAlbums = $passed_albumArticles.length,
+				$lastAlbum     = $passed_albumArticles.last();
 
 			if (endOfRow > numberOfAlbums) {
 
-				$lastAlbum.after($clonedDetails);
+				$lastAlbum.after($passed_clonedDetails);
 				$lastAlbum.next('div.details-wrap').slideDown();
 
 			} else {
 
 				// subtract 1 to accomodate for the zero-based albums
-				$('#album-' + (endOfRow - 1)).after($clonedDetails);
+				$('#album-' + (endOfRow - 1)).after($passed_clonedDetails);
 				$('#album-' + (endOfRow - 1)).next('div.details-wrap').slideDown();
 
 			}
@@ -473,7 +535,6 @@ jQuery(document).ready(function($) {
 
 	}
 
-	// find column position with: $thisAlbumNumber % albumColumns
 
 	function initDestroyClone() {
 
@@ -487,111 +548,24 @@ jQuery(document).ready(function($) {
 	---------------------------------------------------------------------------- */
 	function initEnquire() {
 
-		enquire.register("screen and (min-width: 480px)", {
-
-			match : function() {
-
-				albumColumns = 3;
-				initDestroyClone();
-
-			},
-			unmatch : function() {
-
-				albumColumns = 2;
-				initDestroyClone();
-			}
-
-		}).register("screen and (min-width: 568px)", {
-
-			match : function() {
-
-				albumColumns = 4;
-				initDestroyClone();
-
-			},
-			unmatch : function() {
-
-				albumColumns = 3;
-				initDestroyClone();
-			}
-
-		}).register("screen and (min-width: 768px)", {
+		enquire.register("screen and (min-width: 768px)", {
 
 			deferSetup : true,
 
 			setup : function() {
-
 				initArtistScrollOn();
-
 			},
 			match : function() {
-
 				initArtistScrollOn();
-
-				albumColumns = 5;
-				initDestroyClone();
-
 			},
 			unmatch : function() {
-
 				initArtistScrollOff();
-
-				albumColumns = 4;
-				initDestroyClone();
-
-			}
-
-		}).register("screen and (min-width: 960px)", {
-
-			match : function() {
-
-				albumColumns = 6;
-				initDestroyClone();
-
-			},
-			unmatch : function() {
-
-				albumColumns = 5;
-				initDestroyClone();
-
 			}
 
 		}).register("screen and (min-width: 1024px)", {
 
 			match : function() {
-
 				$('#settings-modal').removeClass('visible');
-
-			}
-
-		}).register("screen and (min-width: 1280px)", {
-
-			match : function() {
-
-				albumColumns = 7;
-				initDestroyClone();
-
-			},
-			unmatch : function() {
-
-				albumColumns = 6;
-				initDestroyClone();
-
-			}
-
-		}).register("screen and (min-width: 1440px)", {
-
-			match : function() {
-
-				albumColumns = 8;
-				initDestroyClone();
-
-			},
-			unmatch : function() {
-
-				albumColumns = 7;
-				initDestroyClone();
-
 			}
 
 		});
@@ -611,9 +585,9 @@ jQuery(document).ready(function($) {
 			initSongViewSticky();
 		}
 
-		// if ( $body.attr('id') == 'views' ) {
+		if ( $body.attr('id') == 'views' ) {
 			initSearchFocus();
-		// }
+		}
 
 		initModalController();
 		initMediaListToggle();
@@ -622,6 +596,8 @@ jQuery(document).ready(function($) {
 		initEnquire();
 
 	});
+
+	$window.resize(initAlbumViewRowCount);
 
 
 });
