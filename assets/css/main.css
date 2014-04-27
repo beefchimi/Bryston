@@ -1861,19 +1861,6 @@ body.bryston main section article.modal-components {
 	height: 100%;
 	background: hsla(206,69%,54%,1);
 }
-
-/*
-div.progress-container {
-	height: 0.8rem;
-	background: hsla(206,69%,96%,1);
-}
-div.progress-container div.progress-bar {
-	height: 0.8rem;
-	background: hsla(206,69%,54%,1);
-}
-*/
-
-
 /* + individual song duration times + */
 #tv-mode main section article div[data-control="song-duration"] span[data-meta="song-time-elapsed_current"] {
 	left: 0;
@@ -1895,11 +1882,6 @@ div.progress-container div.progress-bar {
 	color: hsla(0,0%,12%,1);
 	background: hsla(0,0%,96%,1);
 }
-/*
-#tv-mode main section article div.tv-links a.enabled {
-	background: hsla(206,69%,44%,1);
-}
-*/
 #tv-mode main section article div.tv-links a:hover {
 	background: hsla(206,69%,54%,1);
 }

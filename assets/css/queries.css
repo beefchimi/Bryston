@@ -959,6 +959,15 @@
 	#tv-mode main section article div[data-control="song-duration"] div[data-control="song-length"] div[data-control="song-progress"] {
 		min-height: 1.6rem;
 	}
+	/* --- TV Links --- */
+	#tv-mode main section article div.tv-links {
+		position: relative;
+		z-index: 9000;
+	}
+	#tv-mode main section article div.tv-links a {
+		position: relative;
+		z-index: 9999;
+	}
 
 /* ==|== views ================================================================
    ========================================================================= */
