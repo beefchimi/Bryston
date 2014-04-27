@@ -267,50 +267,53 @@ i[data-icon="ui_minus"]::before {
 i[data-icon="ui_checkmark"]::before {
 	content: "\e624";
 }
-i[data-icon="ui_close"]::before {
+i[data-icon="ui_radio"]::before {
 	content: "\e625";
 }
-i[data-icon="ui_lock"]::before {
+i[data-icon="ui_close"]::before {
 	content: "\e626";
 }
-i[data-icon="ui_unlock"]::before {
+i[data-icon="ui_lock"]::before {
 	content: "\e627";
 }
-i[data-icon="ui_more"]::before {
+i[data-icon="ui_unlock"]::before {
 	content: "\e628";
 }
-i[data-icon="ui_search"]::before {
+i[data-icon="ui_more"]::before {
 	content: "\e629";
 }
-i[data-icon="ui_info"]::before {
+i[data-icon="ui_search"]::before {
 	content: "\e62a";
 }
-i[data-icon="ui_settings"]::before {
+i[data-icon="ui_info"]::before {
 	content: "\e62b";
 }
-i[data-icon="ui_alert"]::before {
+i[data-icon="ui_settings"]::before {
 	content: "\e62c";
 }
-i[data-icon="ui_folder"]::before {
+i[data-icon="ui_alert"]::before {
 	content: "\e62d";
 }
-i[data-icon="ui_playlist"]::before {
+i[data-icon="ui_folder"]::before {
 	content: "\e62e";
 }
-i[data-icon="ui_single-song"]::before {
+i[data-icon="ui_playlist"]::before {
 	content: "\e62f";
 }
-i[data-icon="view_default"]::before {
+i[data-icon="ui_single-song"]::before {
 	content: "\e630";
 }
-i[data-icon="view_song"]::before {
+i[data-icon="view_default"]::before {
 	content: "\e631";
 }
-i[data-icon="view_artist"]::before {
+i[data-icon="view_song"]::before {
 	content: "\e632";
 }
-i[data-icon="view_album"]::before {
+i[data-icon="view_artist"]::before {
 	content: "\e633";
+}
+i[data-icon="view_album"]::before {
+	content: "\e634";
 }
 
 

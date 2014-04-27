@@ -29,7 +29,6 @@
  *
  * #bbe0fb; | hsla(206,90%,86%,1) - blue light
  *
- *
 */
 
 
@@ -350,6 +349,10 @@ input[type="radio"] + label::after,
 input[type="checkbox"] + label::after {
 	color: hsla(206,69%,54%,0);
 }
+input[type="radio"]:active + label,
+input[type="checkbox"]:active + label {
+	opacity: 0.8;
+}
 /* --- Radios --- */
 input[type="radio"] + label {
 	padding: 0.4rem 0 0 3.6rem;
@@ -369,10 +372,10 @@ input[type="radio"] + label::after {
 input[type="radio"] + label::before {
 	top: 0;
 	left: 0;
-	width: 2.4rem;
-	height: 2.4rem;
+	width: 2rem;
+	height: 2rem;
 	background: hsla(0,0%,82%,1);
-	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,0);
+	border: 0.2rem solid hsla(206,69%,54%,0);
 }
 input[type="radio"] + label::after {
 	speak: none;
@@ -383,7 +386,7 @@ input[type="radio"] + label::after {
 	background: hsla(0,0%,42%,0);
 }
 input[type="radio"]:focus + label::before {
-	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
+	border-color: hsla(206,69%,54%,1);
 }
 input[type="radio"]:hover + label {
 	color: hsla(0,0%,92%,1);
@@ -391,11 +394,9 @@ input[type="radio"]:hover + label {
 input[type="radio"]:hover + label::before {
 	background: hsla(0,0%,96%,1);
 }
-input[type="radio"]:active + label {
-	opacity: 0.8;
-}
 input[type="radio"]:checked + label::before {
 	background: hsla(0,0%,92%,1);
+	border-color: hsla(206,69%,54%,1);
 }
 input[type="radio"]:checked + label {
 	color: hsla(206,69%,54%,1);
@@ -433,9 +434,6 @@ input[type="checkbox"] + label::after {
 	font-weight: normal;
 	font-style: normal;
 	text-transform: none;
-/*
-	color: hsla(0,0%,52%,0);
-*/
 	background: hsla(0,0%,96%,1);
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
@@ -448,9 +446,6 @@ input[type="checkbox"]:hover + label {
 input[type="checkbox"]:focus + label::before,
 input[type="checkbox"]:hover + label::before {
 	background: hsla(0,0%,72%,1);
-}
-input[type="checkbox"]:active + label {
-	opacity: 0.8;
 }
 input[type="checkbox"]:checked + label::before {
 	background: hsla(206,69%,54%,1);
@@ -509,7 +504,7 @@ ul.list_radio-checkbox li input[type="radio"] + label::before {
 	top: 1.2rem;
 	left: 1rem;
 	background: hsla(0,0%,96%,1);
-	box-shadow: 0 0 0 0.2rem hsla(0,0%,42%,1);
+	border-color: hsla(0,0%,42%,1);
 }
 ul.list_radio-checkbox li input[type="radio"] + label::after {
 	top: 2rem;
@@ -522,10 +517,10 @@ ul.list_radio-checkbox li input[type="radio"]:hover + label {
 ul.list_radio-checkbox li input[type="radio"]:focus + label::before,
 ul.list_radio-checkbox li input[type="radio"]:hover + label::before {
 	background: hsla(0,0%,92%,1);
-	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
+	border-color: hsla(206,69%,54%,1);
 }
 ul.list_radio-checkbox li input[type="radio"]:checked + label::before {
-	box-shadow: 0 0 0 0.2rem hsla(206,69%,54%,1);
+	border-color: hsla(206,69%,54%,1);
 }
 /* --- Common Form --- */
 form.common-form p {
