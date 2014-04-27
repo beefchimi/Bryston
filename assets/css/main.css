@@ -1437,19 +1437,19 @@ nav[role="primary"] > ul > li.nav-tvmode {
 	border-top: 0.1rem solid hsla(0,0%,18%,1);
 }
 nav[role="primary"] > ul > li.nav-tvmode > a span[data-meta]::before {
-	content: "\e603";
+	content: "\e603"; /* nav_tvmode */
 }
 nav[role="primary"] > ul > li.nav-bradio > a span[data-meta]::before {
-	content: "\e604";
+	content: "\e604"; /* nav_bradio */
 }
 nav[role="primary"] > ul > li.nav-vfp > a span[data-meta]::before {
-	content: "\e605";
+	content: "\e605"; /* nav_vfp */
 	top: -0.7rem;
 	left: 0.6rem;
 	font-size: 3.4rem;
 }
 nav[role="primary"] > ul > li.nav-applications > a span[data-meta]::before {
-	content: "\e606";
+	content: "\e606"; /* nav_applications */
 }
 
 /* Settings Options
@@ -1552,13 +1552,6 @@ main {
 [data-content="box"] blockquote {
 	margin-bottom: 1.2rem;
 }
-/* + content common button + */
-/*
-main section [data-content="parent"] [data-content="body"] .common-button {
-	margin-right: 0.6rem;
-	font-weight: 700;
-}
-*/
 /* + content list-styles class + */
 [data-content="box"].list-styles ol,
 [data-content="box"].list-styles ul {
@@ -2384,13 +2377,13 @@ span[data-meta="album-cover_library"] {
 	-moz-osx-font-smoothing: grayscale;
 }
 #view_default [data-component="add-files"] ol.media-list li.view_folder div.list-wrap::before {
-	content: "\e62d";
+	content: "\e62e"; /* ui_folder */
 }
 #view_default [data-component="add-files"] ol.media-list li.view_playlist div.list-wrap::before {
-	content: "\e62e";
+	content: "\e62f"; /* ui_playlist */
 }
 #view_default [data-component="add-files"] ol.media-list li.view_single-song div.list-wrap::before {
-	content: "\e62f";
+	content: "\e630"; /* ui_single-song */
 }
 #view_default [data-component="add-files"] ol.media-list li:nth-child(2n+3) div.list-wrap {
 	background: hsla(0,0%,62%,1);
@@ -2898,13 +2891,13 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 }
 /* + individual drive types + */
 #settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-sata"] > a[data-meta]::before {
-	content: "\e600";
+	content: "\e600"; /* disk_sata */
 }
 #settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-partition"] > a[data-meta]::before {
-	content: "\e601";
+	content: "\e601"; /* disk_partition */
 }
 #settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
-	content: "\e602";
+	content: "\e602"; /* disk_network */
 	top: 1.4rem;
 	font-size: 1.8rem;
 }
