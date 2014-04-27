@@ -1665,6 +1665,9 @@
 
 	/* Artist View
 	---------------------------------------------------------------------------- */
+	#view_artist {
+		min-height: 100%;
+	}
 	/* --- Artist Header --- */
 	#view_artist [data-component="artist-albums"] [data-component="artist-header"] {
 		position: relative;

@@ -17,18 +17,15 @@
 					<span data-meta="link-title">View Artists</span>
 				</a>
 
-
 				<div id="artists-modal" data-modal="overlay">
 
 					<div data-modal="wrapper">
 
 						<header data-modal="header">
-							<div data-container="contained">
-								<h4>View Artists</h4>
-								<a href="#" data-modal="close">
-									<i data-icon="ui_close"></i>
-								</a>
-							</div>
+							<h4>View Artists</h4>
+							<a href="#" data-modal="close">
+								<i data-icon="ui_close"></i>
+							</a>
 						</header>
 
 						<ul data-compontent="artist-list">
@@ -38,7 +35,6 @@
 					</div>
 
 				</div>
-
 
 			</aside>
 
