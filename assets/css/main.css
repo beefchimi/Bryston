@@ -2273,7 +2273,6 @@ span[data-meta="album-cover_library"] {
 }
 #view_default [data-component] ol.media-list li .list-wrap div.track-details {
 	float: left;
-	width: 70%;
 	font-size: 1.3rem;
 }
 #view_default [data-component] ol.media-list li .list-wrap div.track-details span[data-meta^="song-title"] {
@@ -2315,6 +2314,9 @@ span[data-meta="album-cover_library"] {
 }
 #view_default [data-component="now-playing"] ol.media-list li a.list-wrap:active {
 	color: hsla(206,69%,44%,1);
+}
+#view_default [data-component="now-playing"] ol.media-list li a.list-wrap div.track-details {
+	width: 70%;
 }
 /* + icons + */
 #view_default [data-component="now-playing"] ol.media-list li a.list-wrap div.icons i[data-icon] {
@@ -2417,6 +2419,7 @@ span[data-meta="album-cover_library"] {
 	background: hsla(0,0%,62%,1);
 }
 #view_default [data-component="add-files"] ol.media-list li div.list-wrap div.track-details {
+	width: 80%;
 	color: hsla(0,0%,22%,1);
 }
 #view_default [data-component="add-files"] ol.media-list li a[data-control="add-song"]:hover + div.list-wrap {
