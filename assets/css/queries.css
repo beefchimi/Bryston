@@ -279,17 +279,17 @@
 
 	/* General Pages and Settings
 	---------------------------------------------------------------------------- */
-	/* --- Content Body --- */
-	/* + actions list + */
-	main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+	/* --- Actions List --- */
+	/* + NOT alternate + */
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) {
 		text-align: right;
 	}
-	main.internal-content section [data-content="parent"] ul[data-content="body"].actions li {
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) li {
 		display: inline-block;
 		margin-left: 1rem;
 		text-align: left;
 	}
-	main.internal-content section [data-content="parent"] ul[data-content="body"].actions li .common-button {
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) li .common-button {
 		width: auto;
 	}
 
@@ -449,24 +449,31 @@
 
 	/* Disk Information
 	---------------------------------------------------------------------------- */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container^="column"] {
-		float: left;
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap {
+		position: relative;
+	}
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container^="column"] {
 		margin-bottom: 0;
 	}
 	/* --- Drive List --- */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
 		width: 30%;
 	}
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] {
 		max-height: none;
-		height: 40rem;
+		height: 100%;
 	}
 	/* --- Content / Actions --- */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] {
 		width: 70%;
+		margin-left: 30%;
 		padding-left: 1.6rem;
 	}
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] div.scroll-container [data-content="box"] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] div.scroll-container [data-content="box"] {
 		height: 29.1rem;
 	}
 	/* --- Disk Details --- */
@@ -560,23 +567,6 @@
 		margin: 0 1rem 0 0;
 		width: 20rem;
 	}
-
-	/* NAS Setup
-	---------------------------------------------------------------------------- */
-	/* --- Actions --- */
-/*
-	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
-		text-align: right;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li {
-		display: inline-block;
-		margin-left: 1rem;
-		text-align: left;
-	}
-	#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
-		width: auto;
-	}
-*/
 
 	/* Services
 	---------------------------------------------------------------------------- */
@@ -683,8 +673,9 @@
 	main.internal-content section [data-content="parent"] [data-content="body"] {
 		padding: 2.6rem;
 	}
-	/* + actions list + */
-	main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
+	/* --- Actions List --- */
+	/* + NOT alternate + */
+	main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) {
 		padding-bottom: 1rem;
 	}
 
@@ -694,22 +685,22 @@
 	/* Disk Information
 	---------------------------------------------------------------------------- */
 	/* --- Drive List --- */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta] {
 		padding-left: 4.6rem;
 		font-size: 1.6rem;
 	}
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk] > a[data-meta]::before {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk] > a[data-meta]::before {
 		font-size: 1.8rem;
 	}
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] ul[data-disk="drive-children"] li[data-disk] a[data-meta] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] ul[data-disk="drive-children"] li[data-disk] a[data-meta] {
 		padding: 1rem 1.6rem 1rem 6rem;
 	}
 	/* + individual drive types + */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
 		font-size: 2rem;
 	}
 	/* --- Content / Actions --- */
-	#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] {
+	#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] {
 		padding-left: 2.6rem;
 	}
 

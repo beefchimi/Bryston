@@ -1669,18 +1669,34 @@ main.internal-content section [data-content="parent"] [data-content="body"] h5 e
 	font-style: normal;
 	color: hsla(206,69%,64%,1);
 }
-/* + actions list + */
+/* --- Actions List --- */
 main.internal-content section [data-content="parent"] ul[data-content="body"].actions {
-	padding-bottom: 0.4rem;
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
 main.internal-content section [data-content="parent"] ul[data-content="body"].actions li {
 	margin-bottom: 1.6rem;
 	text-align: center;
 }
-main.internal-content section [data-content="parent"] ul[data-content="body"].actions li .common-button {
+/* + NOT alternate + */
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) {
+	padding-bottom: 0.4rem;
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) li {
+	margin-bottom: 1.6rem;
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions:not(.alternate) li .common-button {
 	margin-right: 0;
 	width: 20rem;
+}
+/* + alternate + */
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions.alternate {
+	border-color: hsla(0,0%,14%,1);
+	padding: 1.6rem 1.6rem 0.8rem 1.6rem;
+	background: hsla(0,0%,82%,1);
+}
+main.internal-content section [data-content="parent"] ul[data-content="body"].actions.alternate li {
+	float: left;
+	margin: 0 0.8rem 0.8rem 0;
 }
 
 /* Generic Pages
@@ -2847,17 +2863,17 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 
 /* Disk Information
 ---------------------------------------------------------------------------- */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container^="column"] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container^="column"] {
 	margin-bottom: 3.2rem;
 }
 /* --- Drive List --- */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] {
 	max-height: 28rem;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	background: hsla(0,0%,82%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta] {
 	display: block;
 	position: relative;
 	padding: 1.6rem 1.6rem 1.6rem 4.2rem;
@@ -2865,7 +2881,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	color: hsla(0,0%,32%,1);
 	background: hsla(0,0%,82%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk] > a[data-meta]::before {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk] > a[data-meta]::before {
 	speak: none;
 	position: absolute;
 	top: 1.6rem;
@@ -2879,65 +2895,60 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk].selected a[data-meta],
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta]:hover {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk].selected a[data-meta],
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta]:hover {
 	background: hsla(0,0%,72%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta]:active {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] a[data-meta]:active {
 	background: hsla(0,0%,76%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] ul[data-disk="drive-children"] li[data-disk] a[data-meta] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] ul[data-disk="drive-list"] li[data-disk] ul[data-disk="drive-children"] li[data-disk] a[data-meta] {
 	padding: 1rem 1.6rem 1rem 6rem;
 }
 /* + individual drive types + */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-sata"] > a[data-meta]::before {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-sata"] > a[data-meta]::before {
 	content: "\e600"; /* disk_sata */
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-partition"] > a[data-meta]::before {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-partition"] > a[data-meta]::before {
 	content: "\e601"; /* disk_partition */
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-one"] > ul[data-disk="drive-list"] > li[data-disk="type-network"] > a[data-meta]::before {
 	content: "\e602"; /* disk_network */
 	top: 1.4rem;
 	font-size: 1.8rem;
 }
 /* --- First Aid / Erase Links --- */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] {
 	margin-bottom: 1.6rem;
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] {
 	display: inline-block;
 	font-size: 1.7rem;
 	font-weight: 600;
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control]::after {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control]::after {
 	content: "\002F"; /* slash */
 	margin: 0 1rem;
 	color: hsla(206,69%,54%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control]:last-child::after {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control]:last-child::after {
 	display: none;
 	content: "";
 	margin: 0;
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta] {
 	color: hsla(206,69%,54%,1);
 }
 /* + hover | active + */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta]:hover {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta]:hover {
 	color: hsla(206,90%,86%,1);
 }
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta]:active {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] ul[data-disk="drive-actions"] li[data-control] a[data-meta]:active {
 	color: hsla(206,90%,72%,1);
 }
 /* --- Content / Actions --- */
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] div[data-container="scroll-vertical"] [data-content="box"] {
+#settings_disk-info [data-content="parent"] [data-content="body"] div.column-wrap [data-container="column-two"] div[data-container="scroll-vertical"] [data-content="box"] {
 	max-height: 29.1rem;
-}
-#settings_disk-info [data-content="parent"] [data-content="body"] [data-container="column-two"] div.actions {
-	margin-top: 0.1rem;
-	padding: 1.6rem;
-	background: hsla(0,0%,82%,1);
 }
 /* --- Disk Details --- */
 #settings_disk-info [data-content="parent"] [data-content="body"] ul[data-disk="details"] li {

@@ -22,72 +22,79 @@
 
 					<div data-content="body" class="clearfix">
 
-						<div data-container="column-one">
+						<div class="column-wrap">
 
-							<ul data-disk="drive-list">
+							<div data-container="column-one">
 
-								<li data-disk="type-sata">
-									<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="466GB;Sata Drive">466GB;Sata Drive</a>
-								</li>
+								<ul data-disk="drive-list">
 
-								<li data-disk="type-partition" class="selected">
-									<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="8GB;Primary Partition">8GB;Primary Partition</a>
-								</li>
+									<li data-disk="type-sata">
+										<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="466GB;Sata Drive">466GB;Sata Drive</a>
+									</li>
 
-								<li data-disk="type-partition">
-									<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="32GB;Secondary Partition">32GB;Secondary Partition</a>
-								</li>
+									<li data-disk="type-partition" class="selected">
+										<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="8GB;Primary Partition">8GB;Primary Partition</a>
+									</li>
 
-								<li data-disk="type-network">
-									<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="500GB;Network Drive">500GB;Network Drive</a>
-									<ul data-disk="drive-children">
-										<li data-disk="drive-child">
-											<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="Untitled">Untitled</a>
-											<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="Video Thumb">Video Thumb</a>
-										</li>
-									</ul>
-								</li>
+									<li data-disk="type-partition">
+										<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="32GB;Secondary Partition">32GB;Secondary Partition</a>
+									</li>
 
-								<li data-disk="type-sata">
-									<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="USB Mount">USB Mounted Disk with the longest title in the history of storage devices</a>
-								</li>
+									<li data-disk="type-network">
+										<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="500GB;Network Drive">500GB;Network Drive</a>
+										<ul data-disk="drive-children">
+											<li data-disk="drive-child">
+												<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="Untitled">Untitled</a>
+												<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="Video Thumb">Video Thumb</a>
+											</li>
+										</ul>
+									</li>
 
-							</ul>
+									<li data-disk="type-sata">
+										<a onclick="issueCommand('disk this drive')" data-meta="drive-title" class="truncate" title="USB Mount">USB Mounted Disk with the longest title in the history of storage devices</a>
+									</li>
 
-						</div>
-
-						<div data-container="column-two">
-
-							<ul data-disk="drive-actions">
-								<li data-control="first-aid">
-									<a onclick="issueCommand('disk firstaid')" data-meta="link-title" title="First Aid">First Aid</a>
-								</li>
-								<li data-control="erase">
-									<a onclick="issueCommand('disk erase')" data-meta="link-title" title="Erase">Erase</a>
-								</li>
-							</ul>
-
-							<div data-container="scroll-vertical">
-
-								<div data-content="box">
-
-									<p>Lorem ipsum dolor sit amet, consectetur. Nullam feugiat magna ac nisl aliquet, ut suipit. Aliquam pulvinar quam vel arcu consectetur. Vestibulum ornare enim at luctus auctor. Nulla id ipsum et mi aliquam fermentum.</p>
-									<p>Fusce sed urna sed diam blandit mollis. Integer quis sapien a urna dignissim pelleesque. Pellentesque adipiscing nunc sagittis lacinia. Praesent et urna nec augue. Mauris in metus sed velit dictum convallis. Praesent et urna nec augue.</p>
-									<p>Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis.</p>
-
-								</div>
+								</ul>
 
 							</div>
 
-							<div class="actions clearfix">
+							<div data-container="column-two">
 
-								<a onclick="issueCommand('disk info')" class="common-button" title="Get Info">
-									<span data-meta="link-title">Get Info</span>
-								</a>
+								<ul data-disk="drive-actions">
+									<li data-control="first-aid">
+										<a onclick="issueCommand('disk firstaid')" data-meta="link-title" title="First Aid">First Aid</a>
+									</li>
+									<li data-control="erase">
+										<a onclick="issueCommand('disk erase')" data-meta="link-title" title="Erase">Erase</a>
+									</li>
+								</ul>
 
-								<a onclick="issueCommand('disk smart')" class="common-button" title="Get S.M.A.R.T.">
-									<span data-meta="link-title">Get S.M.A.R.T.</span>
-								</a>
+								<div data-container="scroll-vertical">
+
+									<div data-content="box">
+
+										<p>Lorem ipsum dolor sit amet, consectetur. Nullam feugiat magna ac nisl aliquet, ut suipit. Aliquam pulvinar quam vel arcu consectetur. Vestibulum ornare enim at luctus auctor. Nulla id ipsum et mi aliquam fermentum.</p>
+										<p>Fusce sed urna sed diam blandit mollis. Integer quis sapien a urna dignissim pelleesque. Pellentesque adipiscing nunc sagittis lacinia. Praesent et urna nec augue. Mauris in metus sed velit dictum convallis. Praesent et urna nec augue.</p>
+										<p>Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis.</p>
+
+									</div>
+
+								</div>
+
+								<ul data-content="body" class="actions alternate clearfix">
+
+									<li class="action-item">
+										<a onclick="issueCommand('disk info')" class="common-button" title="Get Info">
+											<span data-meta="link-title">Get Info</span>
+										</a>
+									</li>
+									<li class="action-item">
+										<a onclick="issueCommand('disk smart')" class="common-button" title="Get S.M.A.R.T.">
+											<span data-meta="link-title">Get S.M.A.R.T.</span>
+										</a>
+									</li>
+
+								</ul>
 
 							</div>
 
