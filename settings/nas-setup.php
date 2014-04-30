@@ -22,7 +22,7 @@
 
 					<form id="nas-setup" class="content-form">
 
-						<div data-content="body" class="clearfix">
+						<div id="configuredDevices" data-content="body" class="clearfix">
 
 							<ul class="list_radio-checkbox">
 
@@ -58,19 +58,30 @@
 
 						</div>
 
-						<ul data-content="body" class="actions clearfix">
+						<ul id="nasButtons" data-content="body" class="actions clearfix">
 
 							<li class="action-item">
-								<input type="submit" value="Update" class="common-button" />
+								<a onclick="editThisShare()" class="common-button" title="Edit">
+									<span data-meta="link-title">Edit</span>
+								</a>
 							</li>
 							<li class="action-item">
-								<input type="submit" value="Speed Test" class="common-button" />
+								<a onclick="updateThisShare()" class="common-button" title="Update">
+									<span data-meta="link-title">Update</span>
+								</a>
 							</li>
 							<li class="action-item">
-								<input type="submit" value="Remove" class="common-button" />
+								<a onclick="addNewNasSihare()" class="common-button" title="Speed Test">
+									<span data-meta="link-title">Speed Test</span>
+								</a>
 							</li>
 							<li class="action-item">
-								<a onclick="issueCommand('nas add share')" class="common-button" title="Add Share">
+								<a onclick="removeSelectedNasShare()" class="common-button" title="Remove">
+									<span data-meta="link-title">Remove</span>
+								</a>
+							</li>
+							<li class="action-item">
+								<a onclick="addNewNasShare()" class="common-button" title="Add Share">
 									<span data-meta="link-title">Add Share</span>
 								</a>
 							</li>

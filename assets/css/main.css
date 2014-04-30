@@ -522,6 +522,13 @@ ul.list_radio-checkbox li input[type="radio"]:hover + label::before {
 ul.list_radio-checkbox li input[type="radio"]:checked + label::before {
 	border-color: hsla(206,69%,54%,1);
 }
+/* + validation styles + */
+ul.list_radio-checkbox li.error {
+	box-shadow: 0 0 0 0.1rem red;
+}
+ul.list_radio-checkbox li.error label {
+	color: red !important;
+}
 /* --- Common Form --- */
 form.common-form p {
 	margin-bottom: 2rem;
@@ -2777,7 +2784,7 @@ span[data-meta="album-cover_library"] {
 /* --- Settings List --- */
 body.system nav[role="secondary"] ul[data-modal="nav-list"] li a[title="System"],
 body.disk-info nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Disk Information"],
-body.album-art-db nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Album Art Database"],
+body.audio-devices nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Album Art Database"],
 body.network-interfaces nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Network Interfaces"],
 body.update-firmware nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Update Firmware"],
 body.mpd nav[role="secondary"] ul[data-modal="nav-list"] li a[title="Music Player Daemon"],
@@ -2797,7 +2804,7 @@ body.system nav[role="secondary"] header.settings-header i[data-icon="tri_eq-dow
 body.disk-info nav[role="secondary"] header.settings-header i[data-icon="tri_eq-down"] {
 	left: 13.623046875%;
 }
-body.album-art-db nav[role="secondary"] header.settings-header i[data-icon="tri_eq-down"] {
+body.audio-devices nav[role="secondary"] header.settings-header i[data-icon="tri_eq-down"] {
 	left: 22.705078125%;
 }
 body.network-interfaces nav[role="secondary"] header.settings-header i[data-icon="tri_eq-down"] {
@@ -2964,8 +2971,9 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	margin-right: 0.2rem;
 }
 
-/* Album Art Database
+/* Album Art Database [DEPRECATED]
 ---------------------------------------------------------------------------- */
+/*
 #settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"]::before {
 	background-image: linear-gradient(to bottom, hsla(0,0%,14%,1), hsla(0,0%,14%,0));
 }
@@ -2987,7 +2995,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 #settings_album-art-db [data-content="parent"] [data-content="body"] [data-container="scroll-vertical"] ul li:nth-child(3n) {
 	margin-right: 0;
 }
-/* --- Actions --- */
+
 #settings_album-art-db [data-content="parent"] [data-content="body"].actions {
 	padding-bottom: 0.4rem;
 	text-align: center;
@@ -2996,6 +3004,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 #settings_album-art-db [data-content="parent"] [data-content="body"].actions a.common-button {
 	margin-bottom: 1.6rem;
 }
+*/
 
 /* Network Interfaces
 ---------------------------------------------------------------------------- */
@@ -3058,6 +3067,9 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 ---------------------------------------------------------------------------- */
 #settings_update-firmware [data-content="parent"] form.content-form [data-content="body"] a[title="Browse"] {
 	margin-bottom: 1rem;
+}
+#settings_update-firmware [data-content="parent"] form.content-form [data-content="body"] div[data-container="scroll-vertical"] [data-content="box"] {
+	height: 26rem;
 }
 /* --- Content Actions --- */
 /*
@@ -3136,19 +3148,7 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 
 /* NAS Setup
 ---------------------------------------------------------------------------- */
-/*
-#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions {
-	border-top: 0.1rem solid hsla(0,0%,22%,1);
-}
-#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li {
-	margin-bottom: 1.6rem;
-	text-align: center;
-}
-#settings_nas-setup [data-content="parent"] form.content-form ul[data-content="body"].actions li .common-button {
-	margin-right: 0;
-	width: 20rem;
-}
-*/
+
 
 /* Services
 ---------------------------------------------------------------------------- */

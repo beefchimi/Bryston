@@ -26,51 +26,17 @@
 
 							<ul data-component="network-list">
 
-
-
 								<li data-network="type-wired">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wired (eth0) 82583V">
-										<span data-meta="network-type">Wired</span> <span data-meta="network-device">(eth0)</span> <span data-meta="network-identifier">82583V</span>
+									<a onclick="displayNetwork('eth0','wired')" data-meta="network-title" title="Wired (eth0) 82583V Gigabit Network Connection">
+										<span data-meta="network-type">Wired</span> <span data-meta="network-device">(eth0)</span> <span data-meta="network-identifier">82583V Gigabit Network Connection</span>
 									</a>
 								</li>
 
 								<li data-network="type-wired">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wired (eth1) 82583V">
-										<span data-meta="network-type">Wired</span> <span data-meta="network-device">(eth1)</span> <span data-meta="network-identifier">82583V</span>
+									<a onclick="displayNetwork('eth0','wired')" data-meta="network-title" title="Wired (eth0) 82583V Gigabit Network Connection">
+										<span data-meta="network-type">Wired</span> <span data-meta="network-device">(eth0)</span> <span data-meta="network-identifier">82583V Gigabit Network Connection</span>
 									</a>
 								</li>
-
-								<li data-network="type-wireless" class="selected">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wireless (wlan0) RT2770">
-										<span data-meta="network-type">Wireless</span> <span data-meta="network-device">(wlan0)</span> <span data-meta="network-identifier">RT2770</span>
-									</a>
-								</li>
-
-								<li data-network="type-wireless">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wireless (wlan1) RT2770">
-										<span data-meta="network-type">Wireless</span> <span data-meta="network-device">(wlan1)</span> <span data-meta="network-identifier">RT2770</span>
-									</a>
-								</li>
-
-								<li data-network="type-wireless">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="Wireless (wlan2) RT2770">
-										<span data-meta="network-type">Wireless</span> <span data-meta="network-device">(wlan2)</span> <span data-meta="network-identifier">RT2770</span>
-									</a>
-								</li>
-
-								<li data-network="type-vpn">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="VPN (Internet Starship)">
-										<span data-meta="network-type">VPN</span> <span data-meta="network-device">(Internet Starship of the VPN Enterprise)</span>
-									</a>
-								</li>
-
-								<li data-network="type-vpn">
-									<a onclick="issueCommand('network this interface')" data-meta="network-title" title="VPN (Bryston Service)">
-										<span data-meta="network-type">VPN</span> <span data-meta="network-device">(Bryston Service)</span>
-									</a>
-								</li>
-
-
 
 							</ul>
 
@@ -79,8 +45,6 @@
 						<div data-container="column-two">
 
 							<form id="network-interfaces-form" class="content-form">
-
-
 
 								<ul data-component="network-actions">
 
@@ -207,8 +171,6 @@
 								</ul>
 
 								<input type="submit" value="Apply" class="common-button" />
-
-
 
 							</form>
 

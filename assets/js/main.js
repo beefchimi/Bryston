@@ -1,7 +1,3 @@
-// global variables for Album View
-var globalAlbumColumns;
-
-
 jQuery(document).ready(function($) {
 
 
@@ -9,9 +5,8 @@ jQuery(document).ready(function($) {
 	var $html     = $('html'),
 		$body     = $('body'),
 		$document = $(document),
-		$window   = $(window);
-
-	// var $dropdown = $('div[data-ui="dropdown"]');
+		$window   = $(window),
+		globalAlbumColumns;
 
 
 	/* Temporary Form Error Handler

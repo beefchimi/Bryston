@@ -20,17 +20,47 @@
 						<i data-icon="ui_volume-up"></i>
 					</header>
 
-					<div data-content="body" class="clearfix">
+					<ul id="deviceList" data-content="body" class="list_radio-checkbox">
 
-						
+						<!-- double line example (with error class in place of inline style) -->
+						<li id="ad-0" class="error clearfix">
+							<input type="checkbox" value="Intel 82801A" name="nas_server_0" id="nas_server_0" />
+							<label for="nas_server_0" class="clearfix">
+								<span class="name-ip truncate">
+									<strong data-meta="server-name">Intel 82801A</strong>
+									<em data-meta="server-ip">ICH</em>
+								</span>
+<!--
+								<span class="network-type truncate">
+									<strong data-meta="server-network">Microsoft Windows Network</strong>
+									<em data-meta="server-type">Audio Files</em>
+								</span>
+-->
+							</label>
+						</li>
 
-					</div>
+						<!-- single line example -->
+						<li id="ad-1" class="clearfix">
+							<input type="checkbox" value="Intel 82801A" name="nas_server_1" id="nas_server_1" />
+							<label for="nas_server_1" class="truncate clearfix">Intel 82801A &mdash; ICH</label>
+						</li>
 
-					<div data-content="body" class="actions clearfix">
+					</ul>
 
-						
+					<ul data-content="body" class="actions clearfix">
 
-					</div>
+						<li class="action-item">
+							<a onclick="restartMpd()" class="common-button" title="Restart MPD">
+								<span data-meta="link-title">Restart</span>
+							</a>
+						</li>
+						<li class="action-item">
+							<a onclick="applyAudio()" class="common-button" title="Apply Audio Settings">
+								<span data-meta="link-title">Apply</span>
+							</a>
+						</li>
+
+					</ul>
 
 				</article>
 

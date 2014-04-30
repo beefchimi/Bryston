@@ -24,8 +24,10 @@
 
 						<div data-content="body" class="clearfix">
 
-							<textarea placeholder="Enter commands here"></textarea>
-							<input type="submit" value="Save" class="common-button" />
+							<textarea id="startupDat" placeholder="Enter startup script here"></textarea>
+							<a onclick="SaveStartupFile();" title="Save" class="common-button">
+								<span data-meta="link-title">Save</span>
+							</a>
 
 						</div>
 
