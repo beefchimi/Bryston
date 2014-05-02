@@ -59,7 +59,7 @@
 
 								</ul>
 
-								<ul data-network="wireless-dhcp" class="network-inputs">
+								<ul data-network="wireless-dhcp" class="content-form-inputs">
 
 									<li class="ip-address">
 										<label for="dhcp_ip-address">IP Address:</label>

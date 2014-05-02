@@ -22,9 +22,9 @@
 
 					<form id="nas-setup" class="content-form">
 
-						<div id="configuredDevices" data-content="body" class="clearfix">
+						<fieldset id="configuredDevices" data-content="body" class="clearfix">
 
-							<ul class="list_radio-checkbox">
+							<ul id="nas-list" class="list_radio-checkbox">
 
 								<li id="nas-1" class="clearfix">
 									<input type="radio" value="0" name="nas_server_1" id="nas_server_1" />
@@ -56,7 +56,45 @@
 
 							</ul>
 
-						</div>
+						</fieldset>
+
+						<fieldset id="editDevices" data-content="body" class="clearfix">
+
+							<ul data-nas="edit" class="content-form-inputs">
+
+								<li class="device-name">
+									<label for="nas-name">Device Name:</label>
+									<input type="text" name="nas-name" id="nas-name" class="nas-setup-text" value="" placeholder="NAS Device Name" />
+								</li>
+
+								<li class="ip-address">
+									<label for="nas-addr">IP Address:</label>
+									<input type="text" name="nas-addr" id="nas-addr" class="nas-setup-text" value="" placeholder="ex: 192.168.2.104" />
+								</li>
+
+								<li class="username">
+									<label for="nas-user">Username:</label>
+									<input type="text" name="nas-user" id="nas-user" class="nas-setup-text" value="" placeholder="secret username" />
+								</li>
+
+								<li class="password">
+									<label for="nas-pass">Password:</label>
+									<input type="password" name="nas-pass" id="nas-pass" class="nas-setup-password" value="" placeholder="secret password" />
+								</li>
+
+								<li class="share-name">
+									<label for="nas-shar">Share Name:</label>
+									<input type="text" name="nas-shar" id="nas-shar" class="nas-setup-text" value="" placeholder="directory//MUSIC" />
+								</li>
+
+								<li class="share-type">
+									<label for="nas-shar">Share Type:</label>
+									<input type="text" name="nas-shar" id="nas-shar" class="nas-setup-text" value="" placeholder="Microsoft Windows Network" />
+								</li>
+
+							</ul>
+
+						</fieldset>
 
 						<ul id="nasButtons" data-content="body" class="actions clearfix">
 

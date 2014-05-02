@@ -554,6 +554,16 @@ form.common-form div.input-wrap textarea {
 	min-height: 10rem;
 	max-height: 42rem;
 }
+/* --- Content Form --- */
+form.content-form ul.content-form-inputs > li {
+	margin-bottom: 2rem;
+}
+form.content-form ul.content-form-inputs > li:last-child {
+	margin-bottom: 0;
+}
+form.content-form ul.content-form-inputs > li label {
+	margin-bottom: 1rem;
+}
 /* --- Common Search --- */
 form.common-search {
 	position: relative;
@@ -2832,30 +2842,8 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	left: 95.361328125%;
 }
 
-
-
-
-
-
-
 /* System
 ---------------------------------------------------------------------------- */
-
-/*
-#settings_system [data-content="parent"] [data-content="body"].actions {
-	border-top: 0.1rem solid hsla(0,0%,22%,1);
-}
-#settings_system [data-content="parent"] [data-content="body"].actions a.common-button {
-	display: block;
-	margin: 0 auto 1.6rem auto;
-	width: 22rem;
-}
-#settings_system [data-content="parent"] [data-content="body"].actions a:only-child,
-#settings_system [data-content="parent"] [data-content="body"].actions a:last-child {
-	margin-bottom: 0;
-}
-*/
-
 #settings_system [data-content="parent"] [data-content="body"] [data-container="column-one"] {
 	margin-bottom: 2rem;
 }
@@ -3050,17 +3038,8 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 	margin-right: 1rem;
 }
 /* --- Network Inputs --- */
-#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul.network-inputs {
+#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul.content-form-inputs {
 	margin-bottom: 2.6rem;
-}
-#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul.network-inputs > li {
-	margin-bottom: 2rem;
-}
-#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul.network-inputs > li:last-child {
-	margin-bottom: 0;
-}
-#settings_network-interfaces [data-content="parent"] [data-content="body"] [data-container="column-two"] form ul.network-inputs > li label {
-	margin-bottom: 1rem;
 }
 
 /* Update Firmware
@@ -3148,7 +3127,19 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 
 /* NAS Setup
 ---------------------------------------------------------------------------- */
-
+#settings_nas-setup {
+}
+/* --- Edit Devices --- */
+#editDevices {
+	display: none;
+	border-top: 0.1rem solid hsla(0,0%,22%,1);
+}
+#editDevices.toggled {
+	display: block;
+}
+#editDevices ul.content-form-inputs li {
+	max-width: 51.4rem;
+}
 
 /* Services
 ---------------------------------------------------------------------------- */
