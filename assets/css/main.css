@@ -3129,15 +3129,28 @@ body.license nav[role="secondary"] header.settings-header i[data-icon="tri_eq-do
 ---------------------------------------------------------------------------- */
 #settings_nas-setup {
 }
+#configuredDevices > p {
+	margin-bottom: 1rem;
+	font-size: 1.4rem;
+	color: hsla(0,0%,82%,1);
+}
+#configuredDevices > p:last-child,
+#configuredDevices > p:only-child {
+	margin-bottom: 0;
+}
+#configuredDevices div[data-ui="dropdown"] + p {
+	margin-top: 1rem;
+}
 /* --- Edit Devices --- */
-#editDevices {
+fieldset.devices-form {
 	display: none;
 	border-top: 0.1rem solid hsla(0,0%,22%,1);
 }
-#editDevices.toggled {
+fieldset.devices-form.toggled {
 	display: block;
 }
-#editDevices ul.content-form-inputs li {
+
+fieldset.devices-form ul.content-form-inputs li {
 	max-width: 51.4rem;
 }
 

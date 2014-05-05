@@ -58,7 +58,7 @@
 
 						</fieldset>
 
-						<fieldset id="editDevices" data-content="body" class="clearfix">
+						<fieldset id="editDevices" data-content="body" class="devices-form clearfix">
 
 							<ul data-nas="edit" class="content-form-inputs">
 
@@ -90,6 +90,55 @@
 								<li class="share-type">
 									<label for="nas-shar">Share Type:</label>
 									<input type="text" name="nas-shar" id="nas-shar" class="nas-setup-text" value="" placeholder="Microsoft Windows Network" />
+								</li>
+
+							</ul>
+
+						</fieldset>
+
+						<fieldset id="addDevices" data-content="body" class="devices-form clearfix">
+
+							<ul data-nas="edit" class="content-form-inputs">
+
+								<li class="nas-setup">
+
+									<label for="">Share Type:</label>
+
+									<div data-ui="dropdown" onclick="showShareTypeDrop();">
+
+										<span class="dropdown-header truncate">Please Select</span>
+
+										<ul id="options_nas">
+											<li class="select-option">
+												<a title="">Microsoft Windows Network</a>
+											</li>
+											<li class="select-option">
+												<a title="">Apple File Sharing</a>
+											</li>
+										</ul>
+
+									</div>
+
+								</li>
+
+								<li class="ip-address">
+									<label for="nas-addr">IP Address:</label>
+									<input type="text" name="nas-addr" id="nas-addr" class="nas-setup-text" value="" placeholder="ex: 192.168.2.104" />
+								</li>
+
+								<li class="username">
+									<label for="nas-user">Username:</label>
+									<input type="text" name="nas-user" id="nas-user" class="nas-setup-text" value="" placeholder="secret username" />
+								</li>
+
+								<li class="password">
+									<label for="nas-pass">Password:</label>
+									<input type="password" name="nas-pass" id="nas-pass" class="nas-setup-password" value="" placeholder="secret password" />
+								</li>
+
+								<li class="share-name">
+									<label for="nas-shar">Share Name:</label>
+									<input type="text" name="nas-shar" id="nas-shar" class="nas-setup-text" value="" placeholder="directory//MUSIC" />
 								</li>
 
 							</ul>
